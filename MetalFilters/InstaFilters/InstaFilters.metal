@@ -12,10 +12,44 @@ using namespace metalpetal;
 
 
 fragment float4 toaster(VertexOut vertexIn [[ stage_in ]],
-                        texture2d<float, access::sample> inputeTexture [[ texure(0) ]],
+                        texture2d<float, access::sample> inputTexture [[ texture(0) ]],
                         sampler s [[ sampler(0) ]])
 {
     return float4(1);
+}
+
+fragment float4 sutro(VertexOut vertexIn [[ stage_in ]],
+                      texture2d<float, access::sample> inputTexture [[ texture(0) ]],
+                      texture2d<float, access::sample> mapTexture [[ texture(2) ]],
+                      texture2d<float, access::sample> metalTexture3 [[ texture(3) ]],
+                      texture2d<float, access::sample> inputTexture4 [[ texture(4) ]],
+                      texture2d<float, access::sample> inputTexture5 [[ texture(5) ]],
+                      sampler s [[ sampler(0) ]]) {
+    return float4(1);
+}
+
+fragment float4 amaro(VertexOut vertexIn [[ stage_in ]],
+                      texture2d<float, access::sample> inputTexture [[ texture(0) ]],
+                      texture2d<float, access::sample> blowoutTexture [[ texture(2) ]],
+                      texture2d<float, access::sample> overlayTexture [[ texture(3) ]],
+                      texture2d<float, access::sample> mapTexture [[ texture(4) ]],
+                      sampler s [[ sampler(0) ]]) {
+    constexpr sampler edgeSampler(coord::normalized, address::clamp_to_edge, filter::linear);
+    
+    float4 texel = inputTexture.sample(edgeSampler, vertexIn.textureCoordinate);
+    float3 bbTexel = blowoutTexture.sample(edgeSampler, vertexIn.textureCoordinate).rgb;
+    
+    texel.r = overlayTexture.sample(edgeSampler, float2(bbTexel.r, texel.r)).r;
+    texel.g = overlayTexture.sample(edgeSampler, float2(bbTexel.g, texel.g)).g;
+    texel.b = overlayTexture.sample(edgeSampler, float2(bbTexel.b, texel.b)).b;
+    
+    float4 mapped;
+    mapped.r = mapTexture.sample(edgeSampler, float2(texel.r, .16666)).r;
+    mapped.g = mapTexture.sample(edgeSampler, float2(texel.g, .5)).g;
+    mapped.b = mapTexture.sample(edgeSampler, float2(texel.b, .83333)).b;
+    mapped.a = 1.0;
+    
+    return mapped;
 }
 
 // 1977

@@ -21,6 +21,10 @@
 		A3700A2B20C906F3005300B8 /* IMG_8957.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A3700A2A20C906F3005300B8 /* IMG_8957.JPG */; };
 		A3700A2D20C91791005300B8 /* IFFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3700A2C20C91791005300B8 /* IFFilter.swift */; };
 		A371AB5320C77F3B004D291F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371AB5220C77F3B004D291F /* CameraViewController.swift */; };
+		A3B48D3B20C93C4100E8C2E8 /* IFSutroFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B48D3A20C93C4100E8C2E8 /* IFSutroFilter.swift */; };
+		A3B48D3D20C9419900E8C2E8 /* IFHudsonFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B48D3C20C9419900E8C2E8 /* IFHudsonFilter.swift */; };
+		A3B48D3F20C943FB00E8C2E8 /* IFAmaroFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B48D3E20C943FB00E8C2E8 /* IFAmaroFilter.swift */; };
+		A3B48D4120C948B600E8C2E8 /* InstagramFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B48D4020C948B600E8C2E8 /* InstagramFilters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		A3700A2A20C906F3005300B8 /* IMG_8957.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_8957.JPG; sourceTree = "<group>"; };
 		A3700A2C20C91791005300B8 /* IFFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFFilter.swift; sourceTree = "<group>"; };
 		A371AB5220C77F3B004D291F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		A3B48D3A20C93C4100E8C2E8 /* IFSutroFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFSutroFilter.swift; sourceTree = "<group>"; };
+		A3B48D3C20C9419900E8C2E8 /* IFHudsonFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFHudsonFilter.swift; sourceTree = "<group>"; };
+		A3B48D3E20C943FB00E8C2E8 /* IFAmaroFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFAmaroFilter.swift; sourceTree = "<group>"; };
+		A3B48D4020C948B600E8C2E8 /* InstagramFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramFilters.swift; sourceTree = "<group>"; };
 		B817D3CCD2892291BA74BE47 /* Pods_MetalFilters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalFilters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -89,6 +97,7 @@
 				A36133D420C6666F0022F27C /* InstaFilters */,
 				A36133C020C665A70022F27C /* AppDelegate.swift */,
 				A36133C220C665A70022F27C /* ViewController.swift */,
+				A3B48D4020C948B600E8C2E8 /* InstagramFilters.swift */,
 				A36133C420C665A70022F27C /* Main.storyboard */,
 				A3700A2A20C906F3005300B8 /* IMG_8957.JPG */,
 				A36133C720C665A70022F27C /* Assets.xcassets */,
@@ -108,6 +117,9 @@
 				A36133D520C666B50022F27C /* IF1977Filter.swift */,
 				A36133D720C666D50022F27C /* IFValenciaFilter.swift */,
 				A36133DB20C6672D0022F27C /* IFToasterFilter.swift */,
+				A3B48D3A20C93C4100E8C2E8 /* IFSutroFilter.swift */,
+				A3B48D3C20C9419900E8C2E8 /* IFHudsonFilter.swift */,
+				A3B48D3E20C943FB00E8C2E8 /* IFAmaroFilter.swift */,
 			);
 			path = InstaFilters;
 			sourceTree = "<group>";
@@ -236,13 +248,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3B48D4120C948B600E8C2E8 /* InstagramFilters.swift in Sources */,
 				A36133DA20C666E50022F27C /* InstaFilters.metal in Sources */,
 				A36133DC20C6672D0022F27C /* IFToasterFilter.swift in Sources */,
+				A3B48D3B20C93C4100E8C2E8 /* IFSutroFilter.swift in Sources */,
 				A36133C320C665A70022F27C /* ViewController.swift in Sources */,
 				A36133D820C666D50022F27C /* IFValenciaFilter.swift in Sources */,
+				A3B48D3D20C9419900E8C2E8 /* IFHudsonFilter.swift in Sources */,
 				A371AB5320C77F3B004D291F /* CameraViewController.swift in Sources */,
 				A36133C120C665A70022F27C /* AppDelegate.swift in Sources */,
 				A3700A2D20C91791005300B8 /* IFFilter.swift in Sources */,
+				A3B48D3F20C943FB00E8C2E8 /* IFAmaroFilter.swift in Sources */,
 				A36133D620C666B50022F27C /* IF1977Filter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

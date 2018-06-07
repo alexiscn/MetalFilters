@@ -7,10 +7,21 @@
 //
 
 import Foundation
+import MetalPetal
 
-protocol IFFilter {
+protocol IFFilter: MTIUnaryFilter {
     
     var name: String { get }
     
-    var entrance: String { get }
+    var metalEntranceName: String { get }
+}
+
+extension IFFilter {
+    
+    var kernel: MTIRenderPipelineKernel {
+        let vertexDescriptor = MTIFunctionDescriptor(name: MTIFilterPassthroughVertexFunctionName)
+        let fragmentDescriptor = MTIFunctionDescriptor(name: metalEntranceName, libraryURL: MTIDefaultLibraryURLForBundle(Bundle.main))
+        let kernel = MTIRenderPipelineKernel(vertexFunctionDescriptor: vertexDescriptor, fragmentFunctionDescriptor: fragmentDescriptor)
+        return kernel
+    }
 }
