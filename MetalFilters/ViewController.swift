@@ -13,6 +13,8 @@ class ViewController: UIViewController {
 
     fileprivate let if1977Filter = IF1977Filter()
     
+    fileprivate let valencialFilter = IFValenciaFilter()
+    
     @IBOutlet weak var imageView: MTIImageView!
     
     override func viewDidLoad() {
@@ -27,21 +29,26 @@ class ViewController: UIViewController {
         
         setupFilter()
         
-        if1977Filter.inputImage = originImage
-        
-        imageView.image = if1977Filter.outputImage
+        valencialFilter.inputImage = originImage
+        imageView.image = valencialFilter.outputImage
     }
     
     fileprivate func setupFilter() {
         
-        guard let url = Bundle.main.url(forResource: "FilterAssets", withExtension: "bundle") else {
+        guard let url = Bundle.main.url(forResource: "FilterAssets", withExtension: "bundle"),
+            let bundle = Bundle(url: url) else {
             return
         }
-        let assetBundle = Bundle(url: url)
         
-        let if1977FilterMapURL = assetBundle?.url(forResource: "1977map", withExtension: "png")
+        func parameterImage(named name: String) -> MTIImage? {
+            let url = bundle.url(forResource: name, withExtension: "png")
+            return MTIImage(contentsOf: url!, options: [.SRGB: false], alphaType: .alphaIsOne)
+        }
         
-        if1977Filter.mapImage = MTIImage(contentsOf: if1977FilterMapURL!, options: [.SRGB: false], alphaType: .alphaIsOne)
+        if1977Filter.mapImage = parameterImage(named: "1977map")
+        
+        valencialFilter.mapImage = parameterImage(named: "valenciaMap")
+        valencialFilter.gradientMapImage = parameterImage(named: "valenciaGradientMap")
     }
 
     override func didReceiveMemoryWarning() {
