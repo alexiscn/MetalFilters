@@ -1,0 +1,21 @@
+{
+  "name": "MTCameraKit",
+  "version": "0.0.1",
+  "authors": {
+    "alexis": "shuifengxu@gmail.com"
+  },
+  "homepage": "https://github.com/alexsicn/",
+  "summary": "CameraKit",
+  "license": {
+    "type": "MIT"
+  },
+  "source": {
+    "path": "DevelopmentPods/MTCameraKit"
+  },
+  "requires_arc": true,
+  "platforms": {
+    "ios": "11.0"
+  },
+  "prefix_header_file": false,
+  "source_files": "*.{swift}"
+}

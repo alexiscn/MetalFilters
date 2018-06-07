@@ -33,10 +33,12 @@
 		23B66832A6F9A6A22554C4A3524811CE /* MTIColorHalftoneFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F7D883AB4CF00DA07D13C1248E7568 /* MTIColorHalftoneFilter.m */; };
 		249EB8D1F1D2F58C0555760C4470D0BB /* MTIImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 30A7E18564096D0D2C3A9F4CBDFA3791 /* MTIImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28711D7C731F4713A5BE4BE2EE41EC3F /* MTIRenderPassOutputDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 964F67248E655AF39C055A9950833BAD /* MTIRenderPassOutputDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		28F7E467F48FD832060C755AD9D6C897 /* MTCameraCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A57134B013C104E9FA0D2E8F69EEE1 /* MTCameraCaptureSession.swift */; };
 		29ABA88FD3A778444BDACECF771E6DFF /* MTIBlendModes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1378918201D2365EB3EE02E4E13003C6 /* MTIBlendModes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2C45030BAD2845C69EACE631360D42F7 /* MTIMultilayerCompositingFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F85AAF5D988B0D9041E274DE693A66 /* MTIMultilayerCompositingFilter.m */; };
 		2CCADCB044884C0872DF270E226A0A46 /* MTIColor.h in Headers */ = {isa = PBXBuildFile; fileRef = E0EAF6768858FDC7C3C805D98F87A98D /* MTIColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2CF445519BA07EE60D6721516F0AC975 /* MTIColorMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = EC13DD79E919DAE7F6AF1599C4629B87 /* MTIColorMatrix.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2D40D09C7694CECAF5A2D9B76997DC1A /* Pods-MetalFilters-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 709FD5AB379AACE75077D02227B49310 /* Pods-MetalFilters-dummy.m */; };
 		2DC6F459954ED322F50CA921C2696005 /* MTICVPixelBufferRendering.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FBA40E6417C598F791D8C7C10263D3 /* MTICVPixelBufferRendering.m */; };
 		2DC7C5D8638F07E1EDEF4ECB3CE24564 /* MTIMultilayerCompositeKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FA9B28B040059FDD483B731C86A319 /* MTIMultilayerCompositeKernel.m */; };
 		2FD4419663B6D1846808BC3D15BBF847 /* MTICLAHEFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AC52D08447FB25A164596D0BAD9E083 /* MTICLAHEFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -44,7 +46,6 @@
 		32F56E7A617CF90EA8AA1E0DD879864C /* MTIBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA586854D36676DECCC329EBF4CE8D88 /* MTIBlendFilter.m */; };
 		3457AC7CECF97EEF1A1C257EACB8BD26 /* MTIComputePipelineKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C771B68E9BD9381E1360F5750DC54C9 /* MTIComputePipelineKernel.m */; };
 		38244B2481486A8B87515D7DCA039ABD /* MTIAlphaPremultiplicationFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 071A3ADB5891DC7C8ADEC2E6CF4E0070 /* MTIAlphaPremultiplicationFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		38A7F5E435AF39E3C1B0DE0272E7173A /* Pods-MetalFilters-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 709FD5AB379AACE75077D02227B49310 /* Pods-MetalFilters-dummy.m */; };
 		3D5526DAD32C5431853452334D1A52FD /* MTIDotScreenFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B21DEA53AAC5A523985990305FBCC4 /* MTIDotScreenFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3DE8981ECDD94063A0E2135C9C569D91 /* MTIColorLookupFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BF3CA4D5E5B61547FE29FEE22ADE502 /* MTIColorLookupFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F155A6EC9550C7FAA785D8968996CF0 /* MTITextureDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E74C69C78F136833AB7598CE267E055 /* MTITextureDescriptor.m */; };
@@ -91,6 +92,7 @@
 		796BEDC87E6E61DE610A697D6CCA215B /* MTIRGBToneCurveFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FFDADC1CCB8DDD76904E2C6BD3732 /* MTIRGBToneCurveFilter.m */; };
 		7A73719AC9DA3634A69A2217542B6893 /* MTIMPSGaussianBlurFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D33140A15D12BE406F2916EFBE50D1E0 /* MTIMPSGaussianBlurFilter.m */; };
 		7AC3718D3CBBCF9F886C2AF4A7E2A924 /* MTIImagePromiseDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = C49D17A830A9D74FD68CD23654A42FFA /* MTIImagePromiseDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BD51C382C79DC7694452758F80522F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		7C21C24672EA87AAA8C1E88C3403030F /* MTIUnaryImageRenderingFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1585A6C148F714773BDEB28D699CE9 /* MTIUnaryImageRenderingFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D9A46228100C8F6E51A6586988BD9DB /* MTIMPSGaussianBlurFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B3D5C5CDA0B9DC4E219CD290A9AEAA5 /* MTIMPSGaussianBlurFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8045FDF5665011CE99BC519C9DE2FFE1 /* MTIMask.h in Headers */ = {isa = PBXBuildFile; fileRef = AAC1BA5E9B4B70A91EBA64A8D86D7EA0 /* MTIMask.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -107,8 +109,9 @@
 		98640A7CE7152942D68B7D99671BDE8F /* MTIImageOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 744F5D8A7450325EDABD7715D529DB0E /* MTIImageOrientation.m */; };
 		98C085664D010D4EC690B98F5B6131D8 /* MTIDrawableRendering.h in Headers */ = {isa = PBXBuildFile; fileRef = FD450D2E346AAFDA8885C612F93CA161 /* MTIDrawableRendering.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C09C169658E61D4D9CD7DF8AA81E325 /* MTIFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 86411A465C107F76D9BD3E7B8AF26CB5 /* MTIFilter.m */; };
+		9DBBAB996ECB773BB9F24574F42D9F3A /* MTCameraKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0EEDB65DC691930A2C4DF92BCF904A /* MTCameraKit-dummy.m */; };
 		9E46B37864EBAEE2AA8F1E71518F008D /* MTIVibranceFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4D46A83AD76C4B0321103AEC1397F /* MTIVibranceFilter.m */; };
-		9EEB4EDE62D85370725A7A74AFA4FA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		9F529DBB3C8535E3FAE21D697C051DCD /* MTCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A63E1D29BD9C91F7551E09F91413D /* MTCameraViewController.swift */; };
 		A0131FEC6B15125F1361AEFBE8A46A7E /* MTIShaderLib.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA87E179E8C858B07C9EE7E8C5B303E /* MTIShaderLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1EA68277EBEBC082BE2D186EC12EEFE /* MTIRenderPipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 475CC8BE6FB8B8E18118C1AFF383DD60 /* MTIRenderPipeline.m */; };
 		A2F712C3B5B3528789EDC66CA2FF9A1D /* MTILock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD517B5097B7B67ECDFFBBEB48278C /* MTILock.m */; };
@@ -123,6 +126,7 @@
 		B0028206B717F92CFA83066BCA71C341 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0220FEA816BFD5EA7F595D379FAC982C /* Shaders.metal */; };
 		B0F1994A3BE91FD3F9454DEEE3C9A348 /* MTIRGBToneCurveFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = B52561DA5A058C762F569E08A73EA71C /* MTIRGBToneCurveFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5771D78E85739B693D1D75BFC44783A /* MTIHighPassSkinSmoothingFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3581FFFABD54A952BC9D96F241D53A02 /* MTIHighPassSkinSmoothingFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B67B62C7B1FCD4BC24C95B8CE16B688E /* Pods-MetalFilters-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 62E418B1D1EB6DF8420D3AF3BBE24D3C /* Pods-MetalFilters-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B68CB9787FABAB30E63A8ED9B0701B4D /* MTIPixelFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = C881B875EE183B01C42D84FB51D3F657 /* MTIPixelFormat.m */; };
 		B6E378BF741E0B4B7F511348DD469234 /* MTITexturePool.h in Headers */ = {isa = PBXBuildFile; fileRef = FBEB50ECEBC036E0B7F2478146330E43 /* MTITexturePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA1F8000363F2FA8657ACE4BAB2542B1 /* MTIImageRenderingContext.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DF46A414E71D8F347CD9FC3F7FCBB4 /* MTIImageRenderingContext.m */; };
@@ -131,6 +135,7 @@
 		C1C9F03E1F9DA7073B1286F2AFF1339F /* MTIImageRenderingContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 70EC7A3E0A35AC085E1AE2AC9C6E2893 /* MTIImageRenderingContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C29233A9ECCCB3C67567554B5C0A3A38 /* MTICVMetalTextureCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B8A4A5FE51AE052800A23ED6FB33C86 /* MTICVMetalTextureCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C368864898789A8DAD4E7BE75EF52440 /* MTITexturePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF1CC877B4265B08664AF2DB4F095BF /* MTITexturePool.m */; };
+		C36D3130B5C5EC9CC847C1F9B757DAEF /* MTCameraKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 521C310556D5BF3CAD4E1B654F90A489 /* MTCameraKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C3A0810B33868BC01CFE11C1E29ABA59 /* MTIFunctionDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1072F29D4AF7E567C8E2433C3D2BBB97 /* MTIFunctionDescriptor.m */; };
 		C5E7C8FD640C7F83925C1515B9F5DFE1 /* MTIPixellateFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD314316456D5D98855B99A62A0C44AE /* MTIPixellateFilter.m */; };
 		C6BCEE6BEB6DFBD06D40514E99427F94 /* MTIImage+Filters.m in Sources */ = {isa = PBXBuildFile; fileRef = F245E7BA831ABE8C7FF56FF5D6938AE4 /* MTIImage+Filters.m */; };
@@ -163,12 +168,19 @@
 		F482E427B6AD7514B7256798CDF0F450 /* MTIMultilayerCompositeKernel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BD9B122DA6B15D52CD7FB3231B8AEFC /* MTIMultilayerCompositeKernel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F518BDE8009B6C9FA6858A0C4EEEDE81 /* MTIDefer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D652A564ADD60C74255ADF20EDF244A /* MTIDefer.m */; };
 		F90F2C08C45BE47E98B02DCD2EF7367D /* MTITextureDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CAD421EE8DDD9F2E553FEB05642801E /* MTITextureDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FA514826713388B569CF38BB5C4909F8 /* Pods-MetalFilters-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 62E418B1D1EB6DF8420D3AF3BBE24D3C /* Pods-MetalFilters-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FBB4A3C31F1076F7BCDB652AB7BE6610 /* MTKTextureLoaderExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2F9E9FA93305C36BEAE849B8D401C5 /* MTKTextureLoaderExtensions.m */; };
+		FFEE58037BD022394A9A626F7ED4BE6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		61CBA1A145243C280BF8A49F3B6BF4C1 /* PBXContainerItemProxy */ = {
+		5D74A8739D1A965317369FFF07A454E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AA8DD15F87A065F5CF08C454F71060A;
+			remoteInfo = MTCameraKit;
+		};
+		DE0203E7B8478DDB2BF6CB338D5B3911 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -183,7 +195,6 @@
 		05F95FAD6BA2509B39C58DAEBBBF52C7 /* MTIImagePromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIImagePromise.h; path = Frameworks/MetalPetal/MTIImagePromise.h; sourceTree = "<group>"; };
 		06C19D4A768B52BE186D675E20570556 /* MTIHighPassSkinSmoothingFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIHighPassSkinSmoothingFilter.m; path = Frameworks/MetalPetal/Filters/MTIHighPassSkinSmoothingFilter.m; sourceTree = "<group>"; };
 		071A3ADB5891DC7C8ADEC2E6CF4E0070 /* MTIAlphaPremultiplicationFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIAlphaPremultiplicationFilter.h; path = Frameworks/MetalPetal/Filters/MTIAlphaPremultiplicationFilter.h; sourceTree = "<group>"; };
-		0A73F7E65B9C4FE0825D60E515A98DCB /* Pods_MetalFilters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MetalFilters.framework; path = "Pods-MetalFilters.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BD7E477D159CDE008C0F6CDC3BD53F0 /* MTIImage+Promise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MTIImage+Promise.h"; path = "Frameworks/MetalPetal/MTIImage+Promise.h"; sourceTree = "<group>"; };
 		0C3CC29C07A4A5D91329074D27F6235F /* MTIVector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIVector.h; path = Frameworks/MetalPetal/MTIVector.h; sourceTree = "<group>"; };
 		0DECD5E944B482F8CF1158379A88F3B8 /* ColorConversionShaders.metal */ = {isa = PBXFileReference; includeInIndex = 1; name = ColorConversionShaders.metal; path = Frameworks/MetalPetal/Shaders/ColorConversionShaders.metal; sourceTree = "<group>"; };
@@ -204,12 +215,12 @@
 		24666AD58E667762478A8C73B1E2F016 /* MTICoreImageRendering.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTICoreImageRendering.h; path = Frameworks/MetalPetal/MTICoreImageRendering.h; sourceTree = "<group>"; };
 		270024AD6253CFFB3FD2C9A81CF97F52 /* MTIColorMatrix.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIColorMatrix.m; path = Frameworks/MetalPetal/MTIColorMatrix.m; sourceTree = "<group>"; };
 		27F7D883AB4CF00DA07D13C1248E7568 /* MTIColorHalftoneFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIColorHalftoneFilter.m; path = Frameworks/MetalPetal/Filters/MTIColorHalftoneFilter.m; sourceTree = "<group>"; };
+		2ADABBD0D8985CC2580F0398E7DEA667 /* MTCameraKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MTCameraKit.modulemap; sourceTree = "<group>"; };
 		2B82E5619F85CB81701C2709F677BAB4 /* Pods-MetalFilters-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MetalFilters-resources.sh"; sourceTree = "<group>"; };
 		2B9603927F2A40BFBE8488FBA55DD3B5 /* MTILayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTILayer.h; path = Frameworks/MetalPetal/MTILayer.h; sourceTree = "<group>"; };
 		2C771B68E9BD9381E1360F5750DC54C9 /* MTIComputePipelineKernel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIComputePipelineKernel.m; path = Frameworks/MetalPetal/Kernels/MTIComputePipelineKernel.m; sourceTree = "<group>"; };
 		30A7E18564096D0D2C3A9F4CBDFA3791 /* MTIImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIImageView.h; path = Frameworks/MetalPetal/UI/MTIImageView.h; sourceTree = "<group>"; };
 		316D1D722619D97EFCEA37471561018D /* MTIPrint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIPrint.m; path = Frameworks/MetalPetal/MTIPrint.m; sourceTree = "<group>"; };
-		344C06181AAFBE6F536DD9A249832919 /* MetalPetal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MetalPetal.framework; path = MetalPetal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3581FFFABD54A952BC9D96F241D53A02 /* MTIHighPassSkinSmoothingFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIHighPassSkinSmoothingFilter.h; path = Frameworks/MetalPetal/Filters/MTIHighPassSkinSmoothingFilter.h; sourceTree = "<group>"; };
 		36B21DEA53AAC5A523985990305FBCC4 /* MTIDotScreenFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIDotScreenFilter.h; path = Frameworks/MetalPetal/Filters/MTIDotScreenFilter.h; sourceTree = "<group>"; };
 		388AB388049216B5118736A756C4FC0A /* MTIBlendWithMaskFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIBlendWithMaskFilter.m; path = Frameworks/MetalPetal/Filters/MTIBlendWithMaskFilter.m; sourceTree = "<group>"; };
@@ -219,13 +230,19 @@
 		3FE04D5F53F7B12B97A60B6A7A673B58 /* MTIImagePromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIImagePromise.m; path = Frameworks/MetalPetal/MTIImagePromise.m; sourceTree = "<group>"; };
 		4296EE074EFF96DE090FD18A741A3055 /* MTIMPSKernel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIMPSKernel.h; path = Frameworks/MetalPetal/Kernels/MTIMPSKernel.h; sourceTree = "<group>"; };
 		42F9962071E7E1D37D01B9F2DE817EA0 /* MTIMPSConvolutionFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIMPSConvolutionFilter.m; path = Frameworks/MetalPetal/Filters/MTIMPSConvolutionFilter.m; sourceTree = "<group>"; };
+		441386FE222F4FECC68A82FE1D8A4869 /* MTCameraKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = MTCameraKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4455E345076EFCFA4EF8ACF987E88699 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45BA35A6874B1A262F730DEEAF7C1372 /* MTCameraKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MTCameraKit.framework; path = MTCameraKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		460836D331F5F6BCCAFC4D5BF36C0EE7 /* MTIAlphaType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIAlphaType.m; path = Frameworks/MetalPetal/MTIAlphaType.m; sourceTree = "<group>"; };
 		475CC8BE6FB8B8E18118C1AFF383DD60 /* MTIRenderPipeline.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIRenderPipeline.m; path = Frameworks/MetalPetal/MTIRenderPipeline.m; sourceTree = "<group>"; };
+		4F0EEDB65DC691930A2C4DF92BCF904A /* MTCameraKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MTCameraKit-dummy.m"; sourceTree = "<group>"; };
+		521C310556D5BF3CAD4E1B654F90A489 /* MTCameraKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MTCameraKit-umbrella.h"; sourceTree = "<group>"; };
 		5241B298DCED195CBE693AB8A871B94F /* MTIRenderPipelineKernel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIRenderPipelineKernel.m; path = Frameworks/MetalPetal/Kernels/MTIRenderPipelineKernel.m; sourceTree = "<group>"; };
 		530FF8A54C21E540AA091468C981A8A9 /* MTILock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTILock.h; path = Frameworks/MetalPetal/MTILock.h; sourceTree = "<group>"; };
 		53C5BB71740723F5E402629183949FD8 /* MTITextureDimensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTITextureDimensions.h; path = Frameworks/MetalPetal/MTITextureDimensions.h; sourceTree = "<group>"; };
 		53D2D7D4693CC035A44722B05535BC53 /* MTIRenderTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIRenderTask.m; path = Frameworks/MetalPetal/MTIRenderTask.m; sourceTree = "<group>"; };
+		549479B0ABD48F8AF1E2DAC2B0ECC265 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55C48BBC372F9F4250DCFEE6470863B2 /* Pods_MetalFilters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MetalFilters.framework; path = "Pods-MetalFilters.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58292FFD11B6BF0686508EA8C451BE91 /* MTIAlphaType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIAlphaType.h; path = Frameworks/MetalPetal/MTIAlphaType.h; sourceTree = "<group>"; };
 		587D907DFCDA00CEEFA56167F6A723A4 /* Pods-MetalFilters.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalFilters.debug.xcconfig"; sourceTree = "<group>"; };
 		5A6AD37C878071102B3A4F37CEEF3481 /* MTIDefer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIDefer.h; path = Frameworks/MetalPetal/MTIDefer.h; sourceTree = "<group>"; };
@@ -239,6 +256,7 @@
 		62E418B1D1EB6DF8420D3AF3BBE24D3C /* Pods-MetalFilters-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MetalFilters-umbrella.h"; sourceTree = "<group>"; };
 		6354CC64B1909A947887F2A29E6A5398 /* MTIContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIContext.h; path = Frameworks/MetalPetal/MTIContext.h; sourceTree = "<group>"; };
 		6456BD4A508A6BB6948B912E8D43705A /* MTIMPSSobelFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIMPSSobelFilter.h; path = Frameworks/MetalPetal/Filters/MTIMPSSobelFilter.h; sourceTree = "<group>"; };
+		64A57134B013C104E9FA0D2E8F69EEE1 /* MTCameraCaptureSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MTCameraCaptureSession.swift; sourceTree = "<group>"; };
 		64C6E3D766A2BF9CCE39EF9FEC62173D /* BlendingShaders.metal */ = {isa = PBXFileReference; includeInIndex = 1; name = BlendingShaders.metal; path = Frameworks/MetalPetal/Shaders/BlendingShaders.metal; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		66E69B95EC8562D75F1A8D2FE93188BF /* MTISamplerDescriptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTISamplerDescriptor.m; path = Frameworks/MetalPetal/MTISamplerDescriptor.m; sourceTree = "<group>"; };
@@ -294,6 +312,7 @@
 		A91EB22B9945DE70528DF6C1187E62AD /* MTIMask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIMask.m; path = Frameworks/MetalPetal/MTIMask.m; sourceTree = "<group>"; };
 		A9D9980EACB17BF6545CC94C6EB6ED9E /* MTIWeakToStrongObjectsMapTable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIWeakToStrongObjectsMapTable.h; path = Frameworks/MetalPetal/MTIWeakToStrongObjectsMapTable.h; sourceTree = "<group>"; };
 		AA45A48F4553C8008D9EE9CB150BFD81 /* Pods-MetalFilters-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MetalFilters-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AA78A62AD01A4A503C42471566187CA8 /* MetalPetal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MetalPetal.framework; path = MetalPetal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC1BA5E9B4B70A91EBA64A8D86D7EA0 /* MTIMask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIMask.h; path = Frameworks/MetalPetal/MTIMask.h; sourceTree = "<group>"; };
 		AAF39937E87CE88E797F9975561ECAEE /* Pods-MetalFilters.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MetalFilters.modulemap"; sourceTree = "<group>"; };
 		AD3951E2DDAA975A50D6FD793901D84A /* MTIPixellateFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIPixellateFilter.h; path = Frameworks/MetalPetal/Filters/MTIPixellateFilter.h; sourceTree = "<group>"; };
@@ -328,6 +347,7 @@
 		CC6A5C1207C46ADB6926705C203B1223 /* MTIContext+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MTIContext+Internal.h"; path = "Frameworks/MetalPetal/MTIContext+Internal.h"; sourceTree = "<group>"; };
 		D0D4D46A83AD76C4B0321103AEC1397F /* MTIVibranceFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIVibranceFilter.m; path = Frameworks/MetalPetal/Filters/MTIVibranceFilter.m; sourceTree = "<group>"; };
 		D1B4FD024B4B5DBB14836CB34248AFBB /* MTIComputePipelineKernel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIComputePipelineKernel.h; path = Frameworks/MetalPetal/Kernels/MTIComputePipelineKernel.h; sourceTree = "<group>"; };
+		D24A63E1D29BD9C91F7551E09F91413D /* MTCameraViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MTCameraViewController.swift; sourceTree = "<group>"; };
 		D33140A15D12BE406F2916EFBE50D1E0 /* MTIMPSGaussianBlurFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIMPSGaussianBlurFilter.m; path = Frameworks/MetalPetal/Filters/MTIMPSGaussianBlurFilter.m; sourceTree = "<group>"; };
 		D40223F7498213E8E3AEEE7913108730 /* MTIRenderPipeline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIRenderPipeline.h; path = Frameworks/MetalPetal/MTIRenderPipeline.h; sourceTree = "<group>"; };
 		D7F96DC53FDDF58B075E67DFAA579E07 /* MTITransformFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTITransformFilter.h; path = Frameworks/MetalPetal/Filters/MTITransformFilter.h; sourceTree = "<group>"; };
@@ -344,6 +364,7 @@
 		F3667F889D8D954F952161926F6B8F78 /* MTIImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIImage.m; path = Frameworks/MetalPetal/MTIImage.m; sourceTree = "<group>"; };
 		F8EC4A0ADAC9337724A9C0D6CC4609F1 /* MTIKernel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIKernel.h; path = Frameworks/MetalPetal/Kernels/MTIKernel.h; sourceTree = "<group>"; };
 		FAF1CC877B4265B08664AF2DB4F095BF /* MTITexturePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTITexturePool.m; path = Frameworks/MetalPetal/MTITexturePool.m; sourceTree = "<group>"; };
+		FB46E3D28504EFDE0138EDE77610EE7B /* MTCameraKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MTCameraKit.xcconfig; sourceTree = "<group>"; };
 		FBEB50ECEBC036E0B7F2478146330E43 /* MTITexturePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTITexturePool.h; path = Frameworks/MetalPetal/MTITexturePool.h; sourceTree = "<group>"; };
 		FD314316456D5D98855B99A62A0C44AE /* MTIPixellateFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIPixellateFilter.m; path = Frameworks/MetalPetal/Filters/MTIPixellateFilter.m; sourceTree = "<group>"; };
 		FD450D2E346AAFDA8885C612F93CA161 /* MTIDrawableRendering.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIDrawableRendering.h; path = Frameworks/MetalPetal/MTIDrawableRendering.h; sourceTree = "<group>"; };
@@ -360,17 +381,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A33CD5663D42C8EC79B99B5CC1EF4C9 /* Frameworks */ = {
+		7437899C641152D2546516D7FE28E1C2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EEB4EDE62D85370725A7A74AFA4FA37 /* Foundation.framework in Frameworks */,
+				7BD51C382C79DC7694452758F80522F3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF1791B55D72744B60FE876C7C85B60A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFEE58037BD022394A9A626F7ED4BE6A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0321D7F9BFDC22F0464860959C6E1A61 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA78A62AD01A4A503C42471566187CA8 /* MetalPetal.framework */,
+				45BA35A6874B1A262F730DEEAF7C1372 /* MTCameraKit.framework */,
+				55C48BBC372F9F4250DCFEE6470863B2 /* Pods_MetalFilters.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2B4CB3860AE64C0DF1037F18C3316628 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				441386FE222F4FECC68A82FE1D8A4869 /* MTCameraKit.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		3BB72C4807AB9CF330F26E88C7D58A7C /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,9 +458,10 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				E173867A1095ED694C57EDEAB21AADD5 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				F60C59D184BB45ABE5F149ABDBB3B6A6 /* Pods */,
-				D9356ACD22A265CE82748E4820CDCFDC /* Products */,
+				0321D7F9BFDC22F0464860959C6E1A61 /* Products */,
 				3BB72C4807AB9CF330F26E88C7D58A7C /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -578,6 +626,19 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
+		A90A616DCCFE5CB47E7A25587D3B4E16 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				549479B0ABD48F8AF1E2DAC2B0ECC265 /* Info.plist */,
+				2ADABBD0D8985CC2580F0398E7DEA667 /* MTCameraKit.modulemap */,
+				FB46E3D28504EFDE0138EDE77610EE7B /* MTCameraKit.xcconfig */,
+				4F0EEDB65DC691930A2C4DF92BCF904A /* MTCameraKit-dummy.m */,
+				521C310556D5BF3CAD4E1B654F90A489 /* MTCameraKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../../Pods/Target Support Files/MTCameraKit";
+			sourceTree = "<group>";
+		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -606,13 +667,24 @@
 			path = "../Target Support Files/MetalPetal";
 			sourceTree = "<group>";
 		};
-		D9356ACD22A265CE82748E4820CDCFDC /* Products */ = {
+		DD6426278104C5C25A3F03ED4E81F756 /* MTCameraKit */ = {
 			isa = PBXGroup;
 			children = (
-				344C06181AAFBE6F536DD9A249832919 /* MetalPetal.framework */,
-				0A73F7E65B9C4FE0825D60E515A98DCB /* Pods_MetalFilters.framework */,
+				64A57134B013C104E9FA0D2E8F69EEE1 /* MTCameraCaptureSession.swift */,
+				D24A63E1D29BD9C91F7551E09F91413D /* MTCameraViewController.swift */,
+				2B4CB3860AE64C0DF1037F18C3316628 /* Pod */,
+				A90A616DCCFE5CB47E7A25587D3B4E16 /* Support Files */,
 			);
-			name = Products;
+			name = MTCameraKit;
+			path = ../DevelopmentPods/MTCameraKit;
+			sourceTree = "<group>";
+		};
+		E173867A1095ED694C57EDEAB21AADD5 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD6426278104C5C25A3F03ED4E81F756 /* MTCameraKit */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		F60C59D184BB45ABE5F149ABDBB3B6A6 /* Pods */ = {
@@ -626,6 +698,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		7C9E969CCAA51E735D2BE5EBB1FDD82B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C36D3130B5C5EC9CC847C1F9B757DAEF /* MTCameraKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B504FD8F22BCF7261C39ABD02B435487 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B67B62C7B1FCD4BC24C95B8CE16B688E /* Pods-MetalFilters-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C284BAAB3C96B02372EB489C5CABA2A9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -708,17 +796,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C2E88070E22C54BFC56374A102D0CA25 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FA514826713388B569CF38BB5C4909F8 /* Pods-MetalFilters-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		12CCFD907F3905015134354975B67DB1 /* Pods-MetalFilters */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6740616A57D3DA0F575D732946313403 /* Build configuration list for PBXNativeTarget "Pods-MetalFilters" */;
+			buildPhases = (
+				B59CC411D74527934C715CA3A8A1355D /* Sources */,
+				7437899C641152D2546516D7FE28E1C2 /* Frameworks */,
+				B504FD8F22BCF7261C39ABD02B435487 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD87EEBFD30830D19412F071233AA721 /* PBXTargetDependency */,
+				D810382BF91371EC7D475DBC41403AAA /* PBXTargetDependency */,
+			);
+			name = "Pods-MetalFilters";
+			productName = "Pods-MetalFilters";
+			productReference = 55C48BBC372F9F4250DCFEE6470863B2 /* Pods_MetalFilters.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		7244D178DBBE6127AD99852DCDD54B1C /* MetalPetal */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8459AD84632671673DD6ED9F28BF4BB /* Build configuration list for PBXNativeTarget "MetalPetal" */;
@@ -733,25 +832,24 @@
 			);
 			name = MetalPetal;
 			productName = MetalPetal;
-			productReference = 344C06181AAFBE6F536DD9A249832919 /* MetalPetal.framework */;
+			productReference = AA78A62AD01A4A503C42471566187CA8 /* MetalPetal.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8F1C44BB2ECE9C4EC44F75D2E7FA048F /* Pods-MetalFilters */ = {
+		9AA8DD15F87A065F5CF08C454F71060A /* MTCameraKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CC5A358196E1E32F8FE2FF7E12C0F0E2 /* Build configuration list for PBXNativeTarget "Pods-MetalFilters" */;
+			buildConfigurationList = 7368776CBE9C0A38CED5C4DD71BDBD36 /* Build configuration list for PBXNativeTarget "MTCameraKit" */;
 			buildPhases = (
-				C92C250214AEA875BDF1D9C79E80CF53 /* Sources */,
-				6A33CD5663D42C8EC79B99B5CC1EF4C9 /* Frameworks */,
-				C2E88070E22C54BFC56374A102D0CA25 /* Headers */,
+				FBB55B33755AF2BB6B385BF818C8E4FF /* Sources */,
+				FF1791B55D72744B60FE876C7C85B60A /* Frameworks */,
+				7C9E969CCAA51E735D2BE5EBB1FDD82B /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4E2DB46847F08E68CD184519903DCFDE /* PBXTargetDependency */,
 			);
-			name = "Pods-MetalFilters";
-			productName = "Pods-MetalFilters";
-			productReference = 0A73F7E65B9C4FE0825D60E515A98DCB /* Pods_MetalFilters.framework */;
+			name = MTCameraKit;
+			productName = MTCameraKit;
+			productReference = 45BA35A6874B1A262F730DEEAF7C1372 /* MTCameraKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -771,12 +869,13 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = D9356ACD22A265CE82748E4820CDCFDC /* Products */;
+			productRefGroup = 0321D7F9BFDC22F0464860959C6E1A61 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				7244D178DBBE6127AD99852DCDD54B1C /* MetalPetal */,
-				8F1C44BB2ECE9C4EC44F75D2E7FA048F /* Pods-MetalFilters */,
+				9AA8DD15F87A065F5CF08C454F71060A /* MTCameraKit */,
+				12CCFD907F3905015134354975B67DB1 /* Pods-MetalFilters */,
 			);
 		};
 /* End PBXProject section */
@@ -868,22 +967,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C92C250214AEA875BDF1D9C79E80CF53 /* Sources */ = {
+		B59CC411D74527934C715CA3A8A1355D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38A7F5E435AF39E3C1B0DE0272E7173A /* Pods-MetalFilters-dummy.m in Sources */,
+				2D40D09C7694CECAF5A2D9B76997DC1A /* Pods-MetalFilters-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBB55B33755AF2BB6B385BF818C8E4FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28F7E467F48FD832060C755AD9D6C897 /* MTCameraCaptureSession.swift in Sources */,
+				9DBBAB996ECB773BB9F24574F42D9F3A /* MTCameraKit-dummy.m in Sources */,
+				9F529DBB3C8535E3FAE21D697C051DCD /* MTCameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4E2DB46847F08E68CD184519903DCFDE /* PBXTargetDependency */ = {
+		D810382BF91371EC7D475DBC41403AAA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MetalPetal;
 			target = 7244D178DBBE6127AD99852DCDD54B1C /* MetalPetal */;
-			targetProxy = 61CBA1A145243C280BF8A49F3B6BF4C1 /* PBXContainerItemProxy */;
+			targetProxy = DE0203E7B8478DDB2BF6CB338D5B3911 /* PBXContainerItemProxy */;
+		};
+		DD87EEBFD30830D19412F071233AA721 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MTCameraKit;
+			target = 9AA8DD15F87A065F5CF08C454F71060A /* MTCameraKit */;
+			targetProxy = 5D74A8739D1A965317369FFF07A454E0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -976,6 +1091,107 @@
 			};
 			name = Debug;
 		};
+		1D9FEA9D08A65C4BD4669E68837A99C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB46E3D28504EFDE0138EDE77610EE7B /* MTCameraKit.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/MTCameraKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MTCameraKit/MTCameraKit.modulemap";
+				PRODUCT_MODULE_NAME = MTCameraKit;
+				PRODUCT_NAME = MTCameraKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2B50C7400321330C5248F13752215B43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 587D907DFCDA00CEEFA56167F6A723A4 /* Pods-MetalFilters.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MetalFilters/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MetalFilters/Pods-MetalFilters.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4B1A00E32CC78D2BE81FF895209FB558 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB46E3D28504EFDE0138EDE77610EE7B /* MTCameraKit.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/MTCameraKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MTCameraKit/MTCameraKit.modulemap";
+				PRODUCT_MODULE_NAME = MTCameraKit;
+				PRODUCT_NAME = MTCameraKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		5CC0E16B3CA0858747947F24B3A20D70 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7428D5300095674ACAD8484CF49B9A55 /* MetalPetal.xcconfig */;
@@ -1006,75 +1222,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		5EBBF7B71CCC5A5313CFACB65C8BBF83 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C04C5957A44E004D79BB1525F8ED4938 /* Pods-MetalFilters.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MetalFilters/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MetalFilters/Pods-MetalFilters.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		62C5F159B985DC619959C267B071A4D9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 587D907DFCDA00CEEFA56167F6A723A4 /* Pods-MetalFilters.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MetalFilters/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MetalFilters/Pods-MetalFilters.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1139,6 +1286,42 @@
 			};
 			name = Debug;
 		};
+		EFB633126E2903B179E8962EEAC2EC21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C04C5957A44E004D79BB1525F8ED4938 /* Pods-MetalFilters.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MetalFilters/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MetalFilters/Pods-MetalFilters.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1151,20 +1334,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		6740616A57D3DA0F575D732946313403 /* Build configuration list for PBXNativeTarget "Pods-MetalFilters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B50C7400321330C5248F13752215B43 /* Debug */,
+				EFB633126E2903B179E8962EEAC2EC21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7368776CBE9C0A38CED5C4DD71BDBD36 /* Build configuration list for PBXNativeTarget "MTCameraKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B1A00E32CC78D2BE81FF895209FB558 /* Debug */,
+				1D9FEA9D08A65C4BD4669E68837A99C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A8459AD84632671673DD6ED9F28BF4BB /* Build configuration list for PBXNativeTarget "MetalPetal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B915ECB59BA0ED7BDFC6F23EF1D9BAF /* Debug */,
 				5CC0E16B3CA0858747947F24B3A20D70 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CC5A358196E1E32F8FE2FF7E12C0F0E2 /* Build configuration list for PBXNativeTarget "Pods-MetalFilters" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				62C5F159B985DC619959C267B071A4D9 /* Debug */,
-				5EBBF7B71CCC5A5313CFACB65C8BBF83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

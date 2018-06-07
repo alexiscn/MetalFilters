@@ -18,6 +18,8 @@
 		A36133D820C666D50022F27C /* IFValenciaFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36133D720C666D50022F27C /* IFValenciaFilter.swift */; };
 		A36133DA20C666E50022F27C /* InstaFilters.metal in Sources */ = {isa = PBXBuildFile; fileRef = A36133D920C666E50022F27C /* InstaFilters.metal */; };
 		A36133DC20C6672D0022F27C /* IFToasterFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36133DB20C6672D0022F27C /* IFToasterFilter.swift */; };
+		A3700A2B20C906F3005300B8 /* IMG_8957.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A3700A2A20C906F3005300B8 /* IMG_8957.JPG */; };
+		A371AB5320C77F3B004D291F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371AB5220C77F3B004D291F /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		A36133D720C666D50022F27C /* IFValenciaFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFValenciaFilter.swift; sourceTree = "<group>"; };
 		A36133D920C666E50022F27C /* InstaFilters.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = InstaFilters.metal; sourceTree = "<group>"; };
 		A36133DB20C6672D0022F27C /* IFToasterFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFToasterFilter.swift; sourceTree = "<group>"; };
+		A3700A2A20C906F3005300B8 /* IMG_8957.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_8957.JPG; sourceTree = "<group>"; };
+		A371AB5220C77F3B004D291F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B817D3CCD2892291BA74BE47 /* Pods_MetalFilters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalFilters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,10 +88,12 @@
 				A36133C020C665A70022F27C /* AppDelegate.swift */,
 				A36133C220C665A70022F27C /* ViewController.swift */,
 				A36133C420C665A70022F27C /* Main.storyboard */,
+				A3700A2A20C906F3005300B8 /* IMG_8957.JPG */,
 				A36133C720C665A70022F27C /* Assets.xcassets */,
 				A36133C920C665A70022F27C /* LaunchScreen.storyboard */,
 				A36133CC20C665A70022F27C /* Info.plist */,
 				A36133D220C6663A0022F27C /* FilterAssets.bundle */,
+				A371AB5220C77F3B004D291F /* CameraViewController.swift */,
 			);
 			path = MetalFilters;
 			sourceTree = "<group>";
@@ -172,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A36133D320C6663A0022F27C /* FilterAssets.bundle in Resources */,
+				A3700A2B20C906F3005300B8 /* IMG_8957.JPG in Resources */,
 				A36133CB20C665A70022F27C /* LaunchScreen.storyboard in Resources */,
 				A36133C820C665A70022F27C /* Assets.xcassets in Resources */,
 				A36133C620C665A70022F27C /* Main.storyboard in Resources */,
@@ -188,10 +195,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MetalFilters/Pods-MetalFilters-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MTCameraKit/MTCameraKit.framework",
 				"${BUILT_PRODUCTS_DIR}/MetalPetal/MetalPetal.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MTCameraKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MetalPetal.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +237,7 @@
 				A36133DC20C6672D0022F27C /* IFToasterFilter.swift in Sources */,
 				A36133C320C665A70022F27C /* ViewController.swift in Sources */,
 				A36133D820C666D50022F27C /* IFValenciaFilter.swift in Sources */,
+				A371AB5320C77F3B004D291F /* CameraViewController.swift in Sources */,
 				A36133C120C665A70022F27C /* AppDelegate.swift in Sources */,
 				A36133D620C666B50022F27C /* IF1977Filter.swift in Sources */,
 			);
