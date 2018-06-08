@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6C6C88BFBC95C7EDDE5BA9ED /* Pods_MetalFilters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B817D3CCD2892291BA74BE47 /* Pods_MetalFilters.framework */; };
+		A35A3F2920CA9DD600DB327F /* IFMoonFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A3F2820CA9DD600DB327F /* IFMoonFilter.swift */; };
+		A35A3F2B20CA9EF900DB327F /* IFMoonFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A35A3F2A20CA9EF900DB327F /* IFMoonFilter.metal */; };
 		A36133C120C665A70022F27C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36133C020C665A70022F27C /* AppDelegate.swift */; };
 		A36133C320C665A70022F27C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36133C220C665A70022F27C /* ViewController.swift */; };
 		A36133C620C665A70022F27C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36133C420C665A70022F27C /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		5ECEE1FADC6C7F777DB3FBE7 /* Pods-MetalFilters.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalFilters.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetalFilters/Pods-MetalFilters.debug.xcconfig"; sourceTree = "<group>"; };
 		8CF694358EC8CD79BA5C6B8E /* Pods-MetalFilters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalFilters.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetalFilters/Pods-MetalFilters.release.xcconfig"; sourceTree = "<group>"; };
+		A35A3F2820CA9DD600DB327F /* IFMoonFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMoonFilter.swift; sourceTree = "<group>"; };
+		A35A3F2A20CA9EF900DB327F /* IFMoonFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = IFMoonFilter.metal; sourceTree = "<group>"; };
 		A36133BD20C665A70022F27C /* MetalFilters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalFilters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36133C020C665A70022F27C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A36133C220C665A70022F27C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 				A39C114E20CA59160095E3E4 /* IFAmaroFilter.metal */,
 				A39C115120CA59790095E3E4 /* IFValenciaFilter.metal */,
 				A39C115320CA59B60095E3E4 /* IF1977Filter.metal */,
+				A35A3F2A20CA9EF900DB327F /* IFMoonFilter.metal */,
 			);
 			path = Metals;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				A3B48D3A20C93C4100E8C2E8 /* IFSutroFilter.swift */,
 				A36133DB20C6672D0022F27C /* IFToasterFilter.swift */,
 				A3B48D3C20C9419900E8C2E8 /* IFHudsonFilter.swift */,
+				A35A3F2820CA9DD600DB327F /* IFMoonFilter.swift */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -286,6 +292,8 @@
 				A3B48D3D20C9419900E8C2E8 /* IFHudsonFilter.swift in Sources */,
 				A371AB5320C77F3B004D291F /* CameraViewController.swift in Sources */,
 				A36133C120C665A70022F27C /* AppDelegate.swift in Sources */,
+				A35A3F2B20CA9EF900DB327F /* IFMoonFilter.metal in Sources */,
+				A35A3F2920CA9DD600DB327F /* IFMoonFilter.swift in Sources */,
 				A3700A2D20C91791005300B8 /* IFFilter.swift in Sources */,
 				A39C114F20CA59160095E3E4 /* IFAmaroFilter.metal in Sources */,
 				A3B48D3F20C943FB00E8C2E8 /* IFAmaroFilter.swift in Sources */,

@@ -19,6 +19,8 @@ class InstagramFilters {
     
     let amaroFilter = IFAmaroFilter()
     
+    let moonFilter = IFMoonFilter()
+    
     init() {
         
         guard let url = Bundle.main.url(forResource: "FilterAssets", withExtension: "bundle"),
