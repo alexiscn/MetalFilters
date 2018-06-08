@@ -27,8 +27,8 @@ class ViewController: UIViewController {
         let originImage = MTIImage(cgImage: image.cgImage!, options: [.SRGB: false], alphaType: .alphaIsOne).oriented(.right)
         imageView.image = originImage
         
-        filter?.valencialFilter.inputImage = originImage
-        imageView.image = filter?.valencialFilter.outputImage
+        filter?.amaroFilter.inputImage = originImage
+        imageView.image = filter?.amaroFilter.outputImage
     }
     
     override func didReceiveMemoryWarning() {

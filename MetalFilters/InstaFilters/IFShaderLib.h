@@ -13,14 +13,18 @@
 
 using namespace metal;
 
+#if __METAL_MACOS__ || __METAL_IOS__
+
 namespace metalpetal {
     
     typedef struct {
+        float4 position [[ position ]];
         float2 textureCoordinate;
         float2 sourceTextureCoordinate;
-        float4 position [[ position ]];
-    } IFVertexOut;
+    }IFVertexOut;
     
 }
+
+#endif
 
 #endif /* IFShaderLib_h */

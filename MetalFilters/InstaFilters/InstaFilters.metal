@@ -8,8 +8,19 @@
 
 #include <metal_stdlib>
 #include "MTIShaderLib.h"
+#include "IFShaderLib.h"
 using namespace metalpetal;
 
+namespace metalpetal {
+    
+    vertex IFVertexOut instagramVertex(const device VertexIn * vertices [[ buffer(0)]],
+                                      uint vid [[ vertex_id ]]) {
+        IFVertexOut outVertex;
+        
+        return outVertex;
+    }
+    
+}
 
 fragment float4 toaster(VertexOut vertexIn [[ stage_in ]],
                         texture2d<float, access::sample> inputTexture [[ texture(0) ]],
