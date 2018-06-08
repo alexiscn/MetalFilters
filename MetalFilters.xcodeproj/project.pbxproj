@@ -21,6 +21,9 @@
 		A3700A2B20C906F3005300B8 /* IMG_8957.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A3700A2A20C906F3005300B8 /* IMG_8957.JPG */; };
 		A3700A2D20C91791005300B8 /* IFFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3700A2C20C91791005300B8 /* IFFilter.swift */; };
 		A371AB5320C77F3B004D291F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371AB5220C77F3B004D291F /* CameraViewController.swift */; };
+		A39C114F20CA59160095E3E4 /* IFAmaroFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A39C114E20CA59160095E3E4 /* IFAmaroFilter.metal */; };
+		A39C115220CA59790095E3E4 /* IFValenciaFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A39C115120CA59790095E3E4 /* IFValenciaFilter.metal */; };
+		A39C115420CA59B60095E3E4 /* IF1977Filter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A39C115320CA59B60095E3E4 /* IF1977Filter.metal */; };
 		A3B48D3B20C93C4100E8C2E8 /* IFSutroFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B48D3A20C93C4100E8C2E8 /* IFSutroFilter.swift */; };
 		A3B48D3D20C9419900E8C2E8 /* IFHudsonFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B48D3C20C9419900E8C2E8 /* IFHudsonFilter.swift */; };
 		A3B48D3F20C943FB00E8C2E8 /* IFAmaroFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B48D3E20C943FB00E8C2E8 /* IFAmaroFilter.swift */; };
@@ -45,6 +48,10 @@
 		A3700A2A20C906F3005300B8 /* IMG_8957.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_8957.JPG; sourceTree = "<group>"; };
 		A3700A2C20C91791005300B8 /* IFFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFFilter.swift; sourceTree = "<group>"; };
 		A371AB5220C77F3B004D291F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		A39C114E20CA59160095E3E4 /* IFAmaroFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = IFAmaroFilter.metal; sourceTree = "<group>"; };
+		A39C115120CA59790095E3E4 /* IFValenciaFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = IFValenciaFilter.metal; sourceTree = "<group>"; };
+		A39C115320CA59B60095E3E4 /* IF1977Filter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = IF1977Filter.metal; sourceTree = "<group>"; };
+		A39C115520CA59FD0095E3E4 /* IFShaderLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFShaderLib.h; sourceTree = "<group>"; };
 		A3B48D3A20C93C4100E8C2E8 /* IFSutroFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFSutroFilter.swift; sourceTree = "<group>"; };
 		A3B48D3C20C9419900E8C2E8 /* IFHudsonFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFHudsonFilter.swift; sourceTree = "<group>"; };
 		A3B48D3E20C943FB00E8C2E8 /* IFAmaroFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFAmaroFilter.swift; sourceTree = "<group>"; };
@@ -112,16 +119,36 @@
 		A36133D420C6666F0022F27C /* InstaFilters */ = {
 			isa = PBXGroup;
 			children = (
+				A39C115020CA59480095E3E4 /* Filters */,
+				A39C114D20CA588B0095E3E4 /* Metals */,
 				A3700A2C20C91791005300B8 /* IFFilter.swift */,
 				A36133D920C666E50022F27C /* InstaFilters.metal */,
-				A36133D520C666B50022F27C /* IF1977Filter.swift */,
-				A36133D720C666D50022F27C /* IFValenciaFilter.swift */,
-				A36133DB20C6672D0022F27C /* IFToasterFilter.swift */,
-				A3B48D3A20C93C4100E8C2E8 /* IFSutroFilter.swift */,
-				A3B48D3C20C9419900E8C2E8 /* IFHudsonFilter.swift */,
-				A3B48D3E20C943FB00E8C2E8 /* IFAmaroFilter.swift */,
+				A39C115520CA59FD0095E3E4 /* IFShaderLib.h */,
 			);
 			path = InstaFilters;
+			sourceTree = "<group>";
+		};
+		A39C114D20CA588B0095E3E4 /* Metals */ = {
+			isa = PBXGroup;
+			children = (
+				A39C114E20CA59160095E3E4 /* IFAmaroFilter.metal */,
+				A39C115120CA59790095E3E4 /* IFValenciaFilter.metal */,
+				A39C115320CA59B60095E3E4 /* IF1977Filter.metal */,
+			);
+			path = Metals;
+			sourceTree = "<group>";
+		};
+		A39C115020CA59480095E3E4 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				A36133D520C666B50022F27C /* IF1977Filter.swift */,
+				A3B48D3E20C943FB00E8C2E8 /* IFAmaroFilter.swift */,
+				A36133D720C666D50022F27C /* IFValenciaFilter.swift */,
+				A3B48D3A20C93C4100E8C2E8 /* IFSutroFilter.swift */,
+				A36133DB20C6672D0022F27C /* IFToasterFilter.swift */,
+				A3B48D3C20C9419900E8C2E8 /* IFHudsonFilter.swift */,
+			);
+			path = Filters;
 			sourceTree = "<group>";
 		};
 		F5AA97785B502832B3C3352B /* Frameworks */ = {
@@ -248,9 +275,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A39C115420CA59B60095E3E4 /* IF1977Filter.metal in Sources */,
 				A3B48D4120C948B600E8C2E8 /* InstagramFilters.swift in Sources */,
 				A36133DA20C666E50022F27C /* InstaFilters.metal in Sources */,
 				A36133DC20C6672D0022F27C /* IFToasterFilter.swift in Sources */,
+				A39C115220CA59790095E3E4 /* IFValenciaFilter.metal in Sources */,
 				A3B48D3B20C93C4100E8C2E8 /* IFSutroFilter.swift in Sources */,
 				A36133C320C665A70022F27C /* ViewController.swift in Sources */,
 				A36133D820C666D50022F27C /* IFValenciaFilter.swift in Sources */,
@@ -258,6 +287,7 @@
 				A371AB5320C77F3B004D291F /* CameraViewController.swift in Sources */,
 				A36133C120C665A70022F27C /* AppDelegate.swift in Sources */,
 				A3700A2D20C91791005300B8 /* IFFilter.swift in Sources */,
+				A39C114F20CA59160095E3E4 /* IFAmaroFilter.metal in Sources */,
 				A3B48D3F20C943FB00E8C2E8 /* IFAmaroFilter.swift in Sources */,
 				A36133D620C666B50022F27C /* IF1977Filter.swift in Sources */,
 			);

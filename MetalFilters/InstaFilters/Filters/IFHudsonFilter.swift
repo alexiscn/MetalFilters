@@ -11,6 +11,14 @@ import MetalPetal
 
 class IFHudsonFilter: NSObject, IFFilter {
     
+    var borderName: String {
+        return ""
+    }
+    
+    var samplers: [String : String] {
+        return [:]
+    }
+    
     var inputImage: MTIImage?
     
     var outputPixelFormat: MTLPixelFormat = .invalid
@@ -25,5 +33,4 @@ class IFHudsonFilter: NSObject, IFFilter {
     var metalEntranceName: String {
         return "hudson"
     }
-    
 }

@@ -30,16 +30,6 @@ class InstagramFilters {
             let url = bundle.url(forResource: name, withExtension: "png")
             return MTIImage(contentsOf: url!, options: [.SRGB: false], alphaType: .alphaIsOne)
         }
-        
-        if1977Filter.mapImage = parameterImage(named: "1977map")
-        
-        valencialFilter.mapImage = parameterImage(named: "valenciaMap")
-        valencialFilter.gradientMapImage = parameterImage(named: "valenciaGradientMap")
-        
-        amaroFilter.blowoutImage = parameterImage(named: "blackboard")
-        amaroFilter.mapImage = parameterImage(named: "amaroMap")
-        amaroFilter.overlayImage = parameterImage(named: "overlayMap")
-        
     }
     
     

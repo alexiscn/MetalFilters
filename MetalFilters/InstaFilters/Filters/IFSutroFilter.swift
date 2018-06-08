@@ -13,17 +13,12 @@ class IFSutroFilter: NSObject, MTIUnaryFilter {
     
     var inputImage: MTIImage?
     
-    var borderImage: MTIImage?
-    
-    var curvesImage: MTIImage?
-    
-    var mapImage: MTIImage?
-    
-    var metalImage: MTIImage?
-    
     var outputPixelFormat: MTLPixelFormat = .invalid
     
     var outputImage: MTIImage?
     
+    var boderName: String {
+        return ""
+    }
     
 }
