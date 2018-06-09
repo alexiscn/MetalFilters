@@ -17,14 +17,11 @@ fragment float4 toasterFragment(VertexOut vertexIn [[ stage_in ]],
                                 texture2d<float, access::sample> metal [[ texture(3) ]],
                                 texture2d<float, access::sample> softLight [[ texture(4) ]],
                                 texture2d<float, access::sample> vignetteMap [[ texture(5) ]],
-                                sampler s [[ sampler(0) ]])
+                                sampler textureSampler [[ sampler(0) ]])
 {
-    
+    constexpr sampler s(coord::normalized, address::clamp_to_edge, filter::linear);
     float4 texel = inputTexture.sample(s, vertexIn.textureCoordinate);
     float4 inputTexel = texel;
-    float2 red;
-    float2 green;
-    float2 blue;
     float2 tc;
     float2 lookup;
     float3 metalSample;

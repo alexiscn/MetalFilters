@@ -15,16 +15,19 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var photoImageView: UIImageView!
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var albumView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Metal Filters"
         // Do any additional setup after loading the view.
         
         PHPhotoLibrary.requestAuthorization { (status) in
             switch status {
             case .authorized:
+                DispatchQueue.main.async {
+                    self.loadPhotos()
+                }
                 break
             case .notDetermined:
                 break
@@ -39,6 +42,22 @@ class MainViewController: UIViewController {
         option.sortDescriptors = [ NSSortDescriptor(key: "creationDate", ascending: false) ]
         let result = PHAsset.fetchAssets(with: option)
         self.fetchResult = result
+        
+        if let firstAsset = result.firstObject {
+            let targetSize = CGSize(width: firstAsset.pixelWidth, height: firstAsset.pixelHeight)
+            PHImageManager.default().requestImage(for: firstAsset, targetSize: targetSize, contentMode: .aspectFit, options: nil) { (image, _) in
+                self.photoImageView.image = image
+            }
+        }
+        
+        let albumController = AlbumPhotoViewController(dataSource: result)
+        albumController.didSelectAssetHandler = { selectedAsset in
+            
+        }
+        albumController.view.frame = albumView.bounds
+        albumView.addSubview(albumController.view)
+        addChildViewController(albumController)
+        albumController.didMove(toParentViewController: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,20 +68,4 @@ class MainViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-}
-
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fetchResult?.count ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
-    }
-    
 }
