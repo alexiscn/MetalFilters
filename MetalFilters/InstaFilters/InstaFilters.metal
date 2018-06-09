@@ -22,24 +22,3 @@ namespace metalpetal {
     
 }
 
-fragment float4 toaster(VertexOut vertexIn [[ stage_in ]],
-                        texture2d<float, access::sample> inputTexture [[ texture(0) ]],
-                        sampler s [[ sampler(0) ]])
-{
-    return float4(1);
-}
-
-fragment float4 sutro(VertexOut vertexIn [[ stage_in ]],
-                      texture2d<float, access::sample> inputTexture [[ texture(0) ]],
-                      texture2d<float, access::sample> mapTexture [[ texture(2) ]],
-                      texture2d<float, access::sample> metalTexture3 [[ texture(3) ]],
-                      texture2d<float, access::sample> inputTexture4 [[ texture(4) ]],
-                      texture2d<float, access::sample> inputTexture5 [[ texture(5) ]],
-                      sampler s [[ sampler(0) ]]) {
-    return float4(1);
-}
-
-
-
-
-

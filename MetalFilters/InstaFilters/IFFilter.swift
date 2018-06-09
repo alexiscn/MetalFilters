@@ -15,7 +15,7 @@ protocol IFFilter: MTIUnaryFilter {
     
     var borderName: String { get }
     
-    var metalEntranceName: String { get }
+    var fragmentName: String { get }
     
     var samplers: [String: String] { get }
 }
@@ -25,7 +25,7 @@ extension IFFilter {
     
     var kernel: MTIRenderPipelineKernel {
         let vertexDescriptor = MTIFunctionDescriptor(name: MTIFilterPassthroughVertexFunctionName)
-        let fragmentDescriptor = MTIFunctionDescriptor(name: metalEntranceName, libraryURL: MTIDefaultLibraryURLForBundle(Bundle.main))
+        let fragmentDescriptor = MTIFunctionDescriptor(name: fragmentName, libraryURL: MTIDefaultLibraryURLForBundle(Bundle.main))
         let kernel = MTIRenderPipelineKernel(vertexFunctionDescriptor: vertexDescriptor, fragmentFunctionDescriptor: fragmentDescriptor)
         return kernel
     }

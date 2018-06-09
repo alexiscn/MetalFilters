@@ -21,18 +21,6 @@ class InstagramFilters {
     
     let moonFilter = IFMoonFilter()
     
-    init() {
-        
-        guard let url = Bundle.main.url(forResource: "FilterAssets", withExtension: "bundle"),
-            let bundle = Bundle(url: url) else {
-                return
-        }
-        
-        func parameterImage(named name: String) -> MTIImage? {
-            let url = bundle.url(forResource: name, withExtension: "png")
-            return MTIImage(contentsOf: url!, options: [.SRGB: false], alphaType: .alphaIsOne)
-        }
-    }
-    
+    let sutroFilter = IFSutroFilter()
     
 }
