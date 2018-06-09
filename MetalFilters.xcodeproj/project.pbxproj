@@ -31,6 +31,7 @@
 		A38FC66020CB85B2002CA905 /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC65F20CB85B2002CA905 /* PhotoEditorViewController.swift */; };
 		A38FC66420CBEAA5002CA905 /* AlbumPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC66320CBEAA5002CA905 /* AlbumPhotoCell.swift */; };
 		A38FC66620CBEB0E002CA905 /* AlbumPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC66520CBEB0E002CA905 /* AlbumPhotoViewController.swift */; };
+		A38FC66820CBFBEB002CA905 /* FilterPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC66720CBFBEB002CA905 /* FilterPickerCell.swift */; };
 		A39C114F20CA59160095E3E4 /* IFAmaroFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A39C114E20CA59160095E3E4 /* IFAmaroFilter.metal */; };
 		A39C115220CA59790095E3E4 /* IFValenciaFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A39C115120CA59790095E3E4 /* IFValenciaFilter.metal */; };
 		A39C115420CA59B60095E3E4 /* IF1977Filter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A39C115320CA59B60095E3E4 /* IF1977Filter.metal */; };
@@ -68,6 +69,7 @@
 		A38FC65F20CB85B2002CA905 /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewController.swift; sourceTree = "<group>"; };
 		A38FC66320CBEAA5002CA905 /* AlbumPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotoCell.swift; sourceTree = "<group>"; };
 		A38FC66520CBEB0E002CA905 /* AlbumPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotoViewController.swift; sourceTree = "<group>"; };
+		A38FC66720CBFBEB002CA905 /* FilterPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPickerCell.swift; sourceTree = "<group>"; };
 		A39C114E20CA59160095E3E4 /* IFAmaroFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = IFAmaroFilter.metal; sourceTree = "<group>"; };
 		A39C115120CA59790095E3E4 /* IFValenciaFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = IFValenciaFilter.metal; sourceTree = "<group>"; };
 		A39C115320CA59B60095E3E4 /* IF1977Filter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = IF1977Filter.metal; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				A38FC66320CBEAA5002CA905 /* AlbumPhotoCell.swift */,
 				A38FC66520CBEB0E002CA905 /* AlbumPhotoViewController.swift */,
 				A38FC65F20CB85B2002CA905 /* PhotoEditorViewController.swift */,
+				A38FC66720CBFBEB002CA905 /* FilterPickerCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				A35A3F2B20CA9EF900DB327F /* IFMoonFilter.metal in Sources */,
 				A35A3F2920CA9DD600DB327F /* IFMoonFilter.swift in Sources */,
 				A3700A2D20C91791005300B8 /* IFFilter.swift in Sources */,
+				A38FC66820CBFBEB002CA905 /* FilterPickerCell.swift in Sources */,
 				A370842020CAC38600153693 /* IFEarlybirdFilter.metal in Sources */,
 				A39C114F20CA59160095E3E4 /* IFAmaroFilter.metal in Sources */,
 				A3B48D3F20C943FB00E8C2E8 /* IFAmaroFilter.swift in Sources */,

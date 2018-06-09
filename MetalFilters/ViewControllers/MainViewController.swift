@@ -13,6 +13,8 @@ class MainViewController: UIViewController {
 
     fileprivate var fetchResult: PHFetchResult<PHAsset>?
     
+    fileprivate var albumController: AlbumPhotoViewController?
+    
     @IBOutlet weak var photoImageView: UIImageView!
     
     @IBOutlet weak var albumView: UIView!
@@ -44,20 +46,33 @@ class MainViewController: UIViewController {
         self.fetchResult = result
         
         if let firstAsset = result.firstObject {
-            let targetSize = CGSize(width: firstAsset.pixelWidth, height: firstAsset.pixelHeight)
-            PHImageManager.default().requestImage(for: firstAsset, targetSize: targetSize, contentMode: .aspectFit, options: nil) { (image, _) in
-                self.photoImageView.image = image
-            }
+            loadImageFor(firstAsset)
         }
         
         let albumController = AlbumPhotoViewController(dataSource: result)
-        albumController.didSelectAssetHandler = { selectedAsset in
-            
+        albumController.didSelectAssetHandler = { [weak self] selectedAsset in
+            self?.loadImageFor(selectedAsset)
         }
         albumController.view.frame = albumView.bounds
         albumView.addSubview(albumController.view)
         addChildViewController(albumController)
         albumController.didMove(toParentViewController: self)
+        //self.albumController = albumController
+    }
+    
+    fileprivate func loadImageFor(_ asset: PHAsset) {
+        let targetSize = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
+        PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: nil) { (image, _) in
+            self.photoImageView.image = image
+        }
+    }
+    
+    fileprivate func loadImageForEditing(_ asset: PHAsset) {
+        let options = PHContentEditingInputRequestOptions()
+        options.isNetworkAccessAllowed = true
+        asset.requestContentEditingInput(with: options) { (input, info) in
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,4 +83,9 @@ class MainViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        
+    }
+    
 }

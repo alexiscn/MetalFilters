@@ -48,6 +48,9 @@ class AlbumPhotoViewController: UIViewController, UICollectionViewDataSource, UI
         view.addSubview(collectionView)
         
         collectionView.reloadData()
+        if dataSource.count > 0 {
+            collectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
+        }
     }
 
     override func didReceiveMemoryWarning() {

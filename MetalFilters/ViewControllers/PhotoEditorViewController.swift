@@ -7,14 +7,25 @@
 //
 
 import UIKit
+import Photos
 import MetalPetal
 
 class PhotoEditorViewController: UIViewController {
 
+    @IBOutlet weak var previewView: UIView!
+    
+    @IBOutlet weak var filtersView: UIView!
+    
+    fileprivate var collectionView: UICollectionView!
+    
+    fileprivate var originAsset: PHAsset?
+    
     fileprivate var filter: InstagramFilters?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupFilterCollectionView()
 
         filter = InstagramFilters()
         
@@ -32,4 +43,41 @@ class PhotoEditorViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    fileprivate func setupFilterCollectionView() {
+    
+        let frame = CGRect(x: 0, y: 0, width: filtersView.bounds.width, height: filtersView.bounds.height - 44)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 104, height: frame.width)
+        
+        collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
+        filtersView.addSubview(collectionView)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(FilterPickerCell.self, forCellWithReuseIdentifier: NSStringFromClass(FilterPickerCell.self))
+    }
+}
+
+extension PhotoEditorViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(FilterPickerCell.self), for: indexPath) as! FilterPickerCell
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
 }
