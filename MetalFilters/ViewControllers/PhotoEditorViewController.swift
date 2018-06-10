@@ -20,24 +20,19 @@ class PhotoEditorViewController: UIViewController {
     
     fileprivate var originAsset: PHAsset?
     
-    fileprivate var filter: InstagramFilters?
-    
-    fileprivate var allFilters: [IFFilter.Type] = []
+    fileprivate var allFilters: [MTFilter.Type] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupFilterCollectionView()
 
-        filter = InstagramFilters()
-        
-        guard let image = UIImage(named: "IMG_8957.JPG") else {
-            return
-        }
-        let originImage = MTIImage(cgImage: image.cgImage!, options: [.SRGB: false], alphaType: .alphaIsOne).oriented(.right)
+        //guard let image = UIImage(named: "IMG_8957.JPG") else {
+        //    return
+        //}
+        //let originImage = MTIImage(cgImage: image.cgImage!, options: [.SRGB: false], alphaType: .alphaIsOne).oriented(.right)
         //imageView.image = originImage
-        
-        filter?.moonFilter.inputImage = originImage
+        //filter?.moonFilter.inputImage = originImage
         //imageView.image = filter?.moonFilter.outputImage
     }
 
