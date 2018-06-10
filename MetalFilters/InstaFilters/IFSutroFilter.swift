@@ -9,21 +9,21 @@
 import Foundation
 import MetalPetal
 
-class IFSutroFilter: NSObject, IFFilter {
+class IFSutroFilter: IFFilter {
     
-    var name: String {
+    override var name: String {
         return "Sutro"
     }
     
-    var borderName: String {
+    override var borderName: String {
         return "sutroBorder.png"
     }
     
-    var fragmentName: String {
+    override var fragmentName: String {
         return "sutroFragment"
     }
     
-    var samplers: [String : String] {
+    override var samplers: [String : String] {
         return [
             "curves": "sutroCurves.png",
             "edgeBurn": "sutroEdgeBurn.pvr",
@@ -32,12 +32,5 @@ class IFSutroFilter: NSObject, IFFilter {
             "vignetteMap": "blackOverlayMap.png"
         ]
     }
-    
-    var inputImage: MTIImage?
-    
-    var outputPixelFormat: MTLPixelFormat = .invalid
-    
-    var outputImage: MTIImage?
-    
     
 }

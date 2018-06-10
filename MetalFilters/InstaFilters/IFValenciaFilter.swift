@@ -9,47 +9,25 @@
 import Foundation
 import MetalPetal
 
-class IFValenciaFilter: NSObject, IFFilter {
+class IFValenciaFilter: IFFilter {
     
-    var borderName: String {
+    override var borderName: String {
         return "filterBorderPlainWhite.png"
     }
     
-    var samplers: [String : String] {
+    override var samplers: [String : String] {
         return [
             "gradientMap": "valenciaGradientMap.png",
             "map": "valenciaMap.png"
         ]
     }
     
-    var name: String {
+    override var name: String {
         return "Valencia"
     }
     
-    var fragmentName: String {
+    override var fragmentName: String {
         return "valencia"
     }
-    
-    public var inputImage: MTIImage?
-    
-    public var outputPixelFormat: MTLPixelFormat = .invalid
-    
-    public var outputImage: MTIImage? {
-        get {
-            guard let input = inputImage else {
-                return inputImage
-            }
-            
-            var images: [MTIImage] = [input]
-            
-            for key in samplers.keys.sorted() {
-                let imageName = samplers[key]!
-                let image = samplerImage(named: imageName)!
-                images.append(image)
-            }
-            return kernel.apply(toInputImages: images, parameters: [:], outputDescriptors: [MTIRenderPassOutputDescriptor(dimensions: MTITextureDimensions(cgSize: input.size), pixelFormat: outputPixelFormat)]).first
-        }
-    }
-    
     
 }

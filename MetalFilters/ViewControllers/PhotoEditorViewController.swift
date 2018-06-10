@@ -22,6 +22,8 @@ class PhotoEditorViewController: UIViewController {
     
     fileprivate var filter: InstagramFilters?
     
+    fileprivate var allFilters: [IFFilter.Type] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +51,8 @@ class PhotoEditorViewController: UIViewController {
         let frame = CGRect(x: 0, y: 0, width: filtersView.bounds.width, height: filtersView.bounds.height - 44)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
         layout.itemSize = CGSize(width: 104, height: frame.width)
         
         collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
@@ -56,6 +60,10 @@ class PhotoEditorViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(FilterPickerCell.self, forCellWithReuseIdentifier: NSStringFromClass(FilterPickerCell.self))
+    }
+    
+    fileprivate func generateFilterThumbnailForImage() {
+        //generateFilterPreviewThumbnailsForImage
     }
 }
 
@@ -66,7 +74,7 @@ extension PhotoEditorViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return allFilters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

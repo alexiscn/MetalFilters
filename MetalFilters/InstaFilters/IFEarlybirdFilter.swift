@@ -9,32 +9,24 @@
 import Foundation
 import MetalPetal
 
-class IFEarlybirdFilter: NSObject, IFFilter {
-    var name: String {
-        return "Ear"
+class IFEarlybirdFilter: IFFilter {
+    override var name: String {
+        return "Earlybird"
     }
     
-    var borderName: String {
+    override var borderName: String {
         return "earlybirdBorder.png"
     }
     
-    var fragmentName: String {
+    override var fragmentName: String {
         return "earlybirdFragment"
     }
     
-    var samplers: [String : String] {
+    override var samplers: [String : String] {
         return ["blowout": "earlybirdBlowout.png",
                 "curves": "earlyBirdCurves.png",
                 "earlybirdMap": "earlybirdMap.png",
                 "overlayMap": "earlybirdOverlayMap.png",
                 "vignetteMap": "plusDarker.png"]
     }
-    
-    var inputImage: MTIImage?
-    
-    var outputPixelFormat: MTLPixelFormat = .invalid
-    
-    var outputImage: MTIImage?
-    
-    
 }

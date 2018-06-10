@@ -17,22 +17,22 @@ float4 hudsonFragment(VertexOut vertexIn [[stage_in]],
                       texture2d<float, access::sample> overlay [[ texture(3) ]],
                       sampler textureSampler [[ sampler(0) ]])
 {
-//    float4 texel = texture2D(s_texture, sourceTextureCoordinate);vec4 inputTexel = texel;vec3 bbTexel = texture2D(blowout, textureCoordinate).rgb;
-//
-//    texel.r = texture2D(overlay, vec2(bbTexel.r, texel.r)).r;
-//    texel.g = texture2D(overlay, vec2(bbTexel.g, texel.g)).g;
-//    texel.b = texture2D(overlay, vec2(bbTexel.b, texel.b)).b;
-//
-//    vec3 mapped;
-//    mapped.r = texture2D(map, vec2(texel.r, .16666)).r;
-//    mapped.g = texture2D(map, vec2(texel.g, .5)).g;
-//    mapped.b = texture2D(map, vec2(texel.b, .83333)).b;
-//
-//    texel.rgb = mapped;
-//    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
-//
-//    gl_FragColor = texel;
+    constexpr sampler s(coord::normalized, address::clamp_to_edge, filter::linear);
+    float4 texel = inputTexture.sample(s, vertexIn.textureCoordinate);
+    float4 inputTexel = texel;
+    float3 bbTexel = blowout.sample(s, vertexIn.textureCoordinate).rgb;
+
+    texel.r = overlay.sample(s, float2(bbTexel.r, texel.r)).r;
+    texel.g = overlay.sample(s, float2(bbTexel.g, texel.g)).g;
+    texel.b = overlay.sample(s, float2(bbTexel.b, texel.b)).b;
+
+    float3 mapped;
+    mapped.r = map.sample(s, float2(texel.r, .16666)).r;
+    mapped.g = map.sample(s, float2(texel.g, .5)).g;
+    mapped.b = map.sample(s, float2(texel.b, .83333)).b;
+    texel.rgb = mapped;
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
     
-    return float4(1.0);
+    return texel;
 }
 

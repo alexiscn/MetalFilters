@@ -9,15 +9,38 @@
 import Foundation
 import MetalPetal
 
-protocol IFFilter: MTIUnaryFilter {
+class IFFilter: NSObject, MTIUnaryFilter {
     
-    var name: String { get }
+    var name: String {
+        return ""
+    }
     
-    var borderName: String { get }
+    var borderName: String { return "" }
+
+    var fragmentName: String { return "" }
+
+    var samplers: [String: String] { return [:] }
+
+    var inputImage: MTIImage?
     
-    var fragmentName: String { get }
+    var outputPixelFormat: MTLPixelFormat = .invalid
     
-    var samplers: [String: String] { get }
+    var outputImage: MTIImage? {
+        guard let input = inputImage else {
+            return inputImage
+        }
+        
+        var images: [MTIImage] = [input]
+        
+        for key in samplers.keys.sorted() {
+            let imageName = samplers[key]!
+            let image = samplerImage(named: imageName)!
+            images.append(image)
+        }
+        return kernel.apply(toInputImages: images, parameters: [:], outputDescriptors: [MTIRenderPassOutputDescriptor(dimensions: MTITextureDimensions(cgSize: input.size), pixelFormat: outputPixelFormat)]).first
+    }
+    
+    
 }
 
 extension IFFilter {

@@ -9,21 +9,21 @@
 import Foundation
 import MetalPetal
 
-class IFToasterFilter: NSObject, IFFilter {
+class IFToasterFilter: IFFilter {
     
-    var name: String {
+    override var name: String {
         return "toaster"
     }
     
-    var borderName: String {
+    override var borderName: String {
         return "filterBorderPlainWhite.png"
     }
     
-    var fragmentName: String {
+    override var fragmentName: String {
         return "toasterFragment"
     }
     
-    var samplers: [String : String] {
+    override var samplers: [String : String] {
         return [
             "colorShift": "toasterColorShift.png",
                 "curves": "toasterCurves.png",
@@ -31,12 +31,4 @@ class IFToasterFilter: NSObject, IFFilter {
                 "softLight": "toasterSoftLight.png",
                 "vignetteMap": "toasterOverlayMapWarm.png"]
     }
-    
-    var inputImage: MTIImage?
-    
-    var outputPixelFormat: MTLPixelFormat = .invalid
-    
-    var outputImage: MTIImage?
-    
-    
 }

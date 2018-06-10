@@ -24,7 +24,6 @@
 		A37083C420CABD5600153693 /* IFHudsonFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A37083C320CABD5600153693 /* IFHudsonFilter.metal */; };
 		A370842020CAC38600153693 /* IFEarlybirdFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A370841F20CAC38600153693 /* IFEarlybirdFilter.metal */; };
 		A370842220CAC3A200153693 /* IFEarlybirdFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370842120CAC3A200153693 /* IFEarlybirdFilter.swift */; };
-		A371AB5320C77F3B004D291F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371AB5220C77F3B004D291F /* CameraViewController.swift */; };
 		A38FC65A20CB7979002CA905 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC65920CB7979002CA905 /* MainViewController.swift */; };
 		A38FC65C20CB7995002CA905 /* IFToasterFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC65B20CB7995002CA905 /* IFToasterFilter.metal */; };
 		A38FC65E20CB79A9002CA905 /* IFSutroFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC65D20CB79A9002CA905 /* IFSutroFilter.metal */; };
@@ -62,7 +61,6 @@
 		A37083C320CABD5600153693 /* IFHudsonFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = IFHudsonFilter.metal; sourceTree = "<group>"; };
 		A370841F20CAC38600153693 /* IFEarlybirdFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = IFEarlybirdFilter.metal; sourceTree = "<group>"; };
 		A370842120CAC3A200153693 /* IFEarlybirdFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEarlybirdFilter.swift; sourceTree = "<group>"; };
-		A371AB5220C77F3B004D291F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A38FC65920CB7979002CA905 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A38FC65B20CB7995002CA905 /* IFToasterFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = IFToasterFilter.metal; sourceTree = "<group>"; };
 		A38FC65D20CB79A9002CA905 /* IFSutroFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = IFSutroFilter.metal; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 		A38FC66220CB8613002CA905 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A371AB5220C77F3B004D291F /* CameraViewController.swift */,
 				A38FC65920CB7979002CA905 /* MainViewController.swift */,
 				A38FC66320CBEAA5002CA905 /* AlbumPhotoCell.swift */,
 				A38FC66520CBEB0E002CA905 /* AlbumPhotoViewController.swift */,
@@ -270,12 +267,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MetalFilters/Pods-MetalFilters-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MTCameraKit/MTCameraKit.framework",
 				"${BUILT_PRODUCTS_DIR}/MetalPetal/MetalPetal.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MTCameraKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MetalPetal.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,7 +319,6 @@
 				A38FC65E20CB79A9002CA905 /* IFSutroFilter.metal in Sources */,
 				A36133D820C666D50022F27C /* IFValenciaFilter.swift in Sources */,
 				A3B48D3D20C9419900E8C2E8 /* IFHudsonFilter.swift in Sources */,
-				A371AB5320C77F3B004D291F /* CameraViewController.swift in Sources */,
 				A36133C120C665A70022F27C /* AppDelegate.swift in Sources */,
 				A35A3F2B20CA9EF900DB327F /* IFMoonFilter.metal in Sources */,
 				A35A3F2920CA9DD600DB327F /* IFMoonFilter.swift in Sources */,
@@ -482,10 +476,7 @@
 				DEVELOPMENT_TEAM = LX863G777H;
 				INFOPLIST_FILE = MetalFilters/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_HEADER_SEARCH_PATHS = "${PODS_CONFIGURATION_BUILD_DIR}/MetalPetal/MetalPetal.framework/Headers";
 				PRODUCT_BUNDLE_IDENTIFIER = me.shuifeng.MetalFilters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -503,10 +494,7 @@
 				DEVELOPMENT_TEAM = LX863G777H;
 				INFOPLIST_FILE = MetalFilters/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_HEADER_SEARCH_PATHS = "${PODS_CONFIGURATION_BUILD_DIR}/MetalPetal/MetalPetal.framework/Headers";
 				PRODUCT_BUNDLE_IDENTIFIER = me.shuifeng.MetalFilters;
 				PRODUCT_NAME = "$(TARGET_NAME)";

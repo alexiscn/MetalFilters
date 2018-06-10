@@ -10,12 +10,12 @@
 #include "MTIShaderLib.h"
 using namespace metalpetal;
 
-fragment float4 amaro(VertexOut vertexIn [[ stage_in ]],
-                      texture2d<float, access::sample> inputTexture [[ texture(0) ]],
-                      texture2d<float, access::sample> blackboard [[ texture(1) ]],
-                      texture2d<float, access::sample> map [[ texture(2) ]],
-                      texture2d<float, access::sample> overlay [[ texture(3) ]],
-                      sampler s [[ sampler(0) ]]) {
+fragment float4 amaroFragment(VertexOut vertexIn [[ stage_in ]],
+                              texture2d<float, access::sample> inputTexture [[ texture(0) ]],
+                              texture2d<float, access::sample> blackboard [[ texture(1) ]],
+                              texture2d<float, access::sample> map [[ texture(2) ]],
+                              texture2d<float, access::sample> overlay [[ texture(3) ]],
+                              sampler s [[ sampler(0) ]]) {
     
     constexpr sampler edgeSampler(coord::normalized, address::clamp_to_edge, filter::linear);
     

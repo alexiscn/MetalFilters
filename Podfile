@@ -3,5 +3,4 @@ use_frameworks!
 
 target 'MetalFilters' do
     pod 'MetalPetal'
-    pod 'MTCameraKit', :path => 'DevelopmentPods/MTCameraKit'
 end

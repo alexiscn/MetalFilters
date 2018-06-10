@@ -1,6 +1,0 @@
-framework module MTCameraKit {
-  umbrella header "MTCameraKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

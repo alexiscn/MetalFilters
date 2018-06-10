@@ -10,10 +10,6 @@ import UIKit
 import Photos
 
 class MainViewController: UIViewController {
-
-    fileprivate var fetchResult: PHFetchResult<PHAsset>?
-    
-    fileprivate var albumController: AlbumPhotoViewController?
     
     @IBOutlet weak var photoImageView: UIImageView!
     
@@ -43,8 +39,6 @@ class MainViewController: UIViewController {
         let option = PHFetchOptions()
         option.sortDescriptors = [ NSSortDescriptor(key: "creationDate", ascending: false) ]
         let result = PHAsset.fetchAssets(with: option)
-        self.fetchResult = result
-        
         if let firstAsset = result.firstObject {
             loadImageFor(firstAsset)
         }
@@ -57,7 +51,6 @@ class MainViewController: UIViewController {
         albumView.addSubview(albumController.view)
         addChildViewController(albumController)
         albumController.didMove(toParentViewController: self)
-        //self.albumController = albumController
     }
     
     fileprivate func loadImageFor(_ asset: PHAsset) {

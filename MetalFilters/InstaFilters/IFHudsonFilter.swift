@@ -9,13 +9,13 @@
 import Foundation
 import MetalPetal
 
-class IFHudsonFilter: NSObject, IFFilter {
+class IFHudsonFilter: IFFilter {
     
-    var borderName: String {
+    override var borderName: String {
         return "hudsonBorder.png"
     }
     
-    var samplers: [String : String] {
+    override var samplers: [String : String] {
         return [
             "blowout": "hudsonBackground.pvr",
             "map": "hudsonMap.png",
@@ -23,17 +23,11 @@ class IFHudsonFilter: NSObject, IFFilter {
         ]
     }
     
-    var inputImage: MTIImage?
-    
-    var outputPixelFormat: MTLPixelFormat = .invalid
-    
-    var outputImage: MTIImage?
-    
-    var name: String {
+    override var name: String {
         return "Hudson"
     }
     
-    var fragmentName: String {
+    override var fragmentName: String {
         return "hudsonFragment"
     }
 }

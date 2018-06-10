@@ -2,24 +2,17 @@ PODS:
   - MetalPetal (0.5.1):
     - MetalPetal/Core (= 0.5.1)
   - MetalPetal/Core (0.5.1)
-  - MTCameraKit (0.0.1)
 
 DEPENDENCIES:
   - MetalPetal
-  - MTCameraKit (from `DevelopmentPods/MTCameraKit`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - MetalPetal
 
-EXTERNAL SOURCES:
-  MTCameraKit:
-    :path: DevelopmentPods/MTCameraKit
-
 SPEC CHECKSUMS:
   MetalPetal: 7239a14d9a3736936cd2356351f5264da013b0f5
-  MTCameraKit: a3c0973cc43b7321295190d79e9303cdc3a14cd2
 
-PODFILE CHECKSUM: dae280867bfd3040652ffaddc55bd32b0611e5da
+PODFILE CHECKSUM: c21a5d46d824be685f2949ca4ef75c333ad152cf
 
 COCOAPODS: 1.5.0
