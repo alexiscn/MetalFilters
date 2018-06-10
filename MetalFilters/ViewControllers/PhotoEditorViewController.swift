@@ -102,15 +102,15 @@ class PhotoEditorViewController: UIViewController {
             options.deliveryMode = .highQualityFormat
             let targetSize = CGSize(width: 200, height: 200)
             PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: options) { (image, _) in
-                DispatchQueue.main.async {
-                    guard let image = image else {
-                        return
+                guard let image = image else {
+                    return
+                }
+                for filter in self.allFilters {
+                    let image = MTFilterManager.shard.generateThumbnailsForImage(image, with: filter)
+                    self.thumbnails[filter.name] = image
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
                     }
-                    for filter in self.allFilters {
-                        let image = MTFilterManager.shard.generateThumbnailsForImage(image, with: filter)
-                        self.thumbnails[filter.name] = image
-                    }
-                    self.collectionView.reloadData()
                 }
             }
         }
