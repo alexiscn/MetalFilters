@@ -2,8 +2,7 @@
 //  MTWillowFilter.metal
 //  MetalFilters
 //
-//  Created by xu.shuifeng on 2018/6/8.
-//  Copyright © 2018 shuifeng.me. All rights reserved.
+//  Created by alexiscn on 2018/6/8.
 //
 
 #include <metal_stdlib>

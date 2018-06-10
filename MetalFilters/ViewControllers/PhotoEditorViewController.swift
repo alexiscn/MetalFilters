@@ -66,6 +66,14 @@ class PhotoEditorViewController: UIViewController {
         return true
     }
     
+    @IBAction func cancelBarButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: false)
+    }
+    
+    @IBAction func saveBarButtonTapped(_ sender: Any) {
+        
+    }
+    
     fileprivate func setupFilterCollectionView() {
     
         let frame = CGRect(x: 0, y: 0, width: filtersView.bounds.width, height: filtersView.bounds.height - 44)

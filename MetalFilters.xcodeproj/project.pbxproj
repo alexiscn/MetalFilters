@@ -14,7 +14,6 @@
 		A36133CB20C665A70022F27C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36133C920C665A70022F27C /* LaunchScreen.storyboard */; };
 		A36133D320C6663A0022F27C /* FilterAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A36133D220C6663A0022F27C /* FilterAssets.bundle */; };
 		A36133DA20C666E50022F27C /* InstaFilters.metal in Sources */ = {isa = PBXBuildFile; fileRef = A36133D920C666E50022F27C /* InstaFilters.metal */; };
-		A3700A2B20C906F3005300B8 /* IMG_8957.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A3700A2A20C906F3005300B8 /* IMG_8957.JPG */; };
 		A3700A2D20C91791005300B8 /* MTFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3700A2C20C91791005300B8 /* MTFilter.swift */; };
 		A38FC65A20CB7979002CA905 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC65920CB7979002CA905 /* MainViewController.swift */; };
 		A38FC66020CB85B2002CA905 /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC65F20CB85B2002CA905 /* PhotoEditorViewController.swift */; };
@@ -101,7 +100,6 @@
 		A36133CC20C665A70022F27C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A36133D220C6663A0022F27C /* FilterAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FilterAssets.bundle; sourceTree = "<group>"; };
 		A36133D920C666E50022F27C /* InstaFilters.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = InstaFilters.metal; sourceTree = "<group>"; };
-		A3700A2A20C906F3005300B8 /* IMG_8957.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_8957.JPG; sourceTree = "<group>"; };
 		A3700A2C20C91791005300B8 /* MTFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTFilter.swift; sourceTree = "<group>"; };
 		A38FC65920CB7979002CA905 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A38FC65F20CB85B2002CA905 /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewController.swift; sourceTree = "<group>"; };
@@ -246,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				A36133C420C665A70022F27C /* Main.storyboard */,
-				A3700A2A20C906F3005300B8 /* IMG_8957.JPG */,
 				A36133C920C665A70022F27C /* LaunchScreen.storyboard */,
 				A36133D220C6663A0022F27C /* FilterAssets.bundle */,
 				A36133C720C665A70022F27C /* Assets.xcassets */,
@@ -408,7 +405,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A36133D320C6663A0022F27C /* FilterAssets.bundle in Resources */,
-				A3700A2B20C906F3005300B8 /* IMG_8957.JPG in Resources */,
 				A36133CB20C665A70022F27C /* LaunchScreen.storyboard in Resources */,
 				A36133C820C665A70022F27C /* Assets.xcassets in Resources */,
 				A36133C620C665A70022F27C /* Main.storyboard in Resources */,
