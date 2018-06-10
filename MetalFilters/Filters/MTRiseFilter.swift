@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTRiseFilter: MTFilter {
 
-   override var name: String {
-        return "MTRiseFilter"
+   override class var name: String {
+        return "Rise"
     }
 
    override var borderName: String {

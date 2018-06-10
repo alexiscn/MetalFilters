@@ -15,6 +15,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var albumView: UIView!
     
+    fileprivate var selectedAsset: PHAsset?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Metal Filters"
@@ -58,6 +60,7 @@ class MainViewController: UIViewController {
         PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: nil) { (image, _) in
             self.photoImageView.image = image
         }
+        selectedAsset = asset
     }
     
     fileprivate func loadImageForEditing(_ asset: PHAsset) {
@@ -78,7 +81,12 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        guard let editorController = mainStoryBoard.instantiateViewController(withIdentifier: "PhotoEditorViewController") as? PhotoEditorViewController else {
+            return
+        }
+        editorController.originAsset = selectedAsset
+        navigationController?.pushViewController(editorController, animated: false)
     }
     
 }

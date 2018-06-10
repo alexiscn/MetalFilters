@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTWaldenFilter: MTFilter {
 
-   override var name: String {
-        return "MTWaldenFilter"
+   override class var name: String {
+        return "Walden"
     }
 
    override var borderName: String {

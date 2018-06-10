@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTXpro2Filter: MTFilter {
 
-   override var name: String {
-        return "MTXpro2Filter"
+   override class var name: String {
+        return "X-Pro II"
     }
 
    override var borderName: String {

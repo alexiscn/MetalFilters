@@ -37,7 +37,7 @@ class FilterPickerCell: UICollectionViewCell {
         
         super.init(frame: frame)
         
-        thumbnailImageView.center = self.center
+        thumbnailImageView.center = contentView.center
         contentView.addSubview(titleLabel)
         contentView.addSubview(thumbnailImageView)
     }
@@ -46,7 +46,7 @@ class FilterPickerCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func update() {
-        
+    func update(_ filter: MTFilter.Type) {
+        titleLabel.text = filter.name
     }
 }

@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTSkylineVideoFilter: MTFilter {
 
-   override var name: String {
-        return "MTSkylineVideoFilter"
+   override class var name: String {
+        return "Skyline"
     }
 
    override var borderName: String {

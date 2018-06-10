@@ -87,6 +87,7 @@
 		A38FC79120CCD917002CA905 /* MTVesperVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74F20CCD916002CA905 /* MTVesperVideoFilter.swift */; };
 		A38FC79220CCD917002CA905 /* MTGinghamVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC75020CCD916002CA905 /* MTGinghamVideoFilter.metal */; };
 		A38FC79320CCD917002CA905 /* MTClarendonVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC75120CCD916002CA905 /* MTClarendonVideoFilter.swift */; };
+		A38FC79520CCDA64002CA905 /* MTFilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC79420CCDA64002CA905 /* MTFilterManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -173,6 +174,7 @@
 		A38FC74F20CCD916002CA905 /* MTVesperVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTVesperVideoFilter.swift; sourceTree = "<group>"; };
 		A38FC75020CCD916002CA905 /* MTGinghamVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTGinghamVideoFilter.metal; sourceTree = "<group>"; };
 		A38FC75120CCD916002CA905 /* MTClarendonVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTClarendonVideoFilter.swift; sourceTree = "<group>"; };
+		A38FC79420CCDA64002CA905 /* MTFilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTFilterManager.swift; sourceTree = "<group>"; };
 		A39C115520CA59FD0095E3E4 /* IFShaderLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFShaderLib.h; sourceTree = "<group>"; };
 		B817D3CCD2892291BA74BE47 /* Pods_MetalFilters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalFilters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -221,7 +223,7 @@
 			children = (
 				A38FC66B20CCD729002CA905 /* Filters */,
 				A38FC66220CB8613002CA905 /* ViewControllers */,
-				A36133D420C6666F0022F27C /* InstaFilters */,
+				A36133D420C6666F0022F27C /* MTFilter */,
 				A38FC66120CB85F4002CA905 /* Supports */,
 				A36133C020C665A70022F27C /* AppDelegate.swift */,
 				A36133CC20C665A70022F27C /* Info.plist */,
@@ -229,14 +231,15 @@
 			path = MetalFilters;
 			sourceTree = "<group>";
 		};
-		A36133D420C6666F0022F27C /* InstaFilters */ = {
+		A36133D420C6666F0022F27C /* MTFilter */ = {
 			isa = PBXGroup;
 			children = (
 				A36133D920C666E50022F27C /* InstaFilters.metal */,
 				A39C115520CA59FD0095E3E4 /* IFShaderLib.h */,
 				A3700A2C20C91791005300B8 /* MTFilter.swift */,
+				A38FC79420CCDA64002CA905 /* MTFilterManager.swift */,
 			);
-			path = InstaFilters;
+			path = MTFilter;
 			sourceTree = "<group>";
 		};
 		A38FC66120CB85F4002CA905 /* Supports */ = {
@@ -458,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A38FC79520CCDA64002CA905 /* MTFilterManager.swift in Sources */,
 				A38FC75F20CCD917002CA905 /* MTSierraFilter.swift in Sources */,
 				A38FC76820CCD917002CA905 /* MTGinzaVideoFilter.metal in Sources */,
 				A38FC76C20CCD917002CA905 /* MTSutroFilter.swift in Sources */,

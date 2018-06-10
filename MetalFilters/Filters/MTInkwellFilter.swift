@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTInkwellFilter: MTFilter {
 
-   override var name: String {
-        return "MTInkwellFilter"
+   override class var name: String {
+        return "Inkwell"
     }
 
    override var borderName: String {

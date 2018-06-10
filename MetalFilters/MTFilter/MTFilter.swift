@@ -11,16 +11,17 @@ import MetalPetal
 
 class MTFilter: NSObject, MTIUnaryFilter {
     
-    var name: String {
-        return ""
-    }
+    // MARK: - Should overrided by subclasses
+    class var name: String { return "" }
     
     var borderName: String { return "" }
-
+    
     var fragmentName: String { return "" }
 
     var samplers: [String: String] { return [:] }
 
+    // MARK: - MTIUnaryFilter
+    
     var inputImage: MTIImage?
     
     var outputPixelFormat: MTLPixelFormat = .invalid
@@ -40,7 +41,9 @@ class MTFilter: NSObject, MTIUnaryFilter {
         return kernel.apply(toInputImages: images, parameters: [:], outputDescriptors: [MTIRenderPassOutputDescriptor(dimensions: MTITextureDimensions(cgSize: input.size), pixelFormat: outputPixelFormat)]).first
     }
     
-    
+    required override init() {
+        
+    }
 }
 
 extension MTFilter {

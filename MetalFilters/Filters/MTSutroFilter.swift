@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTSutroFilter: MTFilter {
 
-   override var name: String {
-        return "MTSutroFilter"
+   override class var name: String {
+        return "Sutro"
     }
 
    override var borderName: String {

@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTWillowFilter: MTFilter {
 
-   override var name: String {
-        return "MTWillowFilter"
+   override class var name: String {
+        return "Willow"
     }
 
    override var borderName: String {

@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTToasterFilter: MTFilter {
 
-   override var name: String {
-        return "MTToasterFilter"
+   override class var name: String {
+        return "Toaster"
     }
 
    override var borderName: String {

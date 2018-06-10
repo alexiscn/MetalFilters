@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTStinsonVideoFilter: MTFilter {
 
-   override var name: String {
-        return "MTStinsonVideoFilter"
+   override class var name: String {
+        return "Stinson"
     }
 
    override var borderName: String {

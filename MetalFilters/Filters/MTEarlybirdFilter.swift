@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTEarlybirdFilter: MTFilter {
 
-   override var name: String {
-        return "MTEarlybirdFilter"
+   override class var name: String {
+        return "Earlybird"
     }
 
    override var borderName: String {

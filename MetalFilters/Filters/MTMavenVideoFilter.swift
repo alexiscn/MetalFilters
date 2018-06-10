@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTMavenVideoFilter: MTFilter {
 
-   override var name: String {
-        return "MTMavenVideoFilter"
+   override class var name: String {
+        return "Maven"
     }
 
    override var borderName: String {

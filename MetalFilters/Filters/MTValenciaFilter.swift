@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTValenciaFilter: MTFilter {
 
-   override var name: String {
-        return "MTValenciaFilter"
+   override class var name: String {
+        return "Valencia"
     }
 
    override var borderName: String {

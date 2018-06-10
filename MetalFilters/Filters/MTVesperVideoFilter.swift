@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTVesperVideoFilter: MTFilter {
 
-   override var name: String {
-        return "MTVesperVideoFilter"
+   override class var name: String {
+        return "Vesper"
     }
 
    override var borderName: String {

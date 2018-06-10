@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTNormalFilter: MTFilter {
 
-   override var name: String {
-        return "MTNormalFilter"
+   override class var name: String {
+        return "Normal"
     }
 
    override var borderName: String {

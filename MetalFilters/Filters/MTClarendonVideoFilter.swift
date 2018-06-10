@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTClarendonVideoFilter: MTFilter {
 
-   override var name: String {
-        return "MTClarendonVideoFilter"
+   override class var name: String {
+        return "Clarendon"
     }
 
    override var borderName: String {

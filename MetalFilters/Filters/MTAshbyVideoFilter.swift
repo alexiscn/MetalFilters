@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTAshbyVideoFilter: MTFilter {
 
-   override var name: String {
-        return "MTAshbyVideoFilter"
+   override class var name: String {
+        return "Ashby"
     }
 
    override var borderName: String {

@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTHefeFilter: MTFilter {
 
-   override var name: String {
-        return "MTHefeFilter"
+   override class var name: String {
+        return "Hefe"
     }
 
    override var borderName: String {

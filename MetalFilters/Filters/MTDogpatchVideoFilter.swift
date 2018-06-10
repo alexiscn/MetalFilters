@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTDogpatchVideoFilter: MTFilter {
 
-   override var name: String {
-        return "MTDogpatchVideoFilter"
+   override class var name: String {
+        return "Dogpatch"
     }
 
    override var borderName: String {

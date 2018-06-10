@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTLoFiFilter: MTFilter {
 
-   override var name: String {
-        return "MTLoFiFilter"
+   override class var name: String {
+        return "Lo-Fi"
     }
 
    override var borderName: String {

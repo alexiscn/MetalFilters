@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTMoonVideoFilter: MTFilter {
 
-   override var name: String {
-        return "MTMoonVideoFilter"
+   override class var name: String {
+        return "Moon"
     }
 
    override var borderName: String {

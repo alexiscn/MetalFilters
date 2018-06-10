@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTKelvinFilter: MTFilter {
 
-   override var name: String {
-        return "MTKelvinFilter"
+   override class var name: String {
+        return "Kelvin"
     }
 
    override var borderName: String {

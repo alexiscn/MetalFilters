@@ -11,8 +11,8 @@ import MetalPetal
 
 class MTHudsonFilter: MTFilter {
 
-   override var name: String {
-        return "MTHudsonFilter"
+   override class var name: String {
+        return "Hudson"
     }
 
    override var borderName: String {
