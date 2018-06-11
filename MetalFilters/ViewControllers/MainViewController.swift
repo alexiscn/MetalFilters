@@ -38,9 +38,9 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func loadPhotos() {
-        let option = PHFetchOptions()
-        option.sortDescriptors = [ NSSortDescriptor(key: "creationDate", ascending: false) ]
-        let result = PHAsset.fetchAssets(with: option)
+        let options = PHFetchOptions()
+        options.sortDescriptors = [ NSSortDescriptor(key: "creationDate", ascending: false) ]
+        let result = PHAsset.fetchAssets(with: .image, options: options)
         if let firstAsset = result.firstObject {
             loadImageFor(firstAsset)
         }
