@@ -7,6 +7,7 @@
 
 #include <metal_stdlib>
 #include "MTIShaderLib.h"
+#include "IFShaderLib.h"
 using namespace metalpetal;
 
 fragment float4 MTMayfairFragment(VertexOut vertexIn [[ stage_in ]], 

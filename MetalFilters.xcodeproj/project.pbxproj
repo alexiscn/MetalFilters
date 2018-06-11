@@ -13,80 +13,95 @@
 		A36133C820C665A70022F27C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A36133C720C665A70022F27C /* Assets.xcassets */; };
 		A36133CB20C665A70022F27C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36133C920C665A70022F27C /* LaunchScreen.storyboard */; };
 		A36133D320C6663A0022F27C /* FilterAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A36133D220C6663A0022F27C /* FilterAssets.bundle */; };
-		A36133DA20C666E50022F27C /* InstaFilters.metal in Sources */ = {isa = PBXBuildFile; fileRef = A36133D920C666E50022F27C /* InstaFilters.metal */; };
 		A3700A2D20C91791005300B8 /* MTFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3700A2C20C91791005300B8 /* MTFilter.swift */; };
 		A38FC65A20CB7979002CA905 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC65920CB7979002CA905 /* MainViewController.swift */; };
 		A38FC66020CB85B2002CA905 /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC65F20CB85B2002CA905 /* PhotoEditorViewController.swift */; };
 		A38FC66420CBEAA5002CA905 /* AlbumPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC66320CBEAA5002CA905 /* AlbumPhotoCell.swift */; };
 		A38FC66620CBEB0E002CA905 /* AlbumPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC66520CBEB0E002CA905 /* AlbumPhotoViewController.swift */; };
 		A38FC66820CBFBEB002CA905 /* FilterPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC66720CBFBEB002CA905 /* FilterPickerCell.swift */; };
-		A38FC75220CCD917002CA905 /* MTSkylineVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71020CCD909002CA905 /* MTSkylineVideoFilter.metal */; };
-		A38FC75320CCD917002CA905 /* MTHudsonFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71120CCD909002CA905 /* MTHudsonFilter.swift */; };
-		A38FC75420CCD917002CA905 /* MTLoFiFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71220CCD909002CA905 /* MTLoFiFilter.metal */; };
-		A38FC75520CCD917002CA905 /* MTHudsonFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71320CCD90A002CA905 /* MTHudsonFilter.metal */; };
-		A38FC75620CCD917002CA905 /* MTKelvinFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71420CCD90A002CA905 /* MTKelvinFilter.metal */; };
-		A38FC75720CCD917002CA905 /* MTRiseFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71520CCD90A002CA905 /* MTRiseFilter.metal */; };
-		A38FC75820CCD917002CA905 /* MTSierraFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71620CCD90A002CA905 /* MTSierraFilter.metal */; };
-		A38FC75920CCD917002CA905 /* MTClarendonVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71720CCD90A002CA905 /* MTClarendonVideoFilter.metal */; };
-		A38FC75A20CCD917002CA905 /* MTAmaroFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71820CCD90A002CA905 /* MTAmaroFilter.swift */; };
-		A38FC75B20CCD917002CA905 /* MTStinsonVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71920CCD90A002CA905 /* MTStinsonVideoFilter.swift */; };
-		A38FC75C20CCD917002CA905 /* MTMavenVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71A20CCD90A002CA905 /* MTMavenVideoFilter.swift */; };
-		A38FC75D20CCD917002CA905 /* MTValenciaFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71B20CCD90B002CA905 /* MTValenciaFilter.swift */; };
-		A38FC75E20CCD917002CA905 /* MT1977Filter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71C20CCD90B002CA905 /* MT1977Filter.metal */; };
-		A38FC75F20CCD917002CA905 /* MTSierraFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71D20CCD90B002CA905 /* MTSierraFilter.swift */; };
-		A38FC76020CCD917002CA905 /* MTWillowFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71E20CCD90B002CA905 /* MTWillowFilter.swift */; };
-		A38FC76120CCD917002CA905 /* MTToasterFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC71F20CCD90B002CA905 /* MTToasterFilter.metal */; };
-		A38FC76220CCD917002CA905 /* MTKelvinFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72020CCD90B002CA905 /* MTKelvinFilter.swift */; };
-		A38FC76320CCD917002CA905 /* MTWaldenFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72120CCD90C002CA905 /* MTWaldenFilter.metal */; };
-		A38FC76420CCD917002CA905 /* MTInkwellFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72220CCD90C002CA905 /* MTInkwellFilter.swift */; };
-		A38FC76520CCD917002CA905 /* MTBrannanFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72320CCD90C002CA905 /* MTBrannanFilter.swift */; };
-		A38FC76620CCD917002CA905 /* MTHelenaVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72420CCD90C002CA905 /* MTHelenaVideoFilter.metal */; };
-		A38FC76720CCD917002CA905 /* MTWaldenFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72520CCD90C002CA905 /* MTWaldenFilter.swift */; };
-		A38FC76820CCD917002CA905 /* MTGinzaVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72620CCD90D002CA905 /* MTGinzaVideoFilter.metal */; };
-		A38FC76920CCD917002CA905 /* MTInkwellFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72720CCD90D002CA905 /* MTInkwellFilter.metal */; };
-		A38FC76A20CCD917002CA905 /* MTMayfairFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72820CCD90D002CA905 /* MTMayfairFilter.swift */; };
-		A38FC76B20CCD917002CA905 /* MTNashvilleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72920CCD90D002CA905 /* MTNashvilleFilter.swift */; };
-		A38FC76C20CCD917002CA905 /* MTSutroFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72A20CCD90E002CA905 /* MTSutroFilter.swift */; };
-		A38FC76D20CCD917002CA905 /* MTBrooklynVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72B20CCD90E002CA905 /* MTBrooklynVideoFilter.swift */; };
-		A38FC76E20CCD917002CA905 /* MTLoFiFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72C20CCD90E002CA905 /* MTLoFiFilter.swift */; };
-		A38FC76F20CCD917002CA905 /* MTSutroFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72D20CCD90E002CA905 /* MTSutroFilter.metal */; };
-		A38FC77020CCD917002CA905 /* MTAshbyVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72E20CCD90F002CA905 /* MTAshbyVideoFilter.metal */; };
-		A38FC77120CCD917002CA905 /* MT1977Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC72F20CCD90F002CA905 /* MT1977Filter.swift */; };
-		A38FC77220CCD917002CA905 /* MTToasterFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73020CCD90F002CA905 /* MTToasterFilter.swift */; };
-		A38FC77320CCD917002CA905 /* MTXpro2Filter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73120CCD90F002CA905 /* MTXpro2Filter.metal */; };
-		A38FC77420CCD917002CA905 /* MTMoonVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73220CCD910002CA905 /* MTMoonVideoFilter.metal */; };
-		A38FC77520CCD917002CA905 /* MTRiseFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73320CCD910002CA905 /* MTRiseFilter.swift */; };
-		A38FC77620CCD917002CA905 /* MTXpro2Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73420CCD910002CA905 /* MTXpro2Filter.swift */; };
-		A38FC77720CCD917002CA905 /* MTHelenaVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73520CCD911002CA905 /* MTHelenaVideoFilter.swift */; };
-		A38FC77820CCD917002CA905 /* MTMayfairFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73620CCD911002CA905 /* MTMayfairFilter.metal */; };
-		A38FC77920CCD917002CA905 /* MTHefeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73720CCD911002CA905 /* MTHefeFilter.swift */; };
-		A38FC77A20CCD917002CA905 /* MTMoonVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73820CCD912002CA905 /* MTMoonVideoFilter.swift */; };
-		A38FC77B20CCD917002CA905 /* MTCharmesVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73920CCD912002CA905 /* MTCharmesVideoFilter.swift */; };
-		A38FC77C20CCD917002CA905 /* MTGinghamVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73A20CCD912002CA905 /* MTGinghamVideoFilter.swift */; };
-		A38FC77D20CCD917002CA905 /* MTNormalFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73B20CCD912002CA905 /* MTNormalFilter.metal */; };
-		A38FC77E20CCD917002CA905 /* MTNormalFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73C20CCD912002CA905 /* MTNormalFilter.swift */; };
-		A38FC77F20CCD917002CA905 /* MTValenciaFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73D20CCD912002CA905 /* MTValenciaFilter.metal */; };
-		A38FC78020CCD917002CA905 /* MTStinsonVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73E20CCD912002CA905 /* MTStinsonVideoFilter.metal */; };
-		A38FC78120CCD917002CA905 /* MTHefeFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC73F20CCD912002CA905 /* MTHefeFilter.metal */; };
-		A38FC78220CCD917002CA905 /* MTNashvilleFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74020CCD913002CA905 /* MTNashvilleFilter.metal */; };
-		A38FC78320CCD917002CA905 /* MTAmaroFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74120CCD913002CA905 /* MTAmaroFilter.metal */; };
-		A38FC78420CCD917002CA905 /* MTWillowFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74220CCD913002CA905 /* MTWillowFilter.metal */; };
-		A38FC78520CCD917002CA905 /* MTAshbyVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74320CCD914002CA905 /* MTAshbyVideoFilter.swift */; };
-		A38FC78620CCD917002CA905 /* MTSkylineVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74420CCD914002CA905 /* MTSkylineVideoFilter.swift */; };
-		A38FC78720CCD917002CA905 /* MTBrooklynVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74520CCD914002CA905 /* MTBrooklynVideoFilter.metal */; };
-		A38FC78820CCD917002CA905 /* MTEarlybirdFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74620CCD914002CA905 /* MTEarlybirdFilter.metal */; };
-		A38FC78920CCD917002CA905 /* MTMavenVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74720CCD915002CA905 /* MTMavenVideoFilter.metal */; };
-		A38FC78A20CCD917002CA905 /* MTEarlybirdFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74820CCD915002CA905 /* MTEarlybirdFilter.swift */; };
-		A38FC78B20CCD917002CA905 /* MTVesperVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74920CCD915002CA905 /* MTVesperVideoFilter.metal */; };
-		A38FC78C20CCD917002CA905 /* MTBrannanFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74A20CCD915002CA905 /* MTBrannanFilter.metal */; };
-		A38FC78D20CCD917002CA905 /* MTDogpatchVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74B20CCD915002CA905 /* MTDogpatchVideoFilter.swift */; };
-		A38FC78E20CCD917002CA905 /* MTDogpatchVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74C20CCD915002CA905 /* MTDogpatchVideoFilter.metal */; };
-		A38FC78F20CCD917002CA905 /* MTGinzaVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74D20CCD915002CA905 /* MTGinzaVideoFilter.swift */; };
-		A38FC79020CCD917002CA905 /* MTCharmesVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74E20CCD916002CA905 /* MTCharmesVideoFilter.metal */; };
-		A38FC79120CCD917002CA905 /* MTVesperVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC74F20CCD916002CA905 /* MTVesperVideoFilter.swift */; };
-		A38FC79220CCD917002CA905 /* MTGinghamVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A38FC75020CCD916002CA905 /* MTGinghamVideoFilter.metal */; };
-		A38FC79320CCD917002CA905 /* MTClarendonVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC75120CCD916002CA905 /* MTClarendonVideoFilter.swift */; };
 		A38FC79520CCDA64002CA905 /* MTFilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC79420CCDA64002CA905 /* MTFilterManager.swift */; };
+		A391B2D720CE4CCA00E6FD67 /* MTSutroFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B28520CE4CB500E6FD67 /* MTSutroFilter.metal */; };
+		A391B2D820CE4CCA00E6FD67 /* MTReyesFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B28620CE4CB500E6FD67 /* MTReyesFilter.swift */; };
+		A391B2D920CE4CCA00E6FD67 /* MTVesperVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B28720CE4CB600E6FD67 /* MTVesperVideoFilter.swift */; };
+		A391B2DA20CE4CCA00E6FD67 /* MTEarlybirdFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B28820CE4CB600E6FD67 /* MTEarlybirdFilter.metal */; };
+		A391B2DB20CE4CCA00E6FD67 /* MTSlumberFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B28920CE4CB600E6FD67 /* MTSlumberFilter.swift */; };
+		A391B2DC20CE4CCA00E6FD67 /* MTXpro2Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B28A20CE4CB600E6FD67 /* MTXpro2Filter.swift */; };
+		A391B2DD20CE4CCA00E6FD67 /* MTCremaFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B28B20CE4CB600E6FD67 /* MTCremaFilter.metal */; };
+		A391B2DE20CE4CCA00E6FD67 /* MTLarkFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B28C20CE4CB600E6FD67 /* MTLarkFilter.swift */; };
+		A391B2DF20CE4CCA00E6FD67 /* MTToasterFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B28D20CE4CB700E6FD67 /* MTToasterFilter.metal */; };
+		A391B2E020CE4CCA00E6FD67 /* MTSierraFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B28E20CE4CB700E6FD67 /* MTSierraFilter.swift */; };
+		A391B2E120CE4CCA00E6FD67 /* MTNormalFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B28F20CE4CB700E6FD67 /* MTNormalFilter.swift */; };
+		A391B2E220CE4CCA00E6FD67 /* MTValenciaFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B29020CE4CB700E6FD67 /* MTValenciaFilter.swift */; };
+		A391B2E320CE4CCA00E6FD67 /* MTLudwigFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B29120CE4CB700E6FD67 /* MTLudwigFilter.swift */; };
+		A391B2E420CE4CCA00E6FD67 /* MTMavenVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B29220CE4CB700E6FD67 /* MTMavenVideoFilter.swift */; };
+		A391B2E520CE4CCA00E6FD67 /* MTHudsonFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B29320CE4CB700E6FD67 /* MTHudsonFilter.swift */; };
+		A391B2E620CE4CCA00E6FD67 /* MTCharmesVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B29420CE4CB800E6FD67 /* MTCharmesVideoFilter.swift */; };
+		A391B2E720CE4CCA00E6FD67 /* MTHelenaVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B29520CE4CB800E6FD67 /* MTHelenaVideoFilter.metal */; };
+		A391B2E820CE4CCA00E6FD67 /* MTValenciaFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B29620CE4CB800E6FD67 /* MTValenciaFilter.metal */; };
+		A391B2E920CE4CCA00E6FD67 /* MTAmaroFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B29720CE4CB800E6FD67 /* MTAmaroFilter.metal */; };
+		A391B2EA20CE4CCA00E6FD67 /* MTCremaFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B29820CE4CB800E6FD67 /* MTCremaFilter.swift */; };
+		A391B2EB20CE4CCA00E6FD67 /* MTClarendonVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B29920CE4CB900E6FD67 /* MTClarendonVideoFilter.swift */; };
+		A391B2EC20CE4CCA00E6FD67 /* MTLarkFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B29A20CE4CB900E6FD67 /* MTLarkFilter.metal */; };
+		A391B2ED20CE4CCA00E6FD67 /* MTMayfairFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B29B20CE4CB900E6FD67 /* MTMayfairFilter.metal */; };
+		A391B2EE20CE4CCA00E6FD67 /* MTKelvinFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B29C20CE4CBA00E6FD67 /* MTKelvinFilter.swift */; };
+		A391B2EF20CE4CCA00E6FD67 /* MTHudsonFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B29D20CE4CBA00E6FD67 /* MTHudsonFilter.metal */; };
+		A391B2F020CE4CCA00E6FD67 /* MTJunoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B29E20CE4CBA00E6FD67 /* MTJunoFilter.metal */; };
+		A391B2F120CE4CCA00E6FD67 /* MTCharmesVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B29F20CE4CBB00E6FD67 /* MTCharmesVideoFilter.metal */; };
+		A391B2F220CE4CCA00E6FD67 /* MTWillowFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2A020CE4CBB00E6FD67 /* MTWillowFilter.swift */; };
+		A391B2F320CE4CCA00E6FD67 /* MTHefeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2A120CE4CBB00E6FD67 /* MTHefeFilter.swift */; };
+		A391B2F420CE4CCA00E6FD67 /* MTHefeFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2A220CE4CBC00E6FD67 /* MTHefeFilter.metal */; };
+		A391B2F520CE4CCA00E6FD67 /* MTBrannanFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2A320CE4CBC00E6FD67 /* MTBrannanFilter.metal */; };
+		A391B2F620CE4CCA00E6FD67 /* MTAdenFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2A420CE4CBC00E6FD67 /* MTAdenFilter.swift */; };
+		A391B2F720CE4CCA00E6FD67 /* MTInkwellFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2A520CE4CBD00E6FD67 /* MTInkwellFilter.swift */; };
+		A391B2F820CE4CCA00E6FD67 /* MTRiseFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2A620CE4CBD00E6FD67 /* MTRiseFilter.metal */; };
+		A391B2F920CE4CCA00E6FD67 /* MTEarlybirdFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2A720CE4CBD00E6FD67 /* MTEarlybirdFilter.swift */; };
+		A391B2FA20CE4CCA00E6FD67 /* MTMayfairFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2A820CE4CBE00E6FD67 /* MTMayfairFilter.swift */; };
+		A391B2FB20CE4CCA00E6FD67 /* MTSutroFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2A920CE4CBE00E6FD67 /* MTSutroFilter.swift */; };
+		A391B2FC20CE4CCA00E6FD67 /* MTXpro2Filter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2AA20CE4CBE00E6FD67 /* MTXpro2Filter.metal */; };
+		A391B2FD20CE4CCA00E6FD67 /* MTDogpatchVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2AB20CE4CBE00E6FD67 /* MTDogpatchVideoFilter.swift */; };
+		A391B2FE20CE4CCA00E6FD67 /* MTClarendonVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2AC20CE4CBF00E6FD67 /* MTClarendonVideoFilter.metal */; };
+		A391B2FF20CE4CCA00E6FD67 /* MTJunoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2AD20CE4CBF00E6FD67 /* MTJunoFilter.swift */; };
+		A391B30020CE4CCA00E6FD67 /* MTGinghamVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2AE20CE4CBF00E6FD67 /* MTGinghamVideoFilter.metal */; };
+		A391B30120CE4CCA00E6FD67 /* MTSkylineVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2AF20CE4CBF00E6FD67 /* MTSkylineVideoFilter.swift */; };
+		A391B30220CE4CCA00E6FD67 /* MTLudwigFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2B020CE4CBF00E6FD67 /* MTLudwigFilter.metal */; };
+		A391B30320CE4CCA00E6FD67 /* MTGinzaVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2B120CE4CC000E6FD67 /* MTGinzaVideoFilter.metal */; };
+		A391B30420CE4CCA00E6FD67 /* MTLoFiFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2B220CE4CC000E6FD67 /* MTLoFiFilter.swift */; };
+		A391B30520CE4CCA00E6FD67 /* MTRiseFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2B320CE4CC000E6FD67 /* MTRiseFilter.swift */; };
+		A391B30620CE4CCA00E6FD67 /* MTToasterFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2B420CE4CC000E6FD67 /* MTToasterFilter.swift */; };
+		A391B30720CE4CCA00E6FD67 /* MTWillowFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2B520CE4CC100E6FD67 /* MTWillowFilter.metal */; };
+		A391B30820CE4CCA00E6FD67 /* MTBrannanFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2B620CE4CC100E6FD67 /* MTBrannanFilter.swift */; };
+		A391B30920CE4CCA00E6FD67 /* MTAmaroFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2B720CE4CC100E6FD67 /* MTAmaroFilter.swift */; };
+		A391B30A20CE4CCA00E6FD67 /* MTStinsonVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2B820CE4CC100E6FD67 /* MTStinsonVideoFilter.swift */; };
+		A391B30B20CE4CCA00E6FD67 /* MTStinsonVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2B920CE4CC200E6FD67 /* MTStinsonVideoFilter.metal */; };
+		A391B30C20CE4CCA00E6FD67 /* MTKelvinFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2BA20CE4CC200E6FD67 /* MTKelvinFilter.metal */; };
+		A391B30D20CE4CCA00E6FD67 /* MTAdenFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2BB20CE4CC200E6FD67 /* MTAdenFilter.metal */; };
+		A391B30E20CE4CCA00E6FD67 /* MTPerpetuaFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2BC20CE4CC300E6FD67 /* MTPerpetuaFilter.swift */; };
+		A391B30F20CE4CCA00E6FD67 /* MTAshbyVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2BD20CE4CC300E6FD67 /* MTAshbyVideoFilter.metal */; };
+		A391B31020CE4CCA00E6FD67 /* MT1977Filter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2BE20CE4CC300E6FD67 /* MT1977Filter.metal */; };
+		A391B31120CE4CCA00E6FD67 /* MTGinghamVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2BF20CE4CC400E6FD67 /* MTGinghamVideoFilter.swift */; };
+		A391B31220CE4CCA00E6FD67 /* MTMoonVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2C020CE4CC400E6FD67 /* MTMoonVideoFilter.swift */; };
+		A391B31320CE4CCA00E6FD67 /* MTReyesFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2C120CE4CC400E6FD67 /* MTReyesFilter.metal */; };
+		A391B31420CE4CCA00E6FD67 /* MTHelenaVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2C220CE4CC500E6FD67 /* MTHelenaVideoFilter.swift */; };
+		A391B31520CE4CCA00E6FD67 /* MT1977Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2C320CE4CC500E6FD67 /* MT1977Filter.swift */; };
+		A391B31620CE4CCA00E6FD67 /* MTBrooklynVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2C420CE4CC500E6FD67 /* MTBrooklynVideoFilter.metal */; };
+		A391B31720CE4CCA00E6FD67 /* MTMavenVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2C520CE4CC500E6FD67 /* MTMavenVideoFilter.metal */; };
+		A391B31820CE4CCA00E6FD67 /* MTSlumberFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2C620CE4CC600E6FD67 /* MTSlumberFilter.metal */; };
+		A391B31920CE4CCA00E6FD67 /* MTGinzaVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2C720CE4CC600E6FD67 /* MTGinzaVideoFilter.swift */; };
+		A391B31A20CE4CCA00E6FD67 /* MTVesperVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2C820CE4CC600E6FD67 /* MTVesperVideoFilter.metal */; };
+		A391B31B20CE4CCA00E6FD67 /* MTPerpetuaFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2C920CE4CC600E6FD67 /* MTPerpetuaFilter.metal */; };
+		A391B31C20CE4CCA00E6FD67 /* MTDogpatchVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2CA20CE4CC600E6FD67 /* MTDogpatchVideoFilter.metal */; };
+		A391B31D20CE4CCA00E6FD67 /* MTNashvilleFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2CB20CE4CC700E6FD67 /* MTNashvilleFilter.metal */; };
+		A391B31E20CE4CCA00E6FD67 /* MTSierraFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2CC20CE4CC700E6FD67 /* MTSierraFilter.metal */; };
+		A391B31F20CE4CCA00E6FD67 /* MTAshbyVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2CD20CE4CC700E6FD67 /* MTAshbyVideoFilter.swift */; };
+		A391B32020CE4CCA00E6FD67 /* MTWaldenFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2CE20CE4CC700E6FD67 /* MTWaldenFilter.swift */; };
+		A391B32120CE4CCA00E6FD67 /* MTWaldenFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2CF20CE4CC800E6FD67 /* MTWaldenFilter.metal */; };
+		A391B32220CE4CCA00E6FD67 /* MTSkylineVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2D020CE4CC800E6FD67 /* MTSkylineVideoFilter.metal */; };
+		A391B32320CE4CCA00E6FD67 /* MTLoFiFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2D120CE4CC800E6FD67 /* MTLoFiFilter.metal */; };
+		A391B32420CE4CCA00E6FD67 /* MTInkwellFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2D220CE4CC800E6FD67 /* MTInkwellFilter.metal */; };
+		A391B32520CE4CCA00E6FD67 /* MTMoonVideoFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2D320CE4CC900E6FD67 /* MTMoonVideoFilter.metal */; };
+		A391B32620CE4CCA00E6FD67 /* MTBrooklynVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2D420CE4CC900E6FD67 /* MTBrooklynVideoFilter.swift */; };
+		A391B32720CE4CCA00E6FD67 /* MTNormalFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B2D520CE4CC900E6FD67 /* MTNormalFilter.metal */; };
+		A391B32820CE4CCA00E6FD67 /* MTNashvilleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B2D620CE4CC900E6FD67 /* MTNashvilleFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,80 +114,95 @@
 		A36133CA20C665A70022F27C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A36133CC20C665A70022F27C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A36133D220C6663A0022F27C /* FilterAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FilterAssets.bundle; sourceTree = "<group>"; };
-		A36133D920C666E50022F27C /* InstaFilters.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = InstaFilters.metal; sourceTree = "<group>"; };
 		A3700A2C20C91791005300B8 /* MTFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTFilter.swift; sourceTree = "<group>"; };
 		A38FC65920CB7979002CA905 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A38FC65F20CB85B2002CA905 /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewController.swift; sourceTree = "<group>"; };
 		A38FC66320CBEAA5002CA905 /* AlbumPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotoCell.swift; sourceTree = "<group>"; };
 		A38FC66520CBEB0E002CA905 /* AlbumPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotoViewController.swift; sourceTree = "<group>"; };
 		A38FC66720CBFBEB002CA905 /* FilterPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPickerCell.swift; sourceTree = "<group>"; };
-		A38FC71020CCD909002CA905 /* MTSkylineVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTSkylineVideoFilter.metal; sourceTree = "<group>"; };
-		A38FC71120CCD909002CA905 /* MTHudsonFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTHudsonFilter.swift; sourceTree = "<group>"; };
-		A38FC71220CCD909002CA905 /* MTLoFiFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTLoFiFilter.metal; sourceTree = "<group>"; };
-		A38FC71320CCD90A002CA905 /* MTHudsonFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTHudsonFilter.metal; sourceTree = "<group>"; };
-		A38FC71420CCD90A002CA905 /* MTKelvinFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTKelvinFilter.metal; sourceTree = "<group>"; };
-		A38FC71520CCD90A002CA905 /* MTRiseFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTRiseFilter.metal; sourceTree = "<group>"; };
-		A38FC71620CCD90A002CA905 /* MTSierraFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTSierraFilter.metal; sourceTree = "<group>"; };
-		A38FC71720CCD90A002CA905 /* MTClarendonVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTClarendonVideoFilter.metal; sourceTree = "<group>"; };
-		A38FC71820CCD90A002CA905 /* MTAmaroFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTAmaroFilter.swift; sourceTree = "<group>"; };
-		A38FC71920CCD90A002CA905 /* MTStinsonVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTStinsonVideoFilter.swift; sourceTree = "<group>"; };
-		A38FC71A20CCD90A002CA905 /* MTMavenVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTMavenVideoFilter.swift; sourceTree = "<group>"; };
-		A38FC71B20CCD90B002CA905 /* MTValenciaFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTValenciaFilter.swift; sourceTree = "<group>"; };
-		A38FC71C20CCD90B002CA905 /* MT1977Filter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MT1977Filter.metal; sourceTree = "<group>"; };
-		A38FC71D20CCD90B002CA905 /* MTSierraFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTSierraFilter.swift; sourceTree = "<group>"; };
-		A38FC71E20CCD90B002CA905 /* MTWillowFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTWillowFilter.swift; sourceTree = "<group>"; };
-		A38FC71F20CCD90B002CA905 /* MTToasterFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTToasterFilter.metal; sourceTree = "<group>"; };
-		A38FC72020CCD90B002CA905 /* MTKelvinFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTKelvinFilter.swift; sourceTree = "<group>"; };
-		A38FC72120CCD90C002CA905 /* MTWaldenFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTWaldenFilter.metal; sourceTree = "<group>"; };
-		A38FC72220CCD90C002CA905 /* MTInkwellFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTInkwellFilter.swift; sourceTree = "<group>"; };
-		A38FC72320CCD90C002CA905 /* MTBrannanFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTBrannanFilter.swift; sourceTree = "<group>"; };
-		A38FC72420CCD90C002CA905 /* MTHelenaVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTHelenaVideoFilter.metal; sourceTree = "<group>"; };
-		A38FC72520CCD90C002CA905 /* MTWaldenFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTWaldenFilter.swift; sourceTree = "<group>"; };
-		A38FC72620CCD90D002CA905 /* MTGinzaVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTGinzaVideoFilter.metal; sourceTree = "<group>"; };
-		A38FC72720CCD90D002CA905 /* MTInkwellFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTInkwellFilter.metal; sourceTree = "<group>"; };
-		A38FC72820CCD90D002CA905 /* MTMayfairFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTMayfairFilter.swift; sourceTree = "<group>"; };
-		A38FC72920CCD90D002CA905 /* MTNashvilleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTNashvilleFilter.swift; sourceTree = "<group>"; };
-		A38FC72A20CCD90E002CA905 /* MTSutroFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTSutroFilter.swift; sourceTree = "<group>"; };
-		A38FC72B20CCD90E002CA905 /* MTBrooklynVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTBrooklynVideoFilter.swift; sourceTree = "<group>"; };
-		A38FC72C20CCD90E002CA905 /* MTLoFiFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTLoFiFilter.swift; sourceTree = "<group>"; };
-		A38FC72D20CCD90E002CA905 /* MTSutroFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTSutroFilter.metal; sourceTree = "<group>"; };
-		A38FC72E20CCD90F002CA905 /* MTAshbyVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTAshbyVideoFilter.metal; sourceTree = "<group>"; };
-		A38FC72F20CCD90F002CA905 /* MT1977Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MT1977Filter.swift; sourceTree = "<group>"; };
-		A38FC73020CCD90F002CA905 /* MTToasterFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTToasterFilter.swift; sourceTree = "<group>"; };
-		A38FC73120CCD90F002CA905 /* MTXpro2Filter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTXpro2Filter.metal; sourceTree = "<group>"; };
-		A38FC73220CCD910002CA905 /* MTMoonVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTMoonVideoFilter.metal; sourceTree = "<group>"; };
-		A38FC73320CCD910002CA905 /* MTRiseFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTRiseFilter.swift; sourceTree = "<group>"; };
-		A38FC73420CCD910002CA905 /* MTXpro2Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTXpro2Filter.swift; sourceTree = "<group>"; };
-		A38FC73520CCD911002CA905 /* MTHelenaVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTHelenaVideoFilter.swift; sourceTree = "<group>"; };
-		A38FC73620CCD911002CA905 /* MTMayfairFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTMayfairFilter.metal; sourceTree = "<group>"; };
-		A38FC73720CCD911002CA905 /* MTHefeFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTHefeFilter.swift; sourceTree = "<group>"; };
-		A38FC73820CCD912002CA905 /* MTMoonVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTMoonVideoFilter.swift; sourceTree = "<group>"; };
-		A38FC73920CCD912002CA905 /* MTCharmesVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTCharmesVideoFilter.swift; sourceTree = "<group>"; };
-		A38FC73A20CCD912002CA905 /* MTGinghamVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTGinghamVideoFilter.swift; sourceTree = "<group>"; };
-		A38FC73B20CCD912002CA905 /* MTNormalFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTNormalFilter.metal; sourceTree = "<group>"; };
-		A38FC73C20CCD912002CA905 /* MTNormalFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTNormalFilter.swift; sourceTree = "<group>"; };
-		A38FC73D20CCD912002CA905 /* MTValenciaFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTValenciaFilter.metal; sourceTree = "<group>"; };
-		A38FC73E20CCD912002CA905 /* MTStinsonVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTStinsonVideoFilter.metal; sourceTree = "<group>"; };
-		A38FC73F20CCD912002CA905 /* MTHefeFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTHefeFilter.metal; sourceTree = "<group>"; };
-		A38FC74020CCD913002CA905 /* MTNashvilleFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTNashvilleFilter.metal; sourceTree = "<group>"; };
-		A38FC74120CCD913002CA905 /* MTAmaroFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTAmaroFilter.metal; sourceTree = "<group>"; };
-		A38FC74220CCD913002CA905 /* MTWillowFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTWillowFilter.metal; sourceTree = "<group>"; };
-		A38FC74320CCD914002CA905 /* MTAshbyVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTAshbyVideoFilter.swift; sourceTree = "<group>"; };
-		A38FC74420CCD914002CA905 /* MTSkylineVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTSkylineVideoFilter.swift; sourceTree = "<group>"; };
-		A38FC74520CCD914002CA905 /* MTBrooklynVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTBrooklynVideoFilter.metal; sourceTree = "<group>"; };
-		A38FC74620CCD914002CA905 /* MTEarlybirdFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTEarlybirdFilter.metal; sourceTree = "<group>"; };
-		A38FC74720CCD915002CA905 /* MTMavenVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTMavenVideoFilter.metal; sourceTree = "<group>"; };
-		A38FC74820CCD915002CA905 /* MTEarlybirdFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTEarlybirdFilter.swift; sourceTree = "<group>"; };
-		A38FC74920CCD915002CA905 /* MTVesperVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTVesperVideoFilter.metal; sourceTree = "<group>"; };
-		A38FC74A20CCD915002CA905 /* MTBrannanFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTBrannanFilter.metal; sourceTree = "<group>"; };
-		A38FC74B20CCD915002CA905 /* MTDogpatchVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTDogpatchVideoFilter.swift; sourceTree = "<group>"; };
-		A38FC74C20CCD915002CA905 /* MTDogpatchVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTDogpatchVideoFilter.metal; sourceTree = "<group>"; };
-		A38FC74D20CCD915002CA905 /* MTGinzaVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTGinzaVideoFilter.swift; sourceTree = "<group>"; };
-		A38FC74E20CCD916002CA905 /* MTCharmesVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTCharmesVideoFilter.metal; sourceTree = "<group>"; };
-		A38FC74F20CCD916002CA905 /* MTVesperVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTVesperVideoFilter.swift; sourceTree = "<group>"; };
-		A38FC75020CCD916002CA905 /* MTGinghamVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTGinghamVideoFilter.metal; sourceTree = "<group>"; };
-		A38FC75120CCD916002CA905 /* MTClarendonVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTClarendonVideoFilter.swift; sourceTree = "<group>"; };
 		A38FC79420CCDA64002CA905 /* MTFilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTFilterManager.swift; sourceTree = "<group>"; };
+		A391B28520CE4CB500E6FD67 /* MTSutroFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTSutroFilter.metal; sourceTree = "<group>"; };
+		A391B28620CE4CB500E6FD67 /* MTReyesFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTReyesFilter.swift; sourceTree = "<group>"; };
+		A391B28720CE4CB600E6FD67 /* MTVesperVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTVesperVideoFilter.swift; sourceTree = "<group>"; };
+		A391B28820CE4CB600E6FD67 /* MTEarlybirdFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTEarlybirdFilter.metal; sourceTree = "<group>"; };
+		A391B28920CE4CB600E6FD67 /* MTSlumberFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTSlumberFilter.swift; sourceTree = "<group>"; };
+		A391B28A20CE4CB600E6FD67 /* MTXpro2Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTXpro2Filter.swift; sourceTree = "<group>"; };
+		A391B28B20CE4CB600E6FD67 /* MTCremaFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTCremaFilter.metal; sourceTree = "<group>"; };
+		A391B28C20CE4CB600E6FD67 /* MTLarkFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTLarkFilter.swift; sourceTree = "<group>"; };
+		A391B28D20CE4CB700E6FD67 /* MTToasterFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTToasterFilter.metal; sourceTree = "<group>"; };
+		A391B28E20CE4CB700E6FD67 /* MTSierraFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTSierraFilter.swift; sourceTree = "<group>"; };
+		A391B28F20CE4CB700E6FD67 /* MTNormalFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTNormalFilter.swift; sourceTree = "<group>"; };
+		A391B29020CE4CB700E6FD67 /* MTValenciaFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTValenciaFilter.swift; sourceTree = "<group>"; };
+		A391B29120CE4CB700E6FD67 /* MTLudwigFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTLudwigFilter.swift; sourceTree = "<group>"; };
+		A391B29220CE4CB700E6FD67 /* MTMavenVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTMavenVideoFilter.swift; sourceTree = "<group>"; };
+		A391B29320CE4CB700E6FD67 /* MTHudsonFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTHudsonFilter.swift; sourceTree = "<group>"; };
+		A391B29420CE4CB800E6FD67 /* MTCharmesVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTCharmesVideoFilter.swift; sourceTree = "<group>"; };
+		A391B29520CE4CB800E6FD67 /* MTHelenaVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTHelenaVideoFilter.metal; sourceTree = "<group>"; };
+		A391B29620CE4CB800E6FD67 /* MTValenciaFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTValenciaFilter.metal; sourceTree = "<group>"; };
+		A391B29720CE4CB800E6FD67 /* MTAmaroFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTAmaroFilter.metal; sourceTree = "<group>"; };
+		A391B29820CE4CB800E6FD67 /* MTCremaFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTCremaFilter.swift; sourceTree = "<group>"; };
+		A391B29920CE4CB900E6FD67 /* MTClarendonVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTClarendonVideoFilter.swift; sourceTree = "<group>"; };
+		A391B29A20CE4CB900E6FD67 /* MTLarkFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTLarkFilter.metal; sourceTree = "<group>"; };
+		A391B29B20CE4CB900E6FD67 /* MTMayfairFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTMayfairFilter.metal; sourceTree = "<group>"; };
+		A391B29C20CE4CBA00E6FD67 /* MTKelvinFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTKelvinFilter.swift; sourceTree = "<group>"; };
+		A391B29D20CE4CBA00E6FD67 /* MTHudsonFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTHudsonFilter.metal; sourceTree = "<group>"; };
+		A391B29E20CE4CBA00E6FD67 /* MTJunoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTJunoFilter.metal; sourceTree = "<group>"; };
+		A391B29F20CE4CBB00E6FD67 /* MTCharmesVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTCharmesVideoFilter.metal; sourceTree = "<group>"; };
+		A391B2A020CE4CBB00E6FD67 /* MTWillowFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTWillowFilter.swift; sourceTree = "<group>"; };
+		A391B2A120CE4CBB00E6FD67 /* MTHefeFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTHefeFilter.swift; sourceTree = "<group>"; };
+		A391B2A220CE4CBC00E6FD67 /* MTHefeFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTHefeFilter.metal; sourceTree = "<group>"; };
+		A391B2A320CE4CBC00E6FD67 /* MTBrannanFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTBrannanFilter.metal; sourceTree = "<group>"; };
+		A391B2A420CE4CBC00E6FD67 /* MTAdenFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTAdenFilter.swift; sourceTree = "<group>"; };
+		A391B2A520CE4CBD00E6FD67 /* MTInkwellFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTInkwellFilter.swift; sourceTree = "<group>"; };
+		A391B2A620CE4CBD00E6FD67 /* MTRiseFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTRiseFilter.metal; sourceTree = "<group>"; };
+		A391B2A720CE4CBD00E6FD67 /* MTEarlybirdFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTEarlybirdFilter.swift; sourceTree = "<group>"; };
+		A391B2A820CE4CBE00E6FD67 /* MTMayfairFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTMayfairFilter.swift; sourceTree = "<group>"; };
+		A391B2A920CE4CBE00E6FD67 /* MTSutroFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTSutroFilter.swift; sourceTree = "<group>"; };
+		A391B2AA20CE4CBE00E6FD67 /* MTXpro2Filter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTXpro2Filter.metal; sourceTree = "<group>"; };
+		A391B2AB20CE4CBE00E6FD67 /* MTDogpatchVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTDogpatchVideoFilter.swift; sourceTree = "<group>"; };
+		A391B2AC20CE4CBF00E6FD67 /* MTClarendonVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTClarendonVideoFilter.metal; sourceTree = "<group>"; };
+		A391B2AD20CE4CBF00E6FD67 /* MTJunoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTJunoFilter.swift; sourceTree = "<group>"; };
+		A391B2AE20CE4CBF00E6FD67 /* MTGinghamVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTGinghamVideoFilter.metal; sourceTree = "<group>"; };
+		A391B2AF20CE4CBF00E6FD67 /* MTSkylineVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTSkylineVideoFilter.swift; sourceTree = "<group>"; };
+		A391B2B020CE4CBF00E6FD67 /* MTLudwigFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTLudwigFilter.metal; sourceTree = "<group>"; };
+		A391B2B120CE4CC000E6FD67 /* MTGinzaVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTGinzaVideoFilter.metal; sourceTree = "<group>"; };
+		A391B2B220CE4CC000E6FD67 /* MTLoFiFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTLoFiFilter.swift; sourceTree = "<group>"; };
+		A391B2B320CE4CC000E6FD67 /* MTRiseFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTRiseFilter.swift; sourceTree = "<group>"; };
+		A391B2B420CE4CC000E6FD67 /* MTToasterFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTToasterFilter.swift; sourceTree = "<group>"; };
+		A391B2B520CE4CC100E6FD67 /* MTWillowFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTWillowFilter.metal; sourceTree = "<group>"; };
+		A391B2B620CE4CC100E6FD67 /* MTBrannanFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTBrannanFilter.swift; sourceTree = "<group>"; };
+		A391B2B720CE4CC100E6FD67 /* MTAmaroFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTAmaroFilter.swift; sourceTree = "<group>"; };
+		A391B2B820CE4CC100E6FD67 /* MTStinsonVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTStinsonVideoFilter.swift; sourceTree = "<group>"; };
+		A391B2B920CE4CC200E6FD67 /* MTStinsonVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTStinsonVideoFilter.metal; sourceTree = "<group>"; };
+		A391B2BA20CE4CC200E6FD67 /* MTKelvinFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTKelvinFilter.metal; sourceTree = "<group>"; };
+		A391B2BB20CE4CC200E6FD67 /* MTAdenFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTAdenFilter.metal; sourceTree = "<group>"; };
+		A391B2BC20CE4CC300E6FD67 /* MTPerpetuaFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTPerpetuaFilter.swift; sourceTree = "<group>"; };
+		A391B2BD20CE4CC300E6FD67 /* MTAshbyVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTAshbyVideoFilter.metal; sourceTree = "<group>"; };
+		A391B2BE20CE4CC300E6FD67 /* MT1977Filter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MT1977Filter.metal; sourceTree = "<group>"; };
+		A391B2BF20CE4CC400E6FD67 /* MTGinghamVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTGinghamVideoFilter.swift; sourceTree = "<group>"; };
+		A391B2C020CE4CC400E6FD67 /* MTMoonVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTMoonVideoFilter.swift; sourceTree = "<group>"; };
+		A391B2C120CE4CC400E6FD67 /* MTReyesFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTReyesFilter.metal; sourceTree = "<group>"; };
+		A391B2C220CE4CC500E6FD67 /* MTHelenaVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTHelenaVideoFilter.swift; sourceTree = "<group>"; };
+		A391B2C320CE4CC500E6FD67 /* MT1977Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MT1977Filter.swift; sourceTree = "<group>"; };
+		A391B2C420CE4CC500E6FD67 /* MTBrooklynVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTBrooklynVideoFilter.metal; sourceTree = "<group>"; };
+		A391B2C520CE4CC500E6FD67 /* MTMavenVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTMavenVideoFilter.metal; sourceTree = "<group>"; };
+		A391B2C620CE4CC600E6FD67 /* MTSlumberFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTSlumberFilter.metal; sourceTree = "<group>"; };
+		A391B2C720CE4CC600E6FD67 /* MTGinzaVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTGinzaVideoFilter.swift; sourceTree = "<group>"; };
+		A391B2C820CE4CC600E6FD67 /* MTVesperVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTVesperVideoFilter.metal; sourceTree = "<group>"; };
+		A391B2C920CE4CC600E6FD67 /* MTPerpetuaFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTPerpetuaFilter.metal; sourceTree = "<group>"; };
+		A391B2CA20CE4CC600E6FD67 /* MTDogpatchVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTDogpatchVideoFilter.metal; sourceTree = "<group>"; };
+		A391B2CB20CE4CC700E6FD67 /* MTNashvilleFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTNashvilleFilter.metal; sourceTree = "<group>"; };
+		A391B2CC20CE4CC700E6FD67 /* MTSierraFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTSierraFilter.metal; sourceTree = "<group>"; };
+		A391B2CD20CE4CC700E6FD67 /* MTAshbyVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTAshbyVideoFilter.swift; sourceTree = "<group>"; };
+		A391B2CE20CE4CC700E6FD67 /* MTWaldenFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTWaldenFilter.swift; sourceTree = "<group>"; };
+		A391B2CF20CE4CC800E6FD67 /* MTWaldenFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTWaldenFilter.metal; sourceTree = "<group>"; };
+		A391B2D020CE4CC800E6FD67 /* MTSkylineVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTSkylineVideoFilter.metal; sourceTree = "<group>"; };
+		A391B2D120CE4CC800E6FD67 /* MTLoFiFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTLoFiFilter.metal; sourceTree = "<group>"; };
+		A391B2D220CE4CC800E6FD67 /* MTInkwellFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTInkwellFilter.metal; sourceTree = "<group>"; };
+		A391B2D320CE4CC900E6FD67 /* MTMoonVideoFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTMoonVideoFilter.metal; sourceTree = "<group>"; };
+		A391B2D420CE4CC900E6FD67 /* MTBrooklynVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTBrooklynVideoFilter.swift; sourceTree = "<group>"; };
+		A391B2D520CE4CC900E6FD67 /* MTNormalFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTNormalFilter.metal; sourceTree = "<group>"; };
+		A391B2D620CE4CC900E6FD67 /* MTNashvilleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTNashvilleFilter.swift; sourceTree = "<group>"; };
 		A39C115520CA59FD0095E3E4 /* IFShaderLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFShaderLib.h; sourceTree = "<group>"; };
 		B817D3CCD2892291BA74BE47 /* Pods_MetalFilters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalFilters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -232,8 +262,6 @@
 		A36133D420C6666F0022F27C /* MTFilter */ = {
 			isa = PBXGroup;
 			children = (
-				A36133D920C666E50022F27C /* InstaFilters.metal */,
-				A39C115520CA59FD0095E3E4 /* IFShaderLib.h */,
 				A3700A2C20C91791005300B8 /* MTFilter.swift */,
 				A38FC79420CCDA64002CA905 /* MTFilterManager.swift */,
 			);
@@ -266,72 +294,89 @@
 		A38FC66B20CCD729002CA905 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
-				A38FC71C20CCD90B002CA905 /* MT1977Filter.metal */,
-				A38FC72F20CCD90F002CA905 /* MT1977Filter.swift */,
-				A38FC74120CCD913002CA905 /* MTAmaroFilter.metal */,
-				A38FC71820CCD90A002CA905 /* MTAmaroFilter.swift */,
-				A38FC72E20CCD90F002CA905 /* MTAshbyVideoFilter.metal */,
-				A38FC74320CCD914002CA905 /* MTAshbyVideoFilter.swift */,
-				A38FC74A20CCD915002CA905 /* MTBrannanFilter.metal */,
-				A38FC72320CCD90C002CA905 /* MTBrannanFilter.swift */,
-				A38FC74520CCD914002CA905 /* MTBrooklynVideoFilter.metal */,
-				A38FC72B20CCD90E002CA905 /* MTBrooklynVideoFilter.swift */,
-				A38FC74E20CCD916002CA905 /* MTCharmesVideoFilter.metal */,
-				A38FC73920CCD912002CA905 /* MTCharmesVideoFilter.swift */,
-				A38FC71720CCD90A002CA905 /* MTClarendonVideoFilter.metal */,
-				A38FC75120CCD916002CA905 /* MTClarendonVideoFilter.swift */,
-				A38FC74C20CCD915002CA905 /* MTDogpatchVideoFilter.metal */,
-				A38FC74B20CCD915002CA905 /* MTDogpatchVideoFilter.swift */,
-				A38FC74620CCD914002CA905 /* MTEarlybirdFilter.metal */,
-				A38FC74820CCD915002CA905 /* MTEarlybirdFilter.swift */,
-				A38FC75020CCD916002CA905 /* MTGinghamVideoFilter.metal */,
-				A38FC73A20CCD912002CA905 /* MTGinghamVideoFilter.swift */,
-				A38FC72620CCD90D002CA905 /* MTGinzaVideoFilter.metal */,
-				A38FC74D20CCD915002CA905 /* MTGinzaVideoFilter.swift */,
-				A38FC73F20CCD912002CA905 /* MTHefeFilter.metal */,
-				A38FC73720CCD911002CA905 /* MTHefeFilter.swift */,
-				A38FC72420CCD90C002CA905 /* MTHelenaVideoFilter.metal */,
-				A38FC73520CCD911002CA905 /* MTHelenaVideoFilter.swift */,
-				A38FC71320CCD90A002CA905 /* MTHudsonFilter.metal */,
-				A38FC71120CCD909002CA905 /* MTHudsonFilter.swift */,
-				A38FC72720CCD90D002CA905 /* MTInkwellFilter.metal */,
-				A38FC72220CCD90C002CA905 /* MTInkwellFilter.swift */,
-				A38FC71420CCD90A002CA905 /* MTKelvinFilter.metal */,
-				A38FC72020CCD90B002CA905 /* MTKelvinFilter.swift */,
-				A38FC71220CCD909002CA905 /* MTLoFiFilter.metal */,
-				A38FC72C20CCD90E002CA905 /* MTLoFiFilter.swift */,
-				A38FC74720CCD915002CA905 /* MTMavenVideoFilter.metal */,
-				A38FC71A20CCD90A002CA905 /* MTMavenVideoFilter.swift */,
-				A38FC73620CCD911002CA905 /* MTMayfairFilter.metal */,
-				A38FC72820CCD90D002CA905 /* MTMayfairFilter.swift */,
-				A38FC73220CCD910002CA905 /* MTMoonVideoFilter.metal */,
-				A38FC73820CCD912002CA905 /* MTMoonVideoFilter.swift */,
-				A38FC74020CCD913002CA905 /* MTNashvilleFilter.metal */,
-				A38FC72920CCD90D002CA905 /* MTNashvilleFilter.swift */,
-				A38FC73B20CCD912002CA905 /* MTNormalFilter.metal */,
-				A38FC73C20CCD912002CA905 /* MTNormalFilter.swift */,
-				A38FC71520CCD90A002CA905 /* MTRiseFilter.metal */,
-				A38FC73320CCD910002CA905 /* MTRiseFilter.swift */,
-				A38FC71620CCD90A002CA905 /* MTSierraFilter.metal */,
-				A38FC71D20CCD90B002CA905 /* MTSierraFilter.swift */,
-				A38FC71020CCD909002CA905 /* MTSkylineVideoFilter.metal */,
-				A38FC74420CCD914002CA905 /* MTSkylineVideoFilter.swift */,
-				A38FC73E20CCD912002CA905 /* MTStinsonVideoFilter.metal */,
-				A38FC71920CCD90A002CA905 /* MTStinsonVideoFilter.swift */,
-				A38FC72D20CCD90E002CA905 /* MTSutroFilter.metal */,
-				A38FC72A20CCD90E002CA905 /* MTSutroFilter.swift */,
-				A38FC71F20CCD90B002CA905 /* MTToasterFilter.metal */,
-				A38FC73020CCD90F002CA905 /* MTToasterFilter.swift */,
-				A38FC73D20CCD912002CA905 /* MTValenciaFilter.metal */,
-				A38FC71B20CCD90B002CA905 /* MTValenciaFilter.swift */,
-				A38FC74920CCD915002CA905 /* MTVesperVideoFilter.metal */,
-				A38FC74F20CCD916002CA905 /* MTVesperVideoFilter.swift */,
-				A38FC72120CCD90C002CA905 /* MTWaldenFilter.metal */,
-				A38FC72520CCD90C002CA905 /* MTWaldenFilter.swift */,
-				A38FC74220CCD913002CA905 /* MTWillowFilter.metal */,
-				A38FC71E20CCD90B002CA905 /* MTWillowFilter.swift */,
-				A38FC73120CCD90F002CA905 /* MTXpro2Filter.metal */,
-				A38FC73420CCD910002CA905 /* MTXpro2Filter.swift */,
+				A39C115520CA59FD0095E3E4 /* IFShaderLib.h */,
+				A391B2BE20CE4CC300E6FD67 /* MT1977Filter.metal */,
+				A391B2C320CE4CC500E6FD67 /* MT1977Filter.swift */,
+				A391B2BB20CE4CC200E6FD67 /* MTAdenFilter.metal */,
+				A391B2A420CE4CBC00E6FD67 /* MTAdenFilter.swift */,
+				A391B29720CE4CB800E6FD67 /* MTAmaroFilter.metal */,
+				A391B2B720CE4CC100E6FD67 /* MTAmaroFilter.swift */,
+				A391B2BD20CE4CC300E6FD67 /* MTAshbyVideoFilter.metal */,
+				A391B2CD20CE4CC700E6FD67 /* MTAshbyVideoFilter.swift */,
+				A391B2A320CE4CBC00E6FD67 /* MTBrannanFilter.metal */,
+				A391B2B620CE4CC100E6FD67 /* MTBrannanFilter.swift */,
+				A391B2C420CE4CC500E6FD67 /* MTBrooklynVideoFilter.metal */,
+				A391B2D420CE4CC900E6FD67 /* MTBrooklynVideoFilter.swift */,
+				A391B29F20CE4CBB00E6FD67 /* MTCharmesVideoFilter.metal */,
+				A391B29420CE4CB800E6FD67 /* MTCharmesVideoFilter.swift */,
+				A391B2AC20CE4CBF00E6FD67 /* MTClarendonVideoFilter.metal */,
+				A391B29920CE4CB900E6FD67 /* MTClarendonVideoFilter.swift */,
+				A391B28B20CE4CB600E6FD67 /* MTCremaFilter.metal */,
+				A391B29820CE4CB800E6FD67 /* MTCremaFilter.swift */,
+				A391B2CA20CE4CC600E6FD67 /* MTDogpatchVideoFilter.metal */,
+				A391B2AB20CE4CBE00E6FD67 /* MTDogpatchVideoFilter.swift */,
+				A391B28820CE4CB600E6FD67 /* MTEarlybirdFilter.metal */,
+				A391B2A720CE4CBD00E6FD67 /* MTEarlybirdFilter.swift */,
+				A391B2AE20CE4CBF00E6FD67 /* MTGinghamVideoFilter.metal */,
+				A391B2BF20CE4CC400E6FD67 /* MTGinghamVideoFilter.swift */,
+				A391B2B120CE4CC000E6FD67 /* MTGinzaVideoFilter.metal */,
+				A391B2C720CE4CC600E6FD67 /* MTGinzaVideoFilter.swift */,
+				A391B2A220CE4CBC00E6FD67 /* MTHefeFilter.metal */,
+				A391B2A120CE4CBB00E6FD67 /* MTHefeFilter.swift */,
+				A391B29520CE4CB800E6FD67 /* MTHelenaVideoFilter.metal */,
+				A391B2C220CE4CC500E6FD67 /* MTHelenaVideoFilter.swift */,
+				A391B29D20CE4CBA00E6FD67 /* MTHudsonFilter.metal */,
+				A391B29320CE4CB700E6FD67 /* MTHudsonFilter.swift */,
+				A391B2D220CE4CC800E6FD67 /* MTInkwellFilter.metal */,
+				A391B2A520CE4CBD00E6FD67 /* MTInkwellFilter.swift */,
+				A391B29E20CE4CBA00E6FD67 /* MTJunoFilter.metal */,
+				A391B2AD20CE4CBF00E6FD67 /* MTJunoFilter.swift */,
+				A391B2BA20CE4CC200E6FD67 /* MTKelvinFilter.metal */,
+				A391B29C20CE4CBA00E6FD67 /* MTKelvinFilter.swift */,
+				A391B29A20CE4CB900E6FD67 /* MTLarkFilter.metal */,
+				A391B28C20CE4CB600E6FD67 /* MTLarkFilter.swift */,
+				A391B2D120CE4CC800E6FD67 /* MTLoFiFilter.metal */,
+				A391B2B220CE4CC000E6FD67 /* MTLoFiFilter.swift */,
+				A391B2B020CE4CBF00E6FD67 /* MTLudwigFilter.metal */,
+				A391B29120CE4CB700E6FD67 /* MTLudwigFilter.swift */,
+				A391B2C520CE4CC500E6FD67 /* MTMavenVideoFilter.metal */,
+				A391B29220CE4CB700E6FD67 /* MTMavenVideoFilter.swift */,
+				A391B29B20CE4CB900E6FD67 /* MTMayfairFilter.metal */,
+				A391B2A820CE4CBE00E6FD67 /* MTMayfairFilter.swift */,
+				A391B2D320CE4CC900E6FD67 /* MTMoonVideoFilter.metal */,
+				A391B2C020CE4CC400E6FD67 /* MTMoonVideoFilter.swift */,
+				A391B2CB20CE4CC700E6FD67 /* MTNashvilleFilter.metal */,
+				A391B2D620CE4CC900E6FD67 /* MTNashvilleFilter.swift */,
+				A391B2D520CE4CC900E6FD67 /* MTNormalFilter.metal */,
+				A391B28F20CE4CB700E6FD67 /* MTNormalFilter.swift */,
+				A391B2C920CE4CC600E6FD67 /* MTPerpetuaFilter.metal */,
+				A391B2BC20CE4CC300E6FD67 /* MTPerpetuaFilter.swift */,
+				A391B2C120CE4CC400E6FD67 /* MTReyesFilter.metal */,
+				A391B28620CE4CB500E6FD67 /* MTReyesFilter.swift */,
+				A391B2A620CE4CBD00E6FD67 /* MTRiseFilter.metal */,
+				A391B2B320CE4CC000E6FD67 /* MTRiseFilter.swift */,
+				A391B2CC20CE4CC700E6FD67 /* MTSierraFilter.metal */,
+				A391B28E20CE4CB700E6FD67 /* MTSierraFilter.swift */,
+				A391B2D020CE4CC800E6FD67 /* MTSkylineVideoFilter.metal */,
+				A391B2AF20CE4CBF00E6FD67 /* MTSkylineVideoFilter.swift */,
+				A391B2C620CE4CC600E6FD67 /* MTSlumberFilter.metal */,
+				A391B28920CE4CB600E6FD67 /* MTSlumberFilter.swift */,
+				A391B2B920CE4CC200E6FD67 /* MTStinsonVideoFilter.metal */,
+				A391B2B820CE4CC100E6FD67 /* MTStinsonVideoFilter.swift */,
+				A391B28520CE4CB500E6FD67 /* MTSutroFilter.metal */,
+				A391B2A920CE4CBE00E6FD67 /* MTSutroFilter.swift */,
+				A391B28D20CE4CB700E6FD67 /* MTToasterFilter.metal */,
+				A391B2B420CE4CC000E6FD67 /* MTToasterFilter.swift */,
+				A391B29620CE4CB800E6FD67 /* MTValenciaFilter.metal */,
+				A391B29020CE4CB700E6FD67 /* MTValenciaFilter.swift */,
+				A391B2C820CE4CC600E6FD67 /* MTVesperVideoFilter.metal */,
+				A391B28720CE4CB600E6FD67 /* MTVesperVideoFilter.swift */,
+				A391B2CF20CE4CC800E6FD67 /* MTWaldenFilter.metal */,
+				A391B2CE20CE4CC700E6FD67 /* MTWaldenFilter.swift */,
+				A391B2B520CE4CC100E6FD67 /* MTWillowFilter.metal */,
+				A391B2A020CE4CBB00E6FD67 /* MTWillowFilter.swift */,
+				A391B2AA20CE4CBE00E6FD67 /* MTXpro2Filter.metal */,
+				A391B28A20CE4CB600E6FD67 /* MTXpro2Filter.swift */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -457,81 +502,96 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A391B31C20CE4CCA00E6FD67 /* MTDogpatchVideoFilter.metal in Sources */,
+				A391B30120CE4CCA00E6FD67 /* MTSkylineVideoFilter.swift in Sources */,
+				A391B2F220CE4CCA00E6FD67 /* MTWillowFilter.swift in Sources */,
 				A38FC79520CCDA64002CA905 /* MTFilterManager.swift in Sources */,
-				A38FC75F20CCD917002CA905 /* MTSierraFilter.swift in Sources */,
-				A38FC76820CCD917002CA905 /* MTGinzaVideoFilter.metal in Sources */,
-				A38FC76C20CCD917002CA905 /* MTSutroFilter.swift in Sources */,
-				A38FC77620CCD917002CA905 /* MTXpro2Filter.swift in Sources */,
-				A38FC78620CCD917002CA905 /* MTSkylineVideoFilter.swift in Sources */,
-				A38FC78520CCD917002CA905 /* MTAshbyVideoFilter.swift in Sources */,
-				A38FC76220CCD917002CA905 /* MTKelvinFilter.swift in Sources */,
+				A391B30D20CE4CCA00E6FD67 /* MTAdenFilter.metal in Sources */,
+				A391B32020CE4CCA00E6FD67 /* MTWaldenFilter.swift in Sources */,
+				A391B2F120CE4CCA00E6FD67 /* MTCharmesVideoFilter.metal in Sources */,
+				A391B32420CE4CCA00E6FD67 /* MTInkwellFilter.metal in Sources */,
+				A391B2D920CE4CCA00E6FD67 /* MTVesperVideoFilter.swift in Sources */,
+				A391B2DC20CE4CCA00E6FD67 /* MTXpro2Filter.swift in Sources */,
 				A38FC65A20CB7979002CA905 /* MainViewController.swift in Sources */,
-				A38FC77B20CCD917002CA905 /* MTCharmesVideoFilter.swift in Sources */,
-				A38FC76320CCD917002CA905 /* MTWaldenFilter.metal in Sources */,
-				A38FC75A20CCD917002CA905 /* MTAmaroFilter.swift in Sources */,
-				A38FC75920CCD917002CA905 /* MTClarendonVideoFilter.metal in Sources */,
-				A38FC77E20CCD917002CA905 /* MTNormalFilter.swift in Sources */,
-				A38FC76B20CCD917002CA905 /* MTNashvilleFilter.swift in Sources */,
-				A38FC78920CCD917002CA905 /* MTMavenVideoFilter.metal in Sources */,
-				A38FC79120CCD917002CA905 /* MTVesperVideoFilter.swift in Sources */,
-				A38FC75420CCD917002CA905 /* MTLoFiFilter.metal in Sources */,
-				A38FC75320CCD917002CA905 /* MTHudsonFilter.swift in Sources */,
-				A38FC75B20CCD917002CA905 /* MTStinsonVideoFilter.swift in Sources */,
-				A38FC77F20CCD917002CA905 /* MTValenciaFilter.metal in Sources */,
-				A38FC78C20CCD917002CA905 /* MTBrannanFilter.metal in Sources */,
-				A38FC76F20CCD917002CA905 /* MTSutroFilter.metal in Sources */,
-				A38FC75C20CCD917002CA905 /* MTMavenVideoFilter.swift in Sources */,
-				A38FC78D20CCD917002CA905 /* MTDogpatchVideoFilter.swift in Sources */,
-				A38FC77020CCD917002CA905 /* MTAshbyVideoFilter.metal in Sources */,
-				A38FC75D20CCD917002CA905 /* MTValenciaFilter.swift in Sources */,
-				A38FC75220CCD917002CA905 /* MTSkylineVideoFilter.metal in Sources */,
-				A38FC75820CCD917002CA905 /* MTSierraFilter.metal in Sources */,
-				A38FC77320CCD917002CA905 /* MTXpro2Filter.metal in Sources */,
-				A38FC75E20CCD917002CA905 /* MT1977Filter.metal in Sources */,
-				A38FC79020CCD917002CA905 /* MTCharmesVideoFilter.metal in Sources */,
-				A38FC77420CCD917002CA905 /* MTMoonVideoFilter.metal in Sources */,
-				A38FC76420CCD917002CA905 /* MTInkwellFilter.swift in Sources */,
-				A38FC78A20CCD917002CA905 /* MTEarlybirdFilter.swift in Sources */,
+				A391B2F020CE4CCA00E6FD67 /* MTJunoFilter.metal in Sources */,
+				A391B2DF20CE4CCA00E6FD67 /* MTToasterFilter.metal in Sources */,
+				A391B31320CE4CCA00E6FD67 /* MTReyesFilter.metal in Sources */,
+				A391B2EA20CE4CCA00E6FD67 /* MTCremaFilter.swift in Sources */,
+				A391B31F20CE4CCA00E6FD67 /* MTAshbyVideoFilter.swift in Sources */,
+				A391B30720CE4CCA00E6FD67 /* MTWillowFilter.metal in Sources */,
+				A391B2D720CE4CCA00E6FD67 /* MTSutroFilter.metal in Sources */,
+				A391B2FC20CE4CCA00E6FD67 /* MTXpro2Filter.metal in Sources */,
+				A391B2E320CE4CCA00E6FD67 /* MTLudwigFilter.swift in Sources */,
+				A391B2DD20CE4CCA00E6FD67 /* MTCremaFilter.metal in Sources */,
+				A391B2E220CE4CCA00E6FD67 /* MTValenciaFilter.swift in Sources */,
+				A391B2E520CE4CCA00E6FD67 /* MTHudsonFilter.swift in Sources */,
+				A391B31120CE4CCA00E6FD67 /* MTGinghamVideoFilter.swift in Sources */,
+				A391B30A20CE4CCA00E6FD67 /* MTStinsonVideoFilter.swift in Sources */,
+				A391B30920CE4CCA00E6FD67 /* MTAmaroFilter.swift in Sources */,
+				A391B2D820CE4CCA00E6FD67 /* MTReyesFilter.swift in Sources */,
+				A391B2E820CE4CCA00E6FD67 /* MTValenciaFilter.metal in Sources */,
+				A391B2F720CE4CCA00E6FD67 /* MTInkwellFilter.swift in Sources */,
+				A391B30320CE4CCA00E6FD67 /* MTGinzaVideoFilter.metal in Sources */,
+				A391B2DA20CE4CCA00E6FD67 /* MTEarlybirdFilter.metal in Sources */,
+				A391B32820CE4CCA00E6FD67 /* MTNashvilleFilter.swift in Sources */,
+				A391B2E920CE4CCA00E6FD67 /* MTAmaroFilter.metal in Sources */,
 				A38FC66420CBEAA5002CA905 /* AlbumPhotoCell.swift in Sources */,
-				A38FC78420CCD917002CA905 /* MTWillowFilter.metal in Sources */,
-				A38FC76A20CCD917002CA905 /* MTMayfairFilter.swift in Sources */,
-				A38FC78220CCD917002CA905 /* MTNashvilleFilter.metal in Sources */,
 				A38FC66020CB85B2002CA905 /* PhotoEditorViewController.swift in Sources */,
+				A391B30B20CE4CCA00E6FD67 /* MTStinsonVideoFilter.metal in Sources */,
+				A391B2F920CE4CCA00E6FD67 /* MTEarlybirdFilter.swift in Sources */,
+				A391B30620CE4CCA00E6FD67 /* MTToasterFilter.swift in Sources */,
+				A391B31E20CE4CCA00E6FD67 /* MTSierraFilter.metal in Sources */,
+				A391B2F320CE4CCA00E6FD67 /* MTHefeFilter.swift in Sources */,
+				A391B2E620CE4CCA00E6FD67 /* MTCharmesVideoFilter.swift in Sources */,
+				A391B2EF20CE4CCA00E6FD67 /* MTHudsonFilter.metal in Sources */,
+				A391B30420CE4CCA00E6FD67 /* MTLoFiFilter.swift in Sources */,
 				A38FC66620CBEB0E002CA905 /* AlbumPhotoViewController.swift in Sources */,
-				A38FC76920CCD917002CA905 /* MTInkwellFilter.metal in Sources */,
-				A38FC77920CCD917002CA905 /* MTHefeFilter.swift in Sources */,
-				A38FC77520CCD917002CA905 /* MTRiseFilter.swift in Sources */,
-				A36133DA20C666E50022F27C /* InstaFilters.metal in Sources */,
+				A391B32720CE4CCA00E6FD67 /* MTNormalFilter.metal in Sources */,
+				A391B31220CE4CCA00E6FD67 /* MTMoonVideoFilter.swift in Sources */,
+				A391B2E020CE4CCA00E6FD67 /* MTSierraFilter.swift in Sources */,
+				A391B2EB20CE4CCA00E6FD67 /* MTClarendonVideoFilter.swift in Sources */,
+				A391B2FA20CE4CCA00E6FD67 /* MTMayfairFilter.swift in Sources */,
+				A391B2E720CE4CCA00E6FD67 /* MTHelenaVideoFilter.metal in Sources */,
 				A36133C120C665A70022F27C /* AppDelegate.swift in Sources */,
-				A38FC75720CCD917002CA905 /* MTRiseFilter.metal in Sources */,
-				A38FC75520CCD917002CA905 /* MTHudsonFilter.metal in Sources */,
-				A38FC78020CCD917002CA905 /* MTStinsonVideoFilter.metal in Sources */,
-				A38FC78320CCD917002CA905 /* MTAmaroFilter.metal in Sources */,
-				A38FC78B20CCD917002CA905 /* MTVesperVideoFilter.metal in Sources */,
+				A391B2F620CE4CCA00E6FD67 /* MTAdenFilter.swift in Sources */,
+				A391B2FF20CE4CCA00E6FD67 /* MTJunoFilter.swift in Sources */,
+				A391B2FE20CE4CCA00E6FD67 /* MTClarendonVideoFilter.metal in Sources */,
+				A391B31D20CE4CCA00E6FD67 /* MTNashvilleFilter.metal in Sources */,
+				A391B30C20CE4CCA00E6FD67 /* MTKelvinFilter.metal in Sources */,
+				A391B31920CE4CCA00E6FD67 /* MTGinzaVideoFilter.swift in Sources */,
+				A391B30520CE4CCA00E6FD67 /* MTRiseFilter.swift in Sources */,
+				A391B31520CE4CCA00E6FD67 /* MT1977Filter.swift in Sources */,
+				A391B31620CE4CCA00E6FD67 /* MTBrooklynVideoFilter.metal in Sources */,
+				A391B31420CE4CCA00E6FD67 /* MTHelenaVideoFilter.swift in Sources */,
+				A391B2FB20CE4CCA00E6FD67 /* MTSutroFilter.swift in Sources */,
+				A391B32520CE4CCA00E6FD67 /* MTMoonVideoFilter.metal in Sources */,
+				A391B31820CE4CCA00E6FD67 /* MTSlumberFilter.metal in Sources */,
 				A3700A2D20C91791005300B8 /* MTFilter.swift in Sources */,
-				A38FC76620CCD917002CA905 /* MTHelenaVideoFilter.metal in Sources */,
-				A38FC75620CCD917002CA905 /* MTKelvinFilter.metal in Sources */,
-				A38FC76720CCD917002CA905 /* MTWaldenFilter.swift in Sources */,
-				A38FC78120CCD917002CA905 /* MTHefeFilter.metal in Sources */,
+				A391B2E120CE4CCA00E6FD67 /* MTNormalFilter.swift in Sources */,
+				A391B2F420CE4CCA00E6FD67 /* MTHefeFilter.metal in Sources */,
+				A391B2DB20CE4CCA00E6FD67 /* MTSlumberFilter.swift in Sources */,
+				A391B32220CE4CCA00E6FD67 /* MTSkylineVideoFilter.metal in Sources */,
+				A391B2F520CE4CCA00E6FD67 /* MTBrannanFilter.metal in Sources */,
+				A391B31020CE4CCA00E6FD67 /* MT1977Filter.metal in Sources */,
+				A391B2DE20CE4CCA00E6FD67 /* MTLarkFilter.swift in Sources */,
+				A391B31720CE4CCA00E6FD67 /* MTMavenVideoFilter.metal in Sources */,
+				A391B30F20CE4CCA00E6FD67 /* MTAshbyVideoFilter.metal in Sources */,
+				A391B2ED20CE4CCA00E6FD67 /* MTMayfairFilter.metal in Sources */,
+				A391B31B20CE4CCA00E6FD67 /* MTPerpetuaFilter.metal in Sources */,
+				A391B30220CE4CCA00E6FD67 /* MTLudwigFilter.metal in Sources */,
+				A391B2F820CE4CCA00E6FD67 /* MTRiseFilter.metal in Sources */,
+				A391B32620CE4CCA00E6FD67 /* MTBrooklynVideoFilter.swift in Sources */,
+				A391B30820CE4CCA00E6FD67 /* MTBrannanFilter.swift in Sources */,
+				A391B2E420CE4CCA00E6FD67 /* MTMavenVideoFilter.swift in Sources */,
+				A391B2EC20CE4CCA00E6FD67 /* MTLarkFilter.metal in Sources */,
+				A391B30020CE4CCA00E6FD67 /* MTGinghamVideoFilter.metal in Sources */,
 				A38FC66820CBFBEB002CA905 /* FilterPickerCell.swift in Sources */,
-				A38FC77220CCD917002CA905 /* MTToasterFilter.swift in Sources */,
-				A38FC79220CCD917002CA905 /* MTGinghamVideoFilter.metal in Sources */,
-				A38FC78820CCD917002CA905 /* MTEarlybirdFilter.metal in Sources */,
-				A38FC78720CCD917002CA905 /* MTBrooklynVideoFilter.metal in Sources */,
-				A38FC77D20CCD917002CA905 /* MTNormalFilter.metal in Sources */,
-				A38FC79320CCD917002CA905 /* MTClarendonVideoFilter.swift in Sources */,
-				A38FC78F20CCD917002CA905 /* MTGinzaVideoFilter.swift in Sources */,
-				A38FC76D20CCD917002CA905 /* MTBrooklynVideoFilter.swift in Sources */,
-				A38FC77A20CCD917002CA905 /* MTMoonVideoFilter.swift in Sources */,
-				A38FC78E20CCD917002CA905 /* MTDogpatchVideoFilter.metal in Sources */,
-				A38FC76020CCD917002CA905 /* MTWillowFilter.swift in Sources */,
-				A38FC77120CCD917002CA905 /* MT1977Filter.swift in Sources */,
-				A38FC77820CCD917002CA905 /* MTMayfairFilter.metal in Sources */,
-				A38FC76120CCD917002CA905 /* MTToasterFilter.metal in Sources */,
-				A38FC77720CCD917002CA905 /* MTHelenaVideoFilter.swift in Sources */,
-				A38FC76E20CCD917002CA905 /* MTLoFiFilter.swift in Sources */,
-				A38FC76520CCD917002CA905 /* MTBrannanFilter.swift in Sources */,
-				A38FC77C20CCD917002CA905 /* MTGinghamVideoFilter.swift in Sources */,
+				A391B32120CE4CCA00E6FD67 /* MTWaldenFilter.metal in Sources */,
+				A391B2EE20CE4CCA00E6FD67 /* MTKelvinFilter.swift in Sources */,
+				A391B31A20CE4CCA00E6FD67 /* MTVesperVideoFilter.metal in Sources */,
+				A391B30E20CE4CCA00E6FD67 /* MTPerpetuaFilter.swift in Sources */,
+				A391B2FD20CE4CCA00E6FD67 /* MTDogpatchVideoFilter.swift in Sources */,
+				A391B32320CE4CCA00E6FD67 /* MTLoFiFilter.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

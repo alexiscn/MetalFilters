@@ -34,7 +34,7 @@ class PhotoEditorViewController: UIViewController {
         imageView = MTIImageView(frame: previewView.bounds)
         imageView.resizingMode = .aspectFill
         imageView.backgroundColor = .clear
-         
+        
         previewView.addSubview(imageView)
         allFilters = MTFilterManager.shard.allFilters
         setupFilterCollectionView()
@@ -48,7 +48,8 @@ class PhotoEditorViewController: UIViewController {
         options.deliveryMode = .highQualityFormat
         PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: options) { (image, _) in
             if let image = image {
-                let originImage = MTIImage(cgImage: image.cgImage!, options: [.SRGB: false], alphaType: .alphaIsOne)
+                let ciImage = CIImage(cgImage: image.cgImage!)
+                let originImage = MTIImage(ciImage: ciImage, isOpaque: true)
                 self.originInputImage = originImage
                 self.imageView.image = originImage
             }

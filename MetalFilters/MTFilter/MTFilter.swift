@@ -57,6 +57,7 @@ class MTFilter: NSObject, MTIUnaryFilter {
         if let imageUrl = MTFilterManager.shard.url(forResource: name) {
             let ciImage = CIImage(contentsOf: imageUrl)
             return MTIImage(ciImage: ciImage!, isOpaque: true)
+//            return MTIImage(contentsOf: imageUrl, options: [.SRGB: false], alphaType: .alphaIsOne)
         }
         return nil
     }
