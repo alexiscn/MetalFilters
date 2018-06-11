@@ -63,14 +63,6 @@ class MainViewController: UIViewController {
         selectedAsset = asset
     }
     
-    fileprivate func loadImageForEditing(_ asset: PHAsset) {
-        let options = PHContentEditingInputRequestOptions()
-        options.isNetworkAccessAllowed = true
-        asset.requestContentEditingInput(with: options) { (input, info) in
-            
-        }
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

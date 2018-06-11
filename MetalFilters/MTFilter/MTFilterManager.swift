@@ -76,4 +76,11 @@ class MTFilterManager {
         return nil
     }
     
+    func generate(image: MTIImage) -> UIImage? {
+        if let cgImage = try? context?.makeCGImage(from: image) {
+            return UIImage(cgImage: cgImage!)
+        }
+        return nil
+    }
+    
 }

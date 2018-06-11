@@ -71,7 +71,21 @@ class PhotoEditorViewController: UIViewController {
     }
     
     @IBAction func saveBarButtonTapped(_ sender: Any) {
-        
+        guard let image = self.imageView.image,
+            let uiImage = MTFilterManager.shard.generate(image: image) else {
+            return
+        }
+        PHPhotoLibrary.shared().performChanges({
+            let _ = PHAssetCreationRequest.creationRequestForAsset(from: uiImage)
+        }) { (success, error) in
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: nil, message: "Photo Saved!", preferredStyle: .alert)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.dismiss(animated: true, completion: nil)
+                })
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     fileprivate func setupFilterCollectionView() {
