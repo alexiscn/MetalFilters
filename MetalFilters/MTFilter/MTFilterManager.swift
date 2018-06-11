@@ -16,6 +16,8 @@ class MTFilterManager {
     
     var allFilters: [MTFilter.Type] = []
     
+    var resourceBundle: Bundle
+    
     var context: MTIContext?
     
     init() {
@@ -55,6 +57,13 @@ class MTFilterManager {
         allFilters.append(MTCharmesVideoFilter.self)
         
         context = try? MTIContext(device: MTLCreateSystemDefaultDevice()!)
+        
+        let url = Bundle.main.url(forResource: "FilterAssets", withExtension: "bundle")!
+        resourceBundle = Bundle(url: url)!
+    }
+    
+    func url(forResource name: String) -> URL? {
+        return resourceBundle.url(forResource: name, withExtension: nil)
     }
     
     func generateThumbnailsForImage(_ image: UIImage, with type: MTFilter.Type) -> UIImage? {

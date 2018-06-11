@@ -11,6 +11,8 @@ import MetalPetal
 
 class MTFilter: NSObject, MTIUnaryFilter {
     
+    required override init() { }
+    
     // MARK: - Should overrided by subclasses
     class var name: String { return "" }
     
@@ -38,16 +40,11 @@ class MTFilter: NSObject, MTIUnaryFilter {
             let image = samplerImage(named: imageName)!
             images.append(image)
         }
-        return kernel.apply(toInputImages: images, parameters: [:], outputDescriptors: [MTIRenderPassOutputDescriptor(dimensions: MTITextureDimensions(cgSize: input.size), pixelFormat: outputPixelFormat)]).first
+        let outputDescriptors = [
+            MTIRenderPassOutputDescriptor(dimensions: MTITextureDimensions(cgSize: input.size), pixelFormat: outputPixelFormat)
+        ]
+        return kernel.apply(toInputImages: images, parameters: [:], outputDescriptors: outputDescriptors).first
     }
-    
-    required override init() {
-        
-    }
-}
-
-extension MTFilter {
-    
     
     var kernel: MTIRenderPipelineKernel {
         let vertexDescriptor = MTIFunctionDescriptor(name: MTIFilterPassthroughVertexFunctionName)
@@ -57,12 +54,10 @@ extension MTFilter {
     }
     
     func samplerImage(named name: String) -> MTIImage? {
-        
-        guard let url = Bundle.main.url(forResource: "FilterAssets", withExtension: "bundle"),
-            let bundle = Bundle(url: url) else {
-                return nil
+        if let imageUrl = MTFilterManager.shard.url(forResource: name) {
+            let ciImage = CIImage(contentsOf: imageUrl)
+            return MTIImage(ciImage: ciImage!, isOpaque: true)
         }
-        let imageUrl = bundle.url(forResource: name, withExtension: nil)!
-        return MTIImage(contentsOf: imageUrl, options: [.SRGB: false], alphaType: .alphaIsOne)
+        return nil
     }
 }
