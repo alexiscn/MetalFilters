@@ -98,6 +98,7 @@ class PhotoEditorViewController: UIViewController {
         layout.minimumInteritemSpacing = 0
         layout.sectionInset = .zero
         layout.itemSize = CGSize(width: 104, height: frame.height)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         
         collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
