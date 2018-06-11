@@ -28,6 +28,8 @@ class PhotoEditorViewController: UIViewController {
     
     fileprivate var thumbnails: [String: UIImage] = [:]
     
+    fileprivate var basicFilter = MTBasicFilter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,6 +58,10 @@ class PhotoEditorViewController: UIViewController {
         }
         
         generateFilterThumbnailForAsset(asset)
+// TODO
+//        basicFilter.inputImage = imageView.image
+//        basicFilter.brightness = 1.0
+//        imageView.image = basicFilter.outputImage
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,6 +115,10 @@ class PhotoEditorViewController: UIViewController {
         collectionView.delegate = self
         collectionView.register(FilterPickerCell.self, forCellWithReuseIdentifier: NSStringFromClass(FilterPickerCell.self))
         collectionView.reloadData()
+    }
+    
+    fileprivate func setupBasicFilter() {
+        
     }
     
     fileprivate func generateFilterThumbnailForAsset(_ asset: PHAsset) {

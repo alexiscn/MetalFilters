@@ -21,6 +21,8 @@ class MTFilter: NSObject, MTIUnaryFilter {
     var fragmentName: String { return "" }
 
     var samplers: [String: String] { return [:] }
+    
+    var parameters: [String: Any] { return [:] }
 
     // MARK: - MTIUnaryFilter
     
@@ -37,13 +39,15 @@ class MTFilter: NSObject, MTIUnaryFilter {
         
         for key in samplers.keys.sorted() {
             let imageName = samplers[key]!
-            let image = samplerImage(named: imageName)!
-            images.append(image)
+            if imageName.count > 0 {
+                let image = samplerImage(named: imageName)!
+                images.append(image)
+            }
         }
         let outputDescriptors = [
             MTIRenderPassOutputDescriptor(dimensions: MTITextureDimensions(cgSize: input.size), pixelFormat: outputPixelFormat)
         ]
-        return kernel.apply(toInputImages: images, parameters: [:], outputDescriptors: outputDescriptors).first
+        return kernel.apply(toInputImages: images, parameters: parameters, outputDescriptors: outputDescriptors).first
     }
     
     var kernel: MTIRenderPipelineKernel {
