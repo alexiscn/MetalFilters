@@ -20,12 +20,12 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Metal Filters"
-        // Do any additional setup after loading the view.
         
         PHPhotoLibrary.requestAuthorization { (status) in
             switch status {
             case .authorized:
                 DispatchQueue.main.async {
+                    PHPhotoLibrary.shared().register(self)
                     self.loadPhotos()
                 }
                 break
@@ -39,6 +39,7 @@ class MainViewController: UIViewController {
     
     fileprivate func loadPhotos() {
         let options = PHFetchOptions()
+        options.wantsIncrementalChangeDetails = false
         options.sortDescriptors = [ NSSortDescriptor(key: "creationDate", ascending: false) ]
         let result = PHAsset.fetchAssets(with: .image, options: options)
         if let firstAsset = result.firstObject {
@@ -58,7 +59,9 @@ class MainViewController: UIViewController {
     fileprivate func loadImageFor(_ asset: PHAsset) {
         let targetSize = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
         PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: nil) { (image, _) in
-            self.photoImageView.image = image
+            DispatchQueue.main.async {
+                self.photoImageView.image = image
+            }
         }
         selectedAsset = asset
     }
@@ -79,6 +82,14 @@ class MainViewController: UIViewController {
         }
         editorController.originAsset = selectedAsset
         navigationController?.pushViewController(editorController, animated: false)
+    }
+    
+}
+
+extension MainViewController: PHPhotoLibraryChangeObserver {
+    
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        self.loadPhotos()
     }
     
 }
