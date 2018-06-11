@@ -82,7 +82,7 @@ class PhotoEditorViewController: UIViewController {
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.sectionInset = .zero
-        layout.itemSize = CGSize(width: 104, height: frame.width)
+        layout.itemSize = CGSize(width: 104, height: frame.height)
         
         collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
