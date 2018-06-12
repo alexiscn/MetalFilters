@@ -1,5 +1,5 @@
 //
-//  MTBasicFilter.swift
+//  MTBasicAdjustFilter.swift
 //  MetalFilters
 //
 //  Created by xu.shuifeng on 2018/6/11.
@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import MetalPetal
 
-class MTBasicFilter: MTFilter {
+class MTBasicAdjustFilter: MTFilter {
     
     var brightness: Float = 0
     var contrast: Float = 0
@@ -22,20 +23,23 @@ class MTBasicFilter: MTFilter {
     var sharpenDisabled: Bool = true
     var tintShadowsIntensity: Float = 0
     var tintHighlightsIntensity: Float = 0
-//    constant float3 & tintShadowsColor [[ buffer(12) ]],
-//    constant float3 & tintHighlightsColor [[ buffer(13) ]],
+    var tintShadowsColor: UIColor = .clear
+    var tintHighlightsColor: UIColor = .clear
     
-    override class var name: String { return "" }
+    override class var name: String {
+        return "Basic Adjust"
+        
+    }
     
     override var borderName: String { return "" }
     
     override var fragmentName: String {
-        return "MTBasicFilterFragment"
+        return "MTBasicAdjustFilterFragment"
     }
     
-    // TODO
-    override var samplers: [String: String] { return
-        [
+    override var samplers: [String: String] {
+        // TODO
+        return [
             "blurred": "willowMap.png",
             "sharpenBlur": "willowMap.png",
             "splines": "willowMap.png"
@@ -43,6 +47,7 @@ class MTBasicFilter: MTFilter {
     }
  
     override var parameters: [String: Any] {
+        let color = float3(1)
         return [
             "brightness" : brightness,
             "contrast": contrast,
@@ -55,7 +60,9 @@ class MTBasicFilter: MTFilter {
             "sharpen": sharpen,
             "sharpenDisabled": sharpenDisabled ? Float(0.0): Float(1.0),
             "tintShadowsIntensity": tintShadowsIntensity,
-            "tintHighlightsIntensity": tintHighlightsIntensity
+            "tintHighlightsIntensity": tintHighlightsIntensity,
+            "tintShadowsColor":  MTIVector(float3: color),
+            "tintHighlightsColor": MTIVector(float3: color)
         ]
         
     }

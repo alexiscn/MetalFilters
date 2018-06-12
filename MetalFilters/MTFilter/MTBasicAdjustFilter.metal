@@ -1,5 +1,5 @@
 //
-//  MTBasicFilter.metal
+//  MTBasicAdjustFilter.metal
 //  MetalFilters
 //
 //  Created by xu.shuifeng on 2018/6/11.
@@ -250,7 +250,7 @@ float3 tintHighlights(float3 texel, float3 tintColor, float tintAmount) {
     return clamp(tintedHighlightsWithAmount, 0.0, 1.0);
 }
 
-fragment float4 MTBasicFilterFragment(VertexOut vertexIn [[ stage_in ]],
+fragment float4 MTBasicAdjustFilterFragment(VertexOut vertexIn [[ stage_in ]],
                                       texture2d<float, access::sample> inputTexture [[ texture(0) ]],
                                       texture2d<float, access::sample> blurred [[ texture(1) ]],
                                       texture2d<float, access::sample> sharpenBlur [[ texture(2) ]],
@@ -267,8 +267,8 @@ fragment float4 MTBasicFilterFragment(VertexOut vertexIn [[ stage_in ]],
                                       constant float & sharpenDisabled [[ buffer(9) ]],
                                       constant float & tintShadowsIntensity [[ buffer(10) ]],
                                       constant float & tintHighlightsIntensity [[ buffer(11) ]],
-//                                      constant float3 & tintShadowsColor [[ buffer(12) ]],
-//                                      constant float3 & tintHighlightsColor [[ buffer(13) ]],
+                                      constant float3 & tintShadowsColor [[ buffer(12) ]],
+                                      constant float3 & tintHighlightsColor [[ buffer(13) ]],
                                       sampler textureSampler [[ sampler(0) ]])
 {
     constexpr sampler s(coord::normalized, address::clamp_to_edge, filter::linear);

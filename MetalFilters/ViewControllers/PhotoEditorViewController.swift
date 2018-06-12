@@ -36,7 +36,7 @@ class PhotoEditorViewController: UIViewController {
     
     fileprivate var thumbnails: [String: UIImage] = [:]
     
-    fileprivate var basicFilter = MTBasicFilter()
+    fileprivate var adjustFilter = MTBasicAdjustFilter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,9 +69,9 @@ class PhotoEditorViewController: UIViewController {
         
         generateFilterThumbnailForAsset(asset)
 // TODO
-//        basicFilter.inputImage = imageView.image
-//        basicFilter.brightness = 1.0
-//        imageView.image = basicFilter.outputImage
+        adjustFilter.inputImage = imageView.image
+        adjustFilter.brightness = 1.0
+        imageView.image = adjustFilter.outputImage
     }
 
     override func didReceiveMemoryWarning() {
