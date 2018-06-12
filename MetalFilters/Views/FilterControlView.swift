@@ -12,7 +12,7 @@ protocol FilterControlViewDelegate {
     func filterControlViewDidPressCancel()
     func filterControlViewDidPressDone()
     func filterControlViewDidStartDragging()
-    func filterControlView(_ controlView: FilterControlView, didChangeValue value: Float)
+    func filterControlView(_ controlView: FilterControlView, didChangeValue value: Float, toolType: FilterToolType)
     func filterControlViewDidEndDragging()
 }
 
@@ -30,7 +30,11 @@ class FilterControlView: UIView {
     
     private let slider: SloppyTouchSlider
     
-    override init(frame: CGRect) {
+    private let toolType: FilterToolType
+    
+    init(frame: CGRect, controlType: FilterToolType) {
+        
+        toolType = controlType
         
         let textColor = UIColor(red: 0.15, green: 0.15, blue: 0.15, alpha: 1)
         
@@ -77,6 +81,16 @@ class FilterControlView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setPosition(offScreen isOffScreen: Bool) {
+        if isOffScreen {
+            frame.origin = CGPoint(x: frame.origin.x, y: frame.origin.y + 44)
+            alpha = 0
+        } else {
+            frame.origin = CGPoint(x: frame.origin.x, y: frame.origin.y - 44)
+            alpha = 1
+        }
     }
     
 }

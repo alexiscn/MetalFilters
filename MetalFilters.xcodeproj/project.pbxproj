@@ -408,9 +408,9 @@
 			children = (
 				A38FC66320CBEAA5002CA905 /* AlbumPhotoCell.swift */,
 				A38FC66720CBFBEB002CA905 /* FilterPickerCell.swift */,
+				A3A068DA20CF67F300A2DF76 /* ToolPickerCell.swift */,
 				A38FC79620CF40F8002CA905 /* SloppyTouchSlider.swift */,
 				A3A068DE20CFA92F00A2DF76 /* FilterControlView.swift */,
-				A3A068DA20CF67F300A2DF76 /* ToolPickerCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

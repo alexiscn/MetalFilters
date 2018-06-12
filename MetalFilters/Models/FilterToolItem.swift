@@ -18,13 +18,31 @@ enum FilterToolType {
     case color
     case fade
     case highlights
+    case shadows
     case vignette
     case tiltShift
     case sharpen
 }
 
+
+/// Slider Value Range
+///
+/// - zeroToHundred: value in [0, 100]
+/// - negHundredToHundred: value in [-100, 100], defaluts to 0
+/// - tiltShift: tiltShift
+/// - adjustStraighten: adjustStraighten, specially handled
+enum SliderValueType {
+    case zeroToHundred
+    case negHundredToHundred
+    case tiltShift
+    case adjustStraighten
+}
+
 struct FilterToolItem {
+    
     let type: FilterToolType
+    
+    let slider: SliderValueType
     
     var title: String {
         switch type {
@@ -46,6 +64,8 @@ struct FilterToolItem {
             return "Fade"
         case .highlights:
             return "Highlights"
+        case .shadows:
+            return "Shadows"
         case .vignette:
             return "Vignette"
         case .tiltShift:
@@ -56,7 +76,6 @@ struct FilterToolItem {
     }
     
     var icon: String {
-        
         switch type {
         case .adjust:
             return "icon-structure"
@@ -76,6 +95,8 @@ struct FilterToolItem {
             return "icon-fade"
         case .highlights:
             return "icon-highlights"
+        case .shadows:
+            return "icon-shadows"
         case .vignette:
             return "icon-vignette"
         case .tiltShift:

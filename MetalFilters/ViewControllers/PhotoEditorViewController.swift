@@ -24,6 +24,8 @@ class PhotoEditorViewController: UIViewController {
     
     fileprivate var toolCollectionView: UICollectionView!
     
+    fileprivate var filterControlView: FilterControlView?
+    
     fileprivate var imageView: MTIImageView!
     
     public var originAsset: PHAsset?
@@ -68,10 +70,6 @@ class PhotoEditorViewController: UIViewController {
         }
         
         generateFilterThumbnailForAsset(asset)
-// TODO
-//        adjustFilter.inputImage = imageView.image
-//        adjustFilter.brightness = 1.0
-//        imageView.image = adjustFilter.outputImage
     }
 
     override func didReceiveMemoryWarning() {
@@ -149,18 +147,19 @@ class PhotoEditorViewController: UIViewController {
     
     fileprivate func setupToolDataSource() {
         allTools.removeAll()
-        allTools.append(FilterToolItem(type: .adjust))
-        allTools.append(FilterToolItem(type: .brightness))
-        allTools.append(FilterToolItem(type: .contrast))
-        allTools.append(FilterToolItem(type: .structure))
-        allTools.append(FilterToolItem(type: .warmth))
-        allTools.append(FilterToolItem(type: .saturation))
-        allTools.append(FilterToolItem(type: .color))
-        allTools.append(FilterToolItem(type: .fade))
-        allTools.append(FilterToolItem(type: .highlights))
-        allTools.append(FilterToolItem(type: .vignette))
-        allTools.append(FilterToolItem(type: .tiltShift))
-        allTools.append(FilterToolItem(type: .sharpen))
+        allTools.append(FilterToolItem(type: .adjust, slider: .adjustStraighten))
+        allTools.append(FilterToolItem(type: .brightness, slider: .negHundredToHundred))
+        allTools.append(FilterToolItem(type: .contrast, slider: .negHundredToHundred))
+        allTools.append(FilterToolItem(type: .structure, slider: .zeroToHundred))
+        allTools.append(FilterToolItem(type: .warmth, slider: .negHundredToHundred))
+        allTools.append(FilterToolItem(type: .saturation, slider: .negHundredToHundred))
+        allTools.append(FilterToolItem(type: .color, slider: .negHundredToHundred))
+        allTools.append(FilterToolItem(type: .fade, slider: .zeroToHundred))
+        allTools.append(FilterToolItem(type: .highlights, slider: .negHundredToHundred))
+        allTools.append(FilterToolItem(type: .shadows, slider: .negHundredToHundred))
+        allTools.append(FilterToolItem(type: .vignette, slider: .negHundredToHundred))
+        allTools.append(FilterToolItem(type: .tiltShift, slider: .tiltShift))
+        allTools.append(FilterToolItem(type: .sharpen, slider: .zeroToHundred))
     }
     
     fileprivate func generateFilterThumbnailForAsset(_ asset: PHAsset) {
@@ -215,8 +214,31 @@ class PhotoEditorViewController: UIViewController {
 
     }
     
-    fileprivate func showFilterControlView(for tool: FilterToolItem) {
+    fileprivate func presentFilterControlView(for tool: FilterToolItem) {
         
+        adjustFilter.inputImage = imageView.image
+        
+        let width = self.filtersView.bounds.width
+        let height = self.filtersView.bounds.height + 44
+        let frame = CGRect(x: 0, y: view.bounds.height - height + 44, width: width, height: height)
+        let controlView = FilterControlView(frame: frame, controlType: tool.type)
+        controlView.delegate = self
+        filterControlView = controlView
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.view.addSubview(controlView)
+            controlView.setPosition(offScreen: false)
+        }) { finish in
+            
+        }
+    }
+    
+    fileprivate func dismissFilterControlView() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.filterControlView?.setPosition(offScreen: true)
+        }) { finish in
+            self.filterControlView?.removeFromSuperview()
+        }
     }
     
     fileprivate func valueForFilterControlView(with tool: FilterToolItem) -> Float {
@@ -239,6 +261,8 @@ class PhotoEditorViewController: UIViewController {
             return adjustFilter.fade
         case .highlights:
             return adjustFilter.highlights
+        case .shadows:
+            return adjustFilter.shadows
         case .vignette:
             return adjustFilter.vignette
         case .tiltShift:
@@ -246,6 +270,65 @@ class PhotoEditorViewController: UIViewController {
         case .sharpen:
             return adjustFilter.sharpen
         }
+    }
+}
+
+extension PhotoEditorViewController: FilterControlViewDelegate {
+    
+    func filterControlViewDidPressCancel() {
+        dismissFilterControlView()
+    }
+    
+    func filterControlViewDidPressDone() {
+        dismissFilterControlView()
+    }
+    
+    func filterControlViewDidStartDragging() {
+        
+    }
+    
+    func filterControlView(_ controlView: FilterControlView, didChangeValue value: Float, toolType: FilterToolType) {
+        switch toolType {
+        case .adjust:
+            break
+        case .brightness:
+            adjustFilter.brightness = value
+            break
+        case .contrast:
+            adjustFilter.contrast = value
+            break
+        case .structure:
+            break
+        case .warmth:
+            adjustFilter.temperature = value
+            break
+        case .saturation:
+            adjustFilter.saturation = value
+            break
+        case .color:
+            break
+        case .fade:
+            adjustFilter.fade = value
+            break
+        case .highlights:
+            adjustFilter.highlights = value
+            break
+        case .shadows:
+            adjustFilter.shadows = value
+            break
+        case .vignette:
+            adjustFilter.vignette = value
+            break
+        case .tiltShift:
+            adjustFilter.tintShadowsIntensity = value
+        case .sharpen:
+            adjustFilter.sharpen = value
+        }
+        imageView.image = adjustFilter.outputImage
+    }
+    
+    func filterControlViewDidEndDragging() {
+        
     }
 }
 
@@ -284,7 +367,7 @@ extension PhotoEditorViewController: UICollectionViewDataSource, UICollectionVie
             imageView.image = filter.outputImage
         } else {
             let tool = allTools[indexPath.item]
-            showFilterControlView(for: tool)
+            presentFilterControlView(for: tool)
         }
     }
     
