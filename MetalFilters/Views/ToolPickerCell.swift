@@ -8,11 +8,6 @@
 
 import UIKit
 
-struct FilterToolItem {
-    let title: String
-    let icon: String
-}
-
 class ToolPickerCell: UICollectionViewCell {
 
     private let borderView: UIView

@@ -32,7 +32,7 @@ class PhotoEditorViewController: UIViewController {
     
     fileprivate var allFilters: [MTFilter.Type] = []
     
-    fileprivate var filterTools: [FilterToolItem] = []
+    fileprivate var allTools: [FilterToolItem] = []
     
     fileprivate var thumbnails: [String: UIImage] = [:]
     
@@ -69,9 +69,9 @@ class PhotoEditorViewController: UIViewController {
         
         generateFilterThumbnailForAsset(asset)
 // TODO
-        adjustFilter.inputImage = imageView.image
-        adjustFilter.brightness = 1.0
-        imageView.image = adjustFilter.outputImage
+//        adjustFilter.inputImage = imageView.image
+//        adjustFilter.brightness = 1.0
+//        imageView.image = adjustFilter.outputImage
     }
 
     override func didReceiveMemoryWarning() {
@@ -148,32 +148,19 @@ class PhotoEditorViewController: UIViewController {
     }
     
     fileprivate func setupToolDataSource() {
-        
-        let adjustTool = FilterToolItem(title: "Adjust", icon: "icon-structure")
-        let brightnessTool = FilterToolItem(title: "Brightness", icon: "icon-brightness")
-        let contrastTool = FilterToolItem(title: "Contrast", icon: "icon-contrast")
-        let structureTool = FilterToolItem(title: "Structure", icon: "icon-structure")
-        let warmthTool = FilterToolItem(title: "Warmth", icon: "icon-warmth")
-        let saturationTool = FilterToolItem(title: "Saturation", icon: "icon-saturation")
-        let colorTool = FilterToolItem(title: "Color", icon: "icon-color")
-        let fadeTool = FilterToolItem(title: "Fade", icon: "icon-fade")
-        let highlightsTool = FilterToolItem(title: "Highlights", icon: "icon-highlights")
-        let vignetteTool = FilterToolItem(title: "Vignette", icon: "icon-vignette")
-        let tiltShiftTool = FilterToolItem(title: "Tilt Shift", icon: "icon-tilt-shift")
-        let sharpenTool = FilterToolItem(title: "Sharpen", icon: "icon-sharpen")
-        
-        filterTools.append(adjustTool)
-        filterTools.append(brightnessTool)
-        filterTools.append(contrastTool)
-        filterTools.append(structureTool)
-        filterTools.append(warmthTool)
-        filterTools.append(saturationTool)
-        filterTools.append(colorTool)
-        filterTools.append(fadeTool)
-        filterTools.append(highlightsTool)
-        filterTools.append(vignetteTool)
-        filterTools.append(tiltShiftTool)
-        filterTools.append(sharpenTool)
+        allTools.removeAll()
+        allTools.append(FilterToolItem(type: .adjust))
+        allTools.append(FilterToolItem(type: .brightness))
+        allTools.append(FilterToolItem(type: .contrast))
+        allTools.append(FilterToolItem(type: .structure))
+        allTools.append(FilterToolItem(type: .warmth))
+        allTools.append(FilterToolItem(type: .saturation))
+        allTools.append(FilterToolItem(type: .color))
+        allTools.append(FilterToolItem(type: .fade))
+        allTools.append(FilterToolItem(type: .highlights))
+        allTools.append(FilterToolItem(type: .vignette))
+        allTools.append(FilterToolItem(type: .tiltShift))
+        allTools.append(FilterToolItem(type: .sharpen))
     }
     
     fileprivate func generateFilterThumbnailForAsset(_ asset: PHAsset) {
@@ -201,7 +188,6 @@ class PhotoEditorViewController: UIViewController {
         addCollectionView(at: 0)
     }
     
-    
     @IBAction func editButtonTapped(_ sender: Any) {
         addCollectionView(at: 1)
     }
@@ -222,12 +208,44 @@ class PhotoEditorViewController: UIViewController {
                 self.filterCollectionView.removeFromSuperview()
                 self.filtersView.addSubview(self.toolCollectionView)
             }
-            
         }) { (finish) in
             self.filterButton.isSelected = isFilterTabSelected
             self.editButton.isSelected = !isFilterTabSelected
         }
 
+    }
+    
+    fileprivate func showFilterControlView(for tool: FilterToolItem) {
+        
+    }
+    
+    fileprivate func valueForFilterControlView(with tool: FilterToolItem) -> Float {
+        switch tool.type {
+        case .adjust:
+            return 0
+        case .brightness:
+            return adjustFilter.brightness
+        case .contrast:
+            return adjustFilter.contrast
+        case .structure:
+            return 0
+        case .warmth:
+            return adjustFilter.temperature
+        case .saturation:
+            return adjustFilter.saturation
+        case .color:
+            return 0
+        case .fade:
+            return adjustFilter.fade
+        case .highlights:
+            return adjustFilter.highlights
+        case .vignette:
+            return adjustFilter.vignette
+        case .tiltShift:
+            return adjustFilter.tintShadowsIntensity
+        case .sharpen:
+            return adjustFilter.sharpen
+        }
     }
 }
 
@@ -241,7 +259,7 @@ extension PhotoEditorViewController: UICollectionViewDataSource, UICollectionVie
         if collectionView == filterCollectionView {
             return allFilters.count
         }
-        return filterTools.count
+        return allTools.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -253,7 +271,7 @@ extension PhotoEditorViewController: UICollectionViewDataSource, UICollectionVie
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(ToolPickerCell.self), for: indexPath) as! ToolPickerCell
-            let tool = filterTools[indexPath.item]
+            let tool = allTools[indexPath.item]
             cell.update(tool)
             return cell
         }
@@ -265,7 +283,8 @@ extension PhotoEditorViewController: UICollectionViewDataSource, UICollectionVie
             filter.inputImage = originInputImage
             imageView.image = filter.outputImage
         } else {
-            
+            let tool = allTools[indexPath.item]
+            showFilterControlView(for: tool)
         }
     }
     
