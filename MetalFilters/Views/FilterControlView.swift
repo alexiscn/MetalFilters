@@ -12,7 +12,7 @@ protocol FilterControlViewDelegate {
     func filterControlViewDidPressCancel()
     func filterControlViewDidPressDone()
     func filterControlViewDidStartDragging()
-    func filterControlView(_ controlView: FilterControlView, didChangeValue value: Float, toolType: FilterToolType)
+    func filterControlView(_ controlView: FilterControlView, didChangeValue value: Float, filterTool: FilterToolItem)
     func filterControlViewDidEndDragging()
 }
 
@@ -28,13 +28,13 @@ class FilterControlView: UIView {
     
     private let titleLabel: UILabel
     
-    private let slider: SloppyTouchSlider
+    private let sliderView: HorizontalSliderView
     
-    private let toolType: FilterToolType
+    private let filterTool: FilterToolItem
     
-    init(frame: CGRect, controlType: FilterToolType) {
+    init(frame: CGRect, filterTool: FilterToolItem, value: Float = 0) {
         
-        toolType = controlType
+        self.filterTool = filterTool
         
         let textColor = UIColor(red: 0.15, green: 0.15, blue: 0.15, alpha: 1)
         
@@ -54,14 +54,31 @@ class FilterControlView: UIView {
         titleLabel.textAlignment = .center
         titleLabel.textColor = textColor
         
-        slider = SloppyTouchSlider(frame: .zero)
+        sliderView = HorizontalSliderView(frame: CGRect(x: 30, y: frame.height/2 - 50, width: frame.width - 60, height: 70))
         
         super.init(frame: frame)
+        
+        switch filterTool.slider {
+        case .adjustStraighten:
+            break
+        case .negHundredToHundred:
+            sliderView.slider.maximumValue = 1
+            sliderView.slider.minimumValue = -1
+            sliderView.slider.value = value
+            break
+        case .zeroToHundred:
+            sliderView.slider.maximumValue = 1
+            sliderView.slider.minimumValue = 0
+            sliderView.slider.value = value
+            break
+        case .tiltShift:
+            break
+        }
         
         backgroundColor = .white
         
         addSubview(titleLabel)
-        addSubview(slider)
+        addSubview(sliderView)
         addSubview(cancelButton)
         addSubview(doneButton)
         cancelButton.frame = CGRect(x: 0, y: frame.height - 52, width: frame.width/2, height: 52)
@@ -69,6 +86,7 @@ class FilterControlView: UIView {
         
         cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
         doneButton.addTarget(self, action: #selector(doneButtonTapped), for: .touchUpInside)
+        sliderView.slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
     }
     
     @objc private func cancelButtonTapped() {
@@ -77,6 +95,16 @@ class FilterControlView: UIView {
     
     @objc private func doneButtonTapped() {
         delegate?.filterControlViewDidPressDone()
+    }
+    
+    @objc private func sliderValueChanged(_ sender: UISlider) {
+        titleLabel.text = "\(Int(sender.value * 100))"
+        
+        let trackRect = sender.trackRect(forBounds: sender.bounds)
+        let thumbRect = sender.thumbRect(forBounds: sender.bounds, trackRect: trackRect, value: sender.value)
+        let x = thumbRect.origin.x + sender.frame.origin.x + 44
+        titleLabel.center = CGPoint(x: x, y: frame.height/2 - 60)
+        delegate?.filterControlView(self, didChangeValue: sender.value, filterTool: filterTool)
     }
     
     required init?(coder aDecoder: NSCoder) {

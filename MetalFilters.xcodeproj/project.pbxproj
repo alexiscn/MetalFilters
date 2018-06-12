@@ -106,6 +106,7 @@
 		A3A068DB20CF67F300A2DF76 /* ToolPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A068DA20CF67F300A2DF76 /* ToolPickerCell.swift */; };
 		A3A068DF20CFA92F00A2DF76 /* FilterControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A068DE20CFA92F00A2DF76 /* FilterControlView.swift */; };
 		A3A068E120CFBC9800A2DF76 /* FilterToolItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A068E020CFBC9800A2DF76 /* FilterToolItem.swift */; };
+		A3A068E520CFCE3800A2DF76 /* HorizontalSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A068E420CFCE3800A2DF76 /* HorizontalSliderView.swift */; };
 		A3C44C3220CE7AFB0036E8E8 /* MTBasicAdjustFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C44C3120CE7AFB0036E8E8 /* MTBasicAdjustFilter.swift */; };
 		A3C44C3420CE7B520036E8E8 /* MTBasicAdjustFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A3C44C3320CE7B520036E8E8 /* MTBasicAdjustFilter.metal */; };
 /* End PBXBuildFile section */
@@ -214,6 +215,7 @@
 		A3A068DA20CF67F300A2DF76 /* ToolPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolPickerCell.swift; sourceTree = "<group>"; };
 		A3A068DE20CFA92F00A2DF76 /* FilterControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterControlView.swift; sourceTree = "<group>"; };
 		A3A068E020CFBC9800A2DF76 /* FilterToolItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterToolItem.swift; sourceTree = "<group>"; };
+		A3A068E420CFCE3800A2DF76 /* HorizontalSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSliderView.swift; sourceTree = "<group>"; };
 		A3C44C3120CE7AFB0036E8E8 /* MTBasicAdjustFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTBasicAdjustFilter.swift; sourceTree = "<group>"; };
 		A3C44C3320CE7B520036E8E8 /* MTBasicAdjustFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MTBasicAdjustFilter.metal; sourceTree = "<group>"; };
 		B817D3CCD2892291BA74BE47 /* Pods_MetalFilters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalFilters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -411,6 +413,7 @@
 				A3A068DA20CF67F300A2DF76 /* ToolPickerCell.swift */,
 				A38FC79620CF40F8002CA905 /* SloppyTouchSlider.swift */,
 				A3A068DE20CFA92F00A2DF76 /* FilterControlView.swift */,
+				A3A068E420CFCE3800A2DF76 /* HorizontalSliderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				A391B2D920CE4CCA00E6FD67 /* MTVesperVideoFilter.swift in Sources */,
 				A391B2DC20CE4CCA00E6FD67 /* MTXpro2Filter.swift in Sources */,
 				A38FC65A20CB7979002CA905 /* MainViewController.swift in Sources */,
+				A3A068E520CFCE3800A2DF76 /* HorizontalSliderView.swift in Sources */,
 				A391B2F020CE4CCA00E6FD67 /* MTJunoFilter.metal in Sources */,
 				A391B2DF20CE4CCA00E6FD67 /* MTToasterFilter.metal in Sources */,
 				A391B31320CE4CCA00E6FD67 /* MTReyesFilter.metal in Sources */,

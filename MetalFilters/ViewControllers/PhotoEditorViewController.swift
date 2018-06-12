@@ -216,12 +216,14 @@ class PhotoEditorViewController: UIViewController {
     
     fileprivate func presentFilterControlView(for tool: FilterToolItem) {
         
-        adjustFilter.inputImage = imageView.image
+        //adjustFilter.inputImage = imageView.image
+        adjustFilter.inputImage = originInputImage
         
         let width = self.filtersView.bounds.width
         let height = self.filtersView.bounds.height + 44
         let frame = CGRect(x: 0, y: view.bounds.height - height + 44, width: width, height: height)
-        let controlView = FilterControlView(frame: frame, controlType: tool.type)
+        let value = valueForFilterControlView(with: tool)
+        let controlView = FilterControlView(frame: frame, filterTool: tool, value: value)
         controlView.delegate = self
         filterControlView = controlView
         
@@ -287,8 +289,8 @@ extension PhotoEditorViewController: FilterControlViewDelegate {
         
     }
     
-    func filterControlView(_ controlView: FilterControlView, didChangeValue value: Float, toolType: FilterToolType) {
-        switch toolType {
+    func filterControlView(_ controlView: FilterControlView, didChangeValue value: Float, filterTool: FilterToolItem) {
+        switch filterTool.type {
         case .adjust:
             break
         case .brightness:
