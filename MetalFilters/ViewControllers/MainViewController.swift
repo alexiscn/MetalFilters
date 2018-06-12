@@ -17,6 +17,8 @@ class MainViewController: UIViewController {
     
     fileprivate var selectedAsset: PHAsset?
     
+    fileprivate var albumController: AlbumPhotoViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Metal Filters"
@@ -46,14 +48,19 @@ class MainViewController: UIViewController {
             loadImageFor(firstAsset)
         }
         
-        let albumController = AlbumPhotoViewController(dataSource: result)
-        albumController.didSelectAssetHandler = { [weak self] selectedAsset in
-            self?.loadImageFor(selectedAsset)
+        if let controller = albumController {
+            controller.update(dataSource: result)
+        } else {
+            let albumController = AlbumPhotoViewController(dataSource: result)
+            albumController.didSelectAssetHandler = { [weak self] selectedAsset in
+                self?.loadImageFor(selectedAsset)
+            }
+            albumController.view.frame = albumView.bounds
+            albumView.addSubview(albumController.view)
+            addChildViewController(albumController)
+            albumController.didMove(toParentViewController: self)
+            self.albumController = albumController
         }
-        albumController.view.frame = albumView.bounds
-        albumView.addSubview(albumController.view)
-        addChildViewController(albumController)
-        albumController.didMove(toParentViewController: self)
     }
     
     fileprivate func loadImageFor(_ asset: PHAsset) {

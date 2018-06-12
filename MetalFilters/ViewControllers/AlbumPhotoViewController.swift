@@ -15,7 +15,7 @@ class AlbumPhotoViewController: UIViewController, UICollectionViewDataSource, UI
     
     fileprivate var collectionView: UICollectionView!
     
-    fileprivate let dataSource: PHFetchResult<PHAsset>
+    fileprivate var dataSource: PHFetchResult<PHAsset>
     
     fileprivate var targetSize: CGSize = .zero
     
@@ -51,6 +51,11 @@ class AlbumPhotoViewController: UIViewController, UICollectionViewDataSource, UI
         if dataSource.count > 0 {
             collectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
         }
+    }
+    
+    public func update(dataSource: PHFetchResult<PHAsset>) {
+        self.dataSource = dataSource
+        collectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
