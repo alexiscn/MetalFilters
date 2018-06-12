@@ -12,6 +12,8 @@ class HorizontalSliderView: UIView {
 
     weak var slider: UISlider!
     
+    var isSliding: Bool = false
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setup()
@@ -24,6 +26,7 @@ class HorizontalSliderView: UIView {
     
     weak var trackAdjustmentIndicator: UIView!
     private weak var trackView: UIView!
+    private var feedbackGenerator: UISelectionFeedbackGenerator = UISelectionFeedbackGenerator()
     
     private func setup() {
         let trackView = UIView(frame: .zero)
@@ -47,6 +50,23 @@ class HorizontalSliderView: UIView {
     
     @objc private func sliderValueChanged(_ sender: UISlider) {
         self.setNeedsLayout()
+        
+        if sender.value == sender.minimumValue || sender.value == sender.maximumValue {
+            if isSliding {
+                feedbackGenerator.selectionChanged()
+            }
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        isSliding = true
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        
+        isSliding = false
     }
     
     override func layoutSubviews() {

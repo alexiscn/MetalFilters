@@ -28,7 +28,6 @@ class MTBasicAdjustFilter: MTFilter {
     
     override class var name: String {
         return "Basic Adjust"
-        
     }
     
     override var borderName: String { return "" }
@@ -58,7 +57,7 @@ class MTBasicAdjustFilter: MTFilter {
             "highlights": highlights,
             "shadows": shadows,
             "sharpen": sharpen,
-            "sharpenDisabled": sharpenDisabled ? Float(0.0): Float(1.0),
+            "sharpenDisabled": (sharpenDisabled || sharpen > 0) ? Float(0.0): Float(1.0),
             "tintShadowsIntensity": tintShadowsIntensity,
             "tintHighlightsIntensity": tintHighlightsIntensity,
             "tintShadowsColor":  MTIVector(float3: color),

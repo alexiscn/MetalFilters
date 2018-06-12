@@ -147,18 +147,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oJJ-HM-wNQ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Editor" id="b2a-yh-bPK">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9uM-bX-bFL">
-                            <connections>
-                                <action selector="cancelBarButtonTapped:" destination="hua-2q-xAw" id="BW2-8m-bRR"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="MyK-wa-qot">
-                            <connections>
-                                <action selector="saveBarButtonTapped:" destination="hua-2q-xAw" id="Qco-cz-H77"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Editor" id="b2a-yh-bPK"/>
                     <connections>
                         <outlet property="editButton" destination="XgH-s1-pgd" id="CRD-WL-May"/>
                         <outlet property="filterButton" destination="bha-Ca-bja" id="3U0-cA-Zgv"/>

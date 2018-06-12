@@ -70,6 +70,20 @@ class PhotoEditorViewController: UIViewController {
         }
         
         generateFilterThumbnailForAsset(asset)
+        setupNavigationButton()
+    }
+    
+    private func setupNavigationButton() {
+        let leftBarButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelBarButtonTapped(_:)))
+        let rightBarButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(saveBarButtonTapped(_:)))
+        self.navigationItem.leftBarButtonItem = leftBarButton
+        self.navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    private func clearNavigationButton() {
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.rightBarButtonItem = nil
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,11 +95,11 @@ class PhotoEditorViewController: UIViewController {
         return true
     }
     
-    @IBAction func cancelBarButtonTapped(_ sender: Any) {
+    @objc func cancelBarButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: false)
     }
     
-    @IBAction func saveBarButtonTapped(_ sender: Any) {
+    @objc func saveBarButtonTapped(_ sender: Any) {
         guard let image = self.imageView.image,
             let uiImage = MTFilterManager.shard.generate(image: image) else {
             return
@@ -157,7 +171,7 @@ class PhotoEditorViewController: UIViewController {
         allTools.append(FilterToolItem(type: .fade, slider: .zeroToHundred))
         allTools.append(FilterToolItem(type: .highlights, slider: .negHundredToHundred))
         allTools.append(FilterToolItem(type: .shadows, slider: .negHundredToHundred))
-        allTools.append(FilterToolItem(type: .vignette, slider: .negHundredToHundred))
+        allTools.append(FilterToolItem(type: .vignette, slider: .zeroToHundred))
         allTools.append(FilterToolItem(type: .tiltShift, slider: .tiltShift))
         allTools.append(FilterToolItem(type: .sharpen, slider: .zeroToHundred))
     }
@@ -218,7 +232,6 @@ class PhotoEditorViewController: UIViewController {
         
         //adjustFilter.inputImage = imageView.image
         adjustFilter.inputImage = originInputImage
-        
         let width = self.filtersView.bounds.width
         let height = self.filtersView.bounds.height + 44
         let frame = CGRect(x: 0, y: view.bounds.height - height + 44, width: width, height: height)
@@ -231,7 +244,8 @@ class PhotoEditorViewController: UIViewController {
             self.view.addSubview(controlView)
             controlView.setPosition(offScreen: false)
         }) { finish in
-            
+            self.title = tool.title
+            self.clearNavigationButton()
         }
     }
     
@@ -240,6 +254,8 @@ class PhotoEditorViewController: UIViewController {
             self.filterControlView?.setPosition(offScreen: true)
         }) { finish in
             self.filterControlView?.removeFromSuperview()
+            self.title = "Editor"
+            self.setupNavigationButton()
         }
     }
     
