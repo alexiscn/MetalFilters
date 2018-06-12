@@ -16,7 +16,13 @@ class PhotoEditorViewController: UIViewController {
     
     @IBOutlet weak var filtersView: UIView!
     
-    fileprivate var collectionView: UICollectionView!
+    @IBOutlet weak var filterButton: UIButton!
+    
+    @IBOutlet weak var editButton: UIButton!
+    
+    fileprivate var filterCollectionView: UICollectionView!
+    
+    fileprivate var toolCollectionView: UICollectionView!
     
     fileprivate var imageView: MTIImageView!
     
@@ -25,6 +31,8 @@ class PhotoEditorViewController: UIViewController {
     fileprivate var originInputImage: MTIImage?
     
     fileprivate var allFilters: [MTFilter.Type] = []
+    
+    fileprivate var filterTools: [FilterToolItem] = []
     
     fileprivate var thumbnails: [String: UIImage] = [:]
     
@@ -40,6 +48,8 @@ class PhotoEditorViewController: UIViewController {
         previewView.addSubview(imageView)
         allFilters = MTFilterManager.shard.allFilters
         setupFilterCollectionView()
+        setupToolDataSource()
+        setupToolCollectionView()
     
         guard let asset = originAsset else {
             return
@@ -106,19 +116,64 @@ class PhotoEditorViewController: UIViewController {
         layout.itemSize = CGSize(width: 104, height: frame.height)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         
-        collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
-        collectionView.backgroundColor = .clear
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.showsVerticalScrollIndicator = false
-        filtersView.addSubview(collectionView)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(FilterPickerCell.self, forCellWithReuseIdentifier: NSStringFromClass(FilterPickerCell.self))
-        collectionView.reloadData()
+        filterCollectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
+        filterCollectionView.backgroundColor = .clear
+        filterCollectionView.showsHorizontalScrollIndicator = false
+        filterCollectionView.showsVerticalScrollIndicator = false
+        filtersView.addSubview(filterCollectionView)
+        filterCollectionView.dataSource = self
+        filterCollectionView.delegate = self
+        filterCollectionView.register(FilterPickerCell.self, forCellWithReuseIdentifier: NSStringFromClass(FilterPickerCell.self))
+        filterCollectionView.reloadData()
     }
     
-    fileprivate func setupBasicFilter() {
+    fileprivate func setupToolCollectionView() {
+        let frame = CGRect(x: 0, y: 0, width: filtersView.bounds.width, height: filtersView.bounds.height - 44)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.sectionInset = .zero
+        layout.itemSize = CGSize(width: 98, height: frame.height)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         
+        toolCollectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
+        toolCollectionView.backgroundColor = .clear
+        toolCollectionView.showsHorizontalScrollIndicator = false
+        toolCollectionView.showsVerticalScrollIndicator = false
+        toolCollectionView.dataSource = self
+        toolCollectionView.delegate = self
+        toolCollectionView.register(ToolPickerCell.self, forCellWithReuseIdentifier: NSStringFromClass(ToolPickerCell.self))
+        toolCollectionView.reloadData()
+    }
+    
+    fileprivate func setupToolDataSource() {
+        
+        let adjustTool = FilterToolItem(title: "Adjust", icon: "icon-structure")
+        let brightnessTool = FilterToolItem(title: "Brightness", icon: "icon-brightness")
+        let contrastTool = FilterToolItem(title: "Contrast", icon: "icon-contrast")
+        let structureTool = FilterToolItem(title: "Structure", icon: "icon-structure")
+        let warmthTool = FilterToolItem(title: "Warmth", icon: "icon-warmth")
+        let saturationTool = FilterToolItem(title: "Saturation", icon: "icon-saturation")
+        let colorTool = FilterToolItem(title: "Color", icon: "icon-color")
+        let fadeTool = FilterToolItem(title: "Fade", icon: "icon-fade")
+        let highlightsTool = FilterToolItem(title: "Highlights", icon: "icon-highlights")
+        let vignetteTool = FilterToolItem(title: "Vignette", icon: "icon-vignette")
+        let tiltShiftTool = FilterToolItem(title: "Tilt Shift", icon: "icon-tilt-shift")
+        let sharpenTool = FilterToolItem(title: "Sharpen", icon: "icon-sharpen")
+        
+        filterTools.append(adjustTool)
+        filterTools.append(brightnessTool)
+        filterTools.append(contrastTool)
+        filterTools.append(structureTool)
+        filterTools.append(warmthTool)
+        filterTools.append(saturationTool)
+        filterTools.append(colorTool)
+        filterTools.append(fadeTool)
+        filterTools.append(highlightsTool)
+        filterTools.append(vignetteTool)
+        filterTools.append(tiltShiftTool)
+        filterTools.append(sharpenTool)
     }
     
     fileprivate func generateFilterThumbnailForAsset(_ asset: PHAsset) {
@@ -135,11 +190,44 @@ class PhotoEditorViewController: UIViewController {
                     let image = MTFilterManager.shard.generateThumbnailsForImage(image, with: filter)
                     self.thumbnails[filter.name] = image
                     DispatchQueue.main.async {
-                        self.collectionView.reloadData()
+                        self.filterCollectionView.reloadData()
                     }
                 }
             }
         }
+    }
+    
+    @IBAction func filterButtonTapped(_ sender: Any) {
+        addCollectionView(at: 0)
+    }
+    
+    
+    @IBAction func editButtonTapped(_ sender: Any) {
+        addCollectionView(at: 1)
+    }
+    
+    fileprivate func addCollectionView(at index: Int) {
+        let isFilterTabSelected = index == 0
+        if isFilterTabSelected && filterButton.isSelected {
+            return
+        }
+        if !isFilterTabSelected && editButton.isSelected {
+            return
+        }
+        UIView.animate(withDuration: 0.5, animations: {
+            if isFilterTabSelected {
+                self.toolCollectionView.removeFromSuperview()
+                self.filtersView.addSubview(self.filterCollectionView)
+            } else {
+                self.filterCollectionView.removeFromSuperview()
+                self.filtersView.addSubview(self.toolCollectionView)
+            }
+            
+        }) { (finish) in
+            self.filterButton.isSelected = isFilterTabSelected
+            self.editButton.isSelected = !isFilterTabSelected
+        }
+
     }
 }
 
@@ -150,21 +238,35 @@ extension PhotoEditorViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allFilters.count
+        if collectionView == filterCollectionView {
+            return allFilters.count
+        }
+        return filterTools.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(FilterPickerCell.self), for: indexPath) as! FilterPickerCell
-        let filter = allFilters[indexPath.item]
-        cell.update(filter)
-        cell.thumbnailImageView.image = thumbnails[filter.name]
-        return cell
+        if collectionView == filterCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(FilterPickerCell.self), for: indexPath) as! FilterPickerCell
+            let filter = allFilters[indexPath.item]
+            cell.update(filter)
+            cell.thumbnailImageView.image = thumbnails[filter.name]
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(ToolPickerCell.self), for: indexPath) as! ToolPickerCell
+            let tool = filterTools[indexPath.item]
+            cell.update(tool)
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let filter = allFilters[indexPath.item].init()
-        filter.inputImage = originInputImage
-        imageView.image = filter.outputImage
+        if collectionView == filterCollectionView {
+            let filter = allFilters[indexPath.item].init()
+            filter.inputImage = originInputImage
+            imageView.image = filter.outputImage
+        } else {
+            
+        }
     }
     
 }

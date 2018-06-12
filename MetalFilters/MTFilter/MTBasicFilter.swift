@@ -53,7 +53,7 @@ class MTBasicFilter: MTFilter {
             "highlights": highlights,
             "shadows": shadows,
             "sharpen": sharpen,
-//            "sharpenDisabled": sharpenDisabled ? 0.0: 1.0,
+            "sharpenDisabled": sharpenDisabled ? Float(0.0): Float(1.0),
             "tintShadowsIntensity": tintShadowsIntensity,
             "tintHighlightsIntensity": tintHighlightsIntensity
         ]

@@ -264,9 +264,9 @@ fragment float4 MTBasicFilterFragment(VertexOut vertexIn [[ stage_in ]],
                                       constant float & highlights [[ buffer(6) ]],
                                       constant float & shadows [[ buffer(7) ]],
                                       constant float & sharpen [[ buffer(8) ]],
-//                                      constant float & sharpenDisabled [[ buffer(9) ]],
-                                      constant float & tintShadowsIntensity [[ buffer(9) ]],
-                                      constant float & tintHighlightsIntensity [[ buffer(10) ]],
+                                      constant float & sharpenDisabled [[ buffer(9) ]],
+                                      constant float & tintShadowsIntensity [[ buffer(10) ]],
+                                      constant float & tintHighlightsIntensity [[ buffer(11) ]],
 //                                      constant float3 & tintShadowsColor [[ buffer(12) ]],
 //                                      constant float3 & tintHighlightsColor [[ buffer(13) ]],
                                       sampler textureSampler [[ sampler(0) ]])
@@ -277,14 +277,14 @@ fragment float4 MTBasicFilterFragment(VertexOut vertexIn [[ stage_in ]],
     float4 texel = inputTexture.sample(s, vertexIn.textureCoordinate);
     
     // sharpen
-//    if (abs(sharpenDisabled) < TOOL_ON_EPSILON) {
-//        // A zero value actually does something, a default sharpening, so don't put in a TOOL_ON_EPSILON check here
-//        float3 blurredTexel = sharpenBlur.sample(s, vertexIn.textureCoordinate).rgb;
-//        float3 diff = texel.rgb - blurredTexel;
-//        // sharpen magnitude has a default value of 0.35 at input 0, and a maximum of 2.5 at input 1.0.
-//        float mag = mix(0.35, 2.5, sharpen);
-//        texel.rgb = clamp(texel.rgb + diff * mag, 0.0, 1.0);
-//    }
+    if (abs(sharpenDisabled) < TOOL_ON_EPSILON) {
+        // A zero value actually does something, a default sharpening, so don't put in a TOOL_ON_EPSILON check here
+        float3 blurredTexel = sharpenBlur.sample(s, vertexIn.textureCoordinate).rgb;
+        float3 diff = texel.rgb - blurredTexel;
+        // sharpen magnitude has a default value of 0.35 at input 0, and a maximum of 2.5 at input 1.0.
+        float mag = mix(0.35, 2.5, sharpen);
+        texel.rgb = clamp(texel.rgb + diff * mag, 0.0, 1.0);
+    }
     
     // highlights and shadows both use a blurred texture
     float blurredLum;

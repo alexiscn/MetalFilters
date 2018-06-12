@@ -83,56 +83,66 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9O-hJ-4li" userLabel="Filters View">
-                                <rect key="frame" x="0.0" y="407" width="375" height="260"/>
+                                <rect key="frame" x="0.0" y="407" width="375" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lix-sF-hlR" userLabel="Toobar View">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lix-sF-hlR" userLabel="Toobar View">
-                                        <rect key="frame" x="0.0" y="216" width="375" height="44"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bha-Ca-bja" userLabel="Filter Button">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="44"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                <state key="normal" title="Filter">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgH-s1-pgd" userLabel="Edit Button">
-                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="44"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                <state key="normal" title="Edit">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="2f3-RB-gbd"/>
-                                            <constraint firstItem="XgH-s1-pgd" firstAttribute="width" secondItem="Lix-sF-hlR" secondAttribute="width" multiplier="0.5" id="3io-Kr-ba3"/>
-                                            <constraint firstAttribute="trailing" secondItem="XgH-s1-pgd" secondAttribute="trailing" id="66f-bR-Ayp"/>
-                                            <constraint firstItem="bha-Ca-bja" firstAttribute="width" secondItem="Lix-sF-hlR" secondAttribute="width" multiplier="0.5" id="Fep-Ju-0da"/>
-                                            <constraint firstAttribute="bottom" secondItem="XgH-s1-pgd" secondAttribute="bottom" id="SCk-hh-bmd"/>
-                                            <constraint firstItem="bha-Ca-bja" firstAttribute="leading" secondItem="Lix-sF-hlR" secondAttribute="leading" id="eYW-cR-baQ"/>
-                                            <constraint firstItem="bha-Ca-bja" firstAttribute="top" secondItem="Lix-sF-hlR" secondAttribute="top" id="g7K-XY-Q2Y"/>
-                                            <constraint firstItem="XgH-s1-pgd" firstAttribute="top" secondItem="Lix-sF-hlR" secondAttribute="top" id="obA-Ts-SDM"/>
-                                            <constraint firstAttribute="bottom" secondItem="bha-Ca-bja" secondAttribute="bottom" id="rHY-zW-yM9"/>
-                                        </constraints>
-                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bha-Ca-bja" userLabel="Filter Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Filter">
+                                            <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="filterButtonTapped:" destination="hua-2q-xAw" eventType="touchUpInside" id="x3q-6t-sch"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgH-s1-pgd" userLabel="Edit Button">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Edit">
+                                            <color key="titleColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="editButtonTapped:" destination="hua-2q-xAw" eventType="touchUpInside" id="vmv-yC-tq9"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Lix-sF-hlR" firstAttribute="leading" secondItem="u9O-hJ-4li" secondAttribute="leading" id="N8N-E6-r9q"/>
-                                    <constraint firstAttribute="trailing" secondItem="Lix-sF-hlR" secondAttribute="trailing" id="aVx-PE-kbV"/>
-                                    <constraint firstAttribute="bottom" secondItem="Lix-sF-hlR" secondAttribute="bottom" id="tet-yP-LGx"/>
+                                    <constraint firstAttribute="height" constant="44" id="2f3-RB-gbd"/>
+                                    <constraint firstItem="XgH-s1-pgd" firstAttribute="width" secondItem="Lix-sF-hlR" secondAttribute="width" multiplier="0.5" id="3io-Kr-ba3"/>
+                                    <constraint firstAttribute="trailing" secondItem="XgH-s1-pgd" secondAttribute="trailing" id="66f-bR-Ayp"/>
+                                    <constraint firstItem="bha-Ca-bja" firstAttribute="width" secondItem="Lix-sF-hlR" secondAttribute="width" multiplier="0.5" id="Fep-Ju-0da"/>
+                                    <constraint firstAttribute="bottom" secondItem="XgH-s1-pgd" secondAttribute="bottom" id="SCk-hh-bmd"/>
+                                    <constraint firstItem="bha-Ca-bja" firstAttribute="leading" secondItem="Lix-sF-hlR" secondAttribute="leading" id="eYW-cR-baQ"/>
+                                    <constraint firstItem="bha-Ca-bja" firstAttribute="top" secondItem="Lix-sF-hlR" secondAttribute="top" id="g7K-XY-Q2Y"/>
+                                    <constraint firstItem="XgH-s1-pgd" firstAttribute="top" secondItem="Lix-sF-hlR" secondAttribute="top" id="obA-Ts-SDM"/>
+                                    <constraint firstAttribute="bottom" secondItem="bha-Ca-bja" secondAttribute="bottom" id="rHY-zW-yM9"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Lix-sF-hlR" firstAttribute="leading" secondItem="oJJ-HM-wNQ" secondAttribute="leading" id="003-Z3-s1b"/>
                             <constraint firstItem="oJJ-HM-wNQ" firstAttribute="trailing" secondItem="V4X-Bw-skj" secondAttribute="trailing" id="1q0-gs-obQ"/>
                             <constraint firstItem="V4X-Bw-skj" firstAttribute="top" secondItem="oJJ-HM-wNQ" secondAttribute="top" id="5Na-Gv-IBj"/>
+                            <constraint firstItem="oJJ-HM-wNQ" firstAttribute="bottom" secondItem="Lix-sF-hlR" secondAttribute="bottom" id="6PB-Hg-iQW"/>
+                            <constraint firstItem="oJJ-HM-wNQ" firstAttribute="trailing" secondItem="Lix-sF-hlR" secondAttribute="trailing" id="B7m-7w-EFM"/>
                             <constraint firstItem="u9O-hJ-4li" firstAttribute="top" secondItem="V4X-Bw-skj" secondAttribute="bottom" constant="12" id="Fhg-Ga-rAm"/>
-                            <constraint firstItem="oJJ-HM-wNQ" firstAttribute="bottom" secondItem="u9O-hJ-4li" secondAttribute="bottom" id="K9H-v0-GMq"/>
                             <constraint firstItem="oJJ-HM-wNQ" firstAttribute="trailing" secondItem="u9O-hJ-4li" secondAttribute="trailing" id="Kd5-rD-WY2"/>
                             <constraint firstItem="u9O-hJ-4li" firstAttribute="leading" secondItem="oJJ-HM-wNQ" secondAttribute="leading" id="N8v-HE-gP5"/>
+                            <constraint firstItem="Lix-sF-hlR" firstAttribute="top" secondItem="u9O-hJ-4li" secondAttribute="bottom" id="fE7-f0-7Wd"/>
                             <constraint firstItem="V4X-Bw-skj" firstAttribute="leading" secondItem="oJJ-HM-wNQ" secondAttribute="leading" id="weR-vu-cgU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oJJ-HM-wNQ"/>
@@ -150,13 +160,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="XgH-s1-pgd" id="CRD-WL-May"/>
+                        <outlet property="filterButton" destination="bha-Ca-bja" id="3U0-cA-Zgv"/>
                         <outlet property="filtersView" destination="u9O-hJ-4li" id="bjk-m6-8UE"/>
                         <outlet property="previewView" destination="V4X-Bw-skj" id="3I2-Uh-TUu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKc-yQ-REC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1033" y="1511"/>
+            <point key="canvasLocation" x="1032.8" y="1510.7946026986508"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ST6-ao-S0h">
