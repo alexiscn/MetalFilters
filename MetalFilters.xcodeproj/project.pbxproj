@@ -20,6 +20,7 @@
 		A38FC66620CBEB0E002CA905 /* AlbumPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC66520CBEB0E002CA905 /* AlbumPhotoViewController.swift */; };
 		A38FC66820CBFBEB002CA905 /* FilterPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC66720CBFBEB002CA905 /* FilterPickerCell.swift */; };
 		A38FC79520CCDA64002CA905 /* MTFilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC79420CCDA64002CA905 /* MTFilterManager.swift */; };
+		A38FC79720CF40F8002CA905 /* SloppyTouchSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC79620CF40F8002CA905 /* SloppyTouchSlider.swift */; };
 		A391B2D720CE4CCA00E6FD67 /* MTSutroFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A391B28520CE4CB500E6FD67 /* MTSutroFilter.metal */; };
 		A391B2D820CE4CCA00E6FD67 /* MTReyesFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B28620CE4CB500E6FD67 /* MTReyesFilter.swift */; };
 		A391B2D920CE4CCA00E6FD67 /* MTVesperVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391B28720CE4CB600E6FD67 /* MTVesperVideoFilter.swift */; };
@@ -121,6 +122,7 @@
 		A38FC66520CBEB0E002CA905 /* AlbumPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotoViewController.swift; sourceTree = "<group>"; };
 		A38FC66720CBFBEB002CA905 /* FilterPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPickerCell.swift; sourceTree = "<group>"; };
 		A38FC79420CCDA64002CA905 /* MTFilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTFilterManager.swift; sourceTree = "<group>"; };
+		A38FC79620CF40F8002CA905 /* SloppyTouchSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SloppyTouchSlider.swift; sourceTree = "<group>"; };
 		A391B28520CE4CB500E6FD67 /* MTSutroFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTSutroFilter.metal; sourceTree = "<group>"; };
 		A391B28620CE4CB500E6FD67 /* MTReyesFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTReyesFilter.swift; sourceTree = "<group>"; };
 		A391B28720CE4CB600E6FD67 /* MTVesperVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTVesperVideoFilter.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				A38FC66520CBEB0E002CA905 /* AlbumPhotoViewController.swift */,
 				A38FC65F20CB85B2002CA905 /* PhotoEditorViewController.swift */,
 				A38FC66720CBFBEB002CA905 /* FilterPickerCell.swift */,
+				A38FC79620CF40F8002CA905 /* SloppyTouchSlider.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				A391B31B20CE4CCA00E6FD67 /* MTPerpetuaFilter.metal in Sources */,
 				A391B30220CE4CCA00E6FD67 /* MTLudwigFilter.metal in Sources */,
 				A391B2F820CE4CCA00E6FD67 /* MTRiseFilter.metal in Sources */,
+				A38FC79720CF40F8002CA905 /* SloppyTouchSlider.swift in Sources */,
 				A391B32620CE4CCA00E6FD67 /* MTBrooklynVideoFilter.swift in Sources */,
 				A391B30820CE4CCA00E6FD67 /* MTBrannanFilter.swift in Sources */,
 				A391B2E420CE4CCA00E6FD67 /* MTMavenVideoFilter.swift in Sources */,
