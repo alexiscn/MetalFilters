@@ -37,6 +37,21 @@ class MTBasicAdjustFilter: MTFilter {
     }
     
     override var samplers: [String: String] {
+        /*
+         X: 0.0612549, Y: 0.185368
+         X: 0.16381, Y: 0.365771
+         X: 0.320955, Y: 0.527539
+         X: 0.496851, Y: 0.659237
+         X: 0.709977, Y: 0.79987
+         X: 1, Y: 1
+         X: 0, Y: 0
+         X: 0.185368, Y: 0.0612549
+         X: 0.365771, Y: 0.16381
+         X: 0.527539, Y: 0.320955
+         X: 0.659237, Y: 0.496851
+         X: 0.79987, Y: 0.709977
+         X: 1, Y: 1
+ */
         // TODO
         return [
             "blurred": "willowMap.png",
