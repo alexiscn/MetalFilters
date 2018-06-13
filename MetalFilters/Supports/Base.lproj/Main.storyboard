@@ -120,6 +120,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="XgH-s1-pgd" firstAttribute="leading" secondItem="bha-Ca-bja" secondAttribute="trailing" id="0WC-id-ZR4"/>
                                     <constraint firstAttribute="height" constant="44" id="2f3-RB-gbd"/>
                                     <constraint firstItem="XgH-s1-pgd" firstAttribute="width" secondItem="Lix-sF-hlR" secondAttribute="width" multiplier="0.5" id="3io-Kr-ba3"/>
                                     <constraint firstAttribute="trailing" secondItem="XgH-s1-pgd" secondAttribute="trailing" id="66f-bR-Ayp"/>

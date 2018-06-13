@@ -76,6 +76,7 @@ class FilterControlView: UIView {
         }
         
         backgroundColor = .white
+        isUserInteractionEnabled = true
         
         addSubview(titleLabel)
         addSubview(sliderView)

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6C6C88BFBC95C7EDDE5BA9ED /* Pods_MetalFilters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B817D3CCD2892291BA74BE47 /* Pods_MetalFilters.framework */; };
+		A30D742120D0EC1C00824A1A /* MTLocalLaplacianFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D742020D0EC1C00824A1A /* MTLocalLaplacianFilter.swift */; };
+		A30D742320D0EC2A00824A1A /* MTLocalLaplacianFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A30D742220D0EC2A00824A1A /* MTLocalLaplacianFilter.metal */; };
 		A36133C120C665A70022F27C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36133C020C665A70022F27C /* AppDelegate.swift */; };
 		A36133C620C665A70022F27C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36133C420C665A70022F27C /* Main.storyboard */; };
 		A36133C820C665A70022F27C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A36133C720C665A70022F27C /* Assets.xcassets */; };
@@ -114,6 +116,8 @@
 /* Begin PBXFileReference section */
 		5ECEE1FADC6C7F777DB3FBE7 /* Pods-MetalFilters.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalFilters.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetalFilters/Pods-MetalFilters.debug.xcconfig"; sourceTree = "<group>"; };
 		8CF694358EC8CD79BA5C6B8E /* Pods-MetalFilters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalFilters.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetalFilters/Pods-MetalFilters.release.xcconfig"; sourceTree = "<group>"; };
+		A30D742020D0EC1C00824A1A /* MTLocalLaplacianFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTLocalLaplacianFilter.swift; sourceTree = "<group>"; };
+		A30D742220D0EC2A00824A1A /* MTLocalLaplacianFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MTLocalLaplacianFilter.metal; sourceTree = "<group>"; };
 		A36133BD20C665A70022F27C /* MetalFilters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalFilters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36133C020C665A70022F27C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A36133C520C665A70022F27C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -282,6 +286,8 @@
 				A38FC79420CCDA64002CA905 /* MTFilterManager.swift */,
 				A3C44C3120CE7AFB0036E8E8 /* MTBasicAdjustFilter.swift */,
 				A3C44C3320CE7B520036E8E8 /* MTBasicAdjustFilter.metal */,
+				A30D742020D0EC1C00824A1A /* MTLocalLaplacianFilter.swift */,
+				A30D742220D0EC2A00824A1A /* MTLocalLaplacianFilter.metal */,
 			);
 			path = MTFilter;
 			sourceTree = "<group>";
@@ -585,6 +591,7 @@
 				A391B2EF20CE4CCA00E6FD67 /* MTHudsonFilter.metal in Sources */,
 				A391B30420CE4CCA00E6FD67 /* MTLoFiFilter.swift in Sources */,
 				A38FC66620CBEB0E002CA905 /* AlbumPhotoViewController.swift in Sources */,
+				A30D742320D0EC2A00824A1A /* MTLocalLaplacianFilter.metal in Sources */,
 				A391B32720CE4CCA00E6FD67 /* MTNormalFilter.metal in Sources */,
 				A391B31220CE4CCA00E6FD67 /* MTMoonVideoFilter.swift in Sources */,
 				A391B2E020CE4CCA00E6FD67 /* MTSierraFilter.swift in Sources */,
@@ -605,6 +612,7 @@
 				A391B31420CE4CCA00E6FD67 /* MTHelenaVideoFilter.swift in Sources */,
 				A391B2FB20CE4CCA00E6FD67 /* MTSutroFilter.swift in Sources */,
 				A391B32520CE4CCA00E6FD67 /* MTMoonVideoFilter.metal in Sources */,
+				A30D742120D0EC1C00824A1A /* MTLocalLaplacianFilter.swift in Sources */,
 				A391B31820CE4CCA00E6FD67 /* MTSlumberFilter.metal in Sources */,
 				A3700A2D20C91791005300B8 /* MTFilter.swift in Sources */,
 				A391B2E120CE4CCA00E6FD67 /* MTNormalFilter.swift in Sources */,

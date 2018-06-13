@@ -21,8 +21,8 @@ class MTBasicAdjustFilter: MTFilter {
     var shadows: Float = 0
     var sharpen: Float = 0
     var sharpenDisabled: Bool = false
-    var tintShadowsIntensity: Float = 0
-    var tintHighlightsIntensity: Float = 0
+    var tintShadowsIntensity: Float = 0.5
+    var tintHighlightsIntensity: Float = 0.5
     var tintShadowsColor: UIColor = .clear
     var tintHighlightsColor: UIColor = .clear
     

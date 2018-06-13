@@ -11,8 +11,20 @@ import UIKit
 class HorizontalSliderView: UIView {
 
     weak var slider: UISlider!
+    weak var trackAdjustmentIndicator: UIView!
     
-    var isSliding: Bool = false
+    var value: Float = 0 {
+        didSet {
+            originValue = value
+        }
+    }
+    
+    private weak var trackView: UIView!
+    private var feedbackGenerator: UISelectionFeedbackGenerator = UISelectionFeedbackGenerator()
+    private var tapGesture: UITapGestureRecognizer!
+    private var panGesture: UIPanGestureRecognizer!
+    private var originValue: Float = 0
+    private var isSliding: Bool = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,10 +35,6 @@ class HorizontalSliderView: UIView {
         super.init(coder: aDecoder)
         self.setup()
     }
-    
-    weak var trackAdjustmentIndicator: UIView!
-    private weak var trackView: UIView!
-    private var feedbackGenerator: UISelectionFeedbackGenerator = UISelectionFeedbackGenerator()
     
     private func setup() {
         let trackView = UIView(frame: .zero)
@@ -46,6 +54,9 @@ class HorizontalSliderView: UIView {
         self.slider = slider
         
         self.slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(tap(_:)))
+        addGestureRecognizer(tapGesture)
     }
     
     @objc private func sliderValueChanged(_ sender: UISlider) {
@@ -56,6 +67,10 @@ class HorizontalSliderView: UIView {
                 feedbackGenerator.selectionChanged()
             }
         }
+    }
+    
+    @objc private func tap(_ gesture: UITapGestureRecognizer) {
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
