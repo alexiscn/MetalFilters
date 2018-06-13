@@ -21,10 +21,10 @@ class MTBasicAdjustFilter: MTFilter {
     var shadows: Float = 0
     var sharpen: Float = 0
     var sharpenDisabled: Bool = false
-    var tintShadowsIntensity: Float = 0.5
-    var tintHighlightsIntensity: Float = 0.5
-    var tintShadowsColor: UIColor = .clear
-    var tintHighlightsColor: UIColor = .clear
+    var tintShadowsIntensity: Float = 0.0
+    var tintHighlightsIntensity: Float = 0.0
+    var tintShadowsColor: MTTintColor = .none
+    var tintHighlightsColor: MTTintColor = .none
     
     override class var name: String {
         return "Basic Adjust"
@@ -59,9 +59,32 @@ class MTBasicAdjustFilter: MTFilter {
             "splines": "willowMap.png"
         ]
     }
+    
+    func t() {
+        var knots1: [float2] = []
+        knots1.append(float2(0, 0))
+        knots1.append(float2(0.0612549, 0.185368))
+        knots1.append(float2(0.16381, 0.365771))
+        knots1.append(float2(0.320955, 0.527539))
+        knots1.append(float2(0.496851, 0.659237))
+        knots1.append(float2(0.709977, 0.79987))
+        knots1.append(float2(1, 1))
+        
+        var knots2: [float2] = []
+        knots2.append(float2(0, 0))
+        knots2.append(float2(0.185368, 0.0612549))
+        knots2.append(float2(0.365771, 0.16381))
+        knots2.append(float2(0.527539, 0.320955))
+        knots2.append(float2(0.659237, 0.496851))
+        knots2.append(float2(0.79987, 0.709977))
+        knots2.append(float2(1, 1))
+        
+        let curve1 = MTIRGBToneCurveFilter()
+        
+        let curve2 = MTIRGBToneCurveFilter()
+    }
  
     override var parameters: [String: Any] {
-        let color = float3(1)
         return [
             "brightness" : brightness,
             "contrast": contrast,
@@ -72,11 +95,11 @@ class MTBasicAdjustFilter: MTFilter {
             "highlights": highlights,
             "shadows": shadows,
             "sharpen": sharpen,
-            "sharpenDisabled": (sharpenDisabled || sharpen > 0) ? Float(0.0): Float(1.0),
+            "sharpenDisabled": Float(0.0), // (sharpenDisabled || sharpen > 0) 
             "tintShadowsIntensity": tintShadowsIntensity,
             "tintHighlightsIntensity": tintHighlightsIntensity,
-            "tintShadowsColor":  MTIVector(float3: color),
-            "tintHighlightsColor": MTIVector(float3: color)
+            "tintShadowsColor":  tintShadowsColor.colorVector,
+            "tintHighlightsColor":tintHighlightsColor.colorVector
         ]
         
     }

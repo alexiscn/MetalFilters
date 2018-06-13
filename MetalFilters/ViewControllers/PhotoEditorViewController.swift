@@ -328,6 +328,8 @@ extension PhotoEditorViewController: FilterControlViewDelegate {
             adjustFilter.saturation = value
             break
         case .color:
+            adjustFilter.tintShadowsColor = .green
+            adjustFilter.tintShadowsIntensity = 1
             break
         case .fade:
             adjustFilter.fade = value

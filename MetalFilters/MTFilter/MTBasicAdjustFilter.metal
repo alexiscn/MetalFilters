@@ -272,14 +272,14 @@ fragment float4 MTBasicAdjustFilterFragment(VertexOut vertexIn [[ stage_in ]],
     }
     
     // tint shadows
-//    if (abs(tintShadowsIntensity) > TOOL_ON_EPSILON) {
-//        texel.rgb = tintShadows(texel.rgb, tintShadowsColor, tintShadowsIntensity * 2.0);
-//    }
+    if (abs(tintShadowsIntensity) > TOOL_ON_EPSILON) {
+        texel.rgb = tintShadows(texel.rgb, tintShadowsColor, tintShadowsIntensity * 2.0);
+    }
     
     // tint highlights
-//    if (abs(tintHighlightsIntensity) > TOOL_ON_EPSILON) {
-//        texel.rgb = tintHighlights(texel.rgb, tintHighlightsColor, tintHighlightsIntensity * 2.0);
-//    }
+    if (abs(tintHighlightsIntensity) > TOOL_ON_EPSILON) {
+        texel.rgb = tintHighlights(texel.rgb, tintHighlightsColor, tintHighlightsIntensity * 2.0);
+    }
     
     // we're in HSV space for the next bunch of operations
     float3 hsv = rgb_to_hsv(texel.rgb);
