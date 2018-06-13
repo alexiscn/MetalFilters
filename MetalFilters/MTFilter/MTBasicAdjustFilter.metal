@@ -48,50 +48,6 @@ float powerBow(float inVal, float mag) {
     return outVal;
 }
 
-float3 rgb_to_hsv(float3 c) {
-    float4 K = float4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
-    float4 p = c.g < c.b ? float4(c.bg, K.wz) : float4(c.gb, K.xy);
-    float4 q = c.r < p.x ? float4(p.xyw, c.r) : float4(c.r, p.yzx);
-    
-    float d = q.x - min(q.w, q.y);
-    float e = 1.0e-10;
-    return float3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
-}
-
-float3 hsv_to_rgb(float3 c) {
-    float4 K = float4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
-    float3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
-    return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
-}
-
-float getLuma(float3 rgbP) {
-    return  (0.299 * rgbP.r) +
-    (0.587 * rgbP.g) +
-    (0.114 * rgbP.b);
-}
-
-float3 rgbToYuv(float3 inP) {
-    float3 outP;
-    outP.r = getLuma(inP);
-    outP.g = (1.0/1.772)*(inP.b - outP.r);
-    outP.b = (1.0/1.402)*(inP.r - outP.r);
-    return outP;
-}
-
-
-float3 yuvToRgb(float3 inP) {
-    float y = inP.r;
-    float u = inP.g;
-    float v = inP.b;
-    float3 outP;
-    outP.r = 1.402 * v + y;
-    outP.g = (y - (0.299 * 1.402 / 0.587) * v -
-              (0.114 * 1.772 / 0.587) * u);
-    outP.b = 1.772 * u + y;
-    return outP;
-}
-
-
 float3 adjustTemperature(float tempDelta, float3 inRgb) {
     // we're adjusting the temperature by shifting the chroma channels in yuv space.
     float3 yuvVec;

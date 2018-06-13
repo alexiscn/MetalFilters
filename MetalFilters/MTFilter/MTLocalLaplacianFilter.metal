@@ -13,7 +13,8 @@ using namespace metalpetal;
 fragment float4 MTLocalLaplacianFilterFragment(VertexOut vertexIn [[ stage_in ]],
                                                texture2d<float, access::sample> inputTexture [[ texture(0) ]],
                                                texture2d<float, access::sample> localLaplacian [[ texture(1) ]],
-                                               constant float & filterStrength [[ buffer(0) ]])
+                                               constant float & filterStrength [[ buffer(0) ]],
+                                               sampler textureSampler [[ sampler(0) ]])
 {
     constexpr sampler s(coord::normalized, address::clamp_to_edge, filter::linear);
     float4 texel = inputTexture.sample(s, vertexIn.textureCoordinate);
