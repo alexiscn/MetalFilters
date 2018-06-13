@@ -43,6 +43,10 @@ class PhotoEditorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let luxImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
+        luxImageView.image = UIImage(named: "edit-luxtool")
+        navigationItem.titleView = luxImageView
+        
         imageView = MTIImageView(frame: previewView.bounds)
         imageView.resizingMode = .aspectFill
         imageView.backgroundColor = .clear
@@ -109,7 +113,7 @@ class PhotoEditorViewController: UIViewController {
         }) { (success, error) in
             DispatchQueue.main.async {
                 let alert = UIAlertController(title: nil, message: "Photo Saved!", preferredStyle: .alert)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     self.dismiss(animated: true, completion: nil)
                 })
                 self.present(alert, animated: true, completion: nil)

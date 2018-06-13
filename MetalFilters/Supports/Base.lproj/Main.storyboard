@@ -67,7 +67,7 @@
             </objects>
             <point key="canvasLocation" x="1033" y="793"/>
         </scene>
-        <!--Editor-->
+        <!--Photo Editor View Controller-->
         <scene sceneID="shH-UL-wvR">
             <objects>
                 <viewController storyboardIdentifier="PhotoEditorViewController" id="hua-2q-xAw" customClass="PhotoEditorViewController" customModule="MetalFilters" customModuleProvider="target" sceneMemberID="viewController">
@@ -148,7 +148,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oJJ-HM-wNQ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Editor" id="b2a-yh-bPK"/>
+                    <navigationItem key="navigationItem" id="b2a-yh-bPK"/>
                     <connections>
                         <outlet property="editButton" destination="XgH-s1-pgd" id="CRD-WL-May"/>
                         <outlet property="filterButton" destination="bha-Ca-bja" id="3U0-cA-Zgv"/>
