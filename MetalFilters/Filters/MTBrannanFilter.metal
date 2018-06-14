@@ -17,6 +17,7 @@ fragment float4 MTBrannanFragment(VertexOut vertexIn [[ stage_in ]],
     texture2d<float, access::sample> contrast [[ texture(3) ]], 
     texture2d<float, access::sample> lumaMap [[ texture(4) ]], 
     texture2d<float, access::sample> screenMap [[ texture(5) ]], 
+    constant float & strength [[ buffer(0)]], 
     sampler textureSampler [[ sampler(0) ]])
 {
     constexpr sampler s(coord::normalized, address::clamp_to_edge, filter::linear);

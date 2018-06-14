@@ -17,6 +17,7 @@ fragment float4 MTSierraFragment(VertexOut vertexIn [[ stage_in ]],
     texture2d<float, access::sample> smoke [[ texture(3) ]], 
     texture2d<float, access::sample> softLight [[ texture(4) ]], 
     texture2d<float, access::sample> vignette [[ texture(5) ]], 
+    constant float & strength [[ buffer(0)]], 
     sampler textureSampler [[ sampler(0) ]])
 {
     constexpr sampler s(coord::normalized, address::clamp_to_edge, filter::linear);

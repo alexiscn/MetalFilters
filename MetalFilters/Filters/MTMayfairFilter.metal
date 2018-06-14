@@ -16,6 +16,7 @@ fragment float4 MTMayfairFragment(VertexOut vertexIn [[ stage_in ]],
     texture2d<float, access::sample> glowField [[ texture(2) ]], 
     texture2d<float, access::sample> map [[ texture(3) ]], 
     texture2d<float, access::sample> overlay [[ texture(4) ]], 
+    constant float & strength [[ buffer(0)]], 
     sampler textureSampler [[ sampler(0) ]])
 {
     constexpr sampler s(coord::normalized, address::clamp_to_edge, filter::linear);

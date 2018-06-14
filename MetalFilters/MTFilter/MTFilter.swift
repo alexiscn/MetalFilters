@@ -26,6 +26,8 @@ class MTFilter: NSObject, MTIUnaryFilter {
     
     var parameters: [String: Any] { return [:] }
     
+    var strength: Float = 1.0
+    
     /// override this function to modifiy samplers if needed
     ///
     /// - Returns: final samplers passes into Metal
@@ -58,7 +60,12 @@ class MTFilter: NSObject, MTIUnaryFilter {
         let outputDescriptors = [
             MTIRenderPassOutputDescriptor(dimensions: MTITextureDimensions(cgSize: input.size), pixelFormat: outputPixelFormat)
         ]
-        return kernel.apply(toInputImages: images, parameters: parameters, outputDescriptors: outputDescriptors).first
+        
+        var params = parameters
+        if params["strength"] == nil {
+            params["strength"] = strength
+        }
+        return kernel.apply(toInputImages: images, parameters: params, outputDescriptors: outputDescriptors).first
     }
     
     var kernel: MTIRenderPipelineKernel {

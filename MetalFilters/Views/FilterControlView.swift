@@ -58,6 +58,14 @@ class FilterControlView: UIView {
         
         super.init(frame: frame)
         
+        if filterTool.type == .color {
+            //let colorControlView = FilterTintColorControl(frame: frame)
+        } else if filterTool.type == .adjust {
+            
+        } else {
+            
+        }
+        
         switch filterTool.slider {
         case .adjustStraighten:
             break

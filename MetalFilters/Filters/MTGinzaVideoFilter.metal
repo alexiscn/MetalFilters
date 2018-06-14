@@ -14,6 +14,7 @@ fragment float4 MTGinzaVideoFragment(VertexOut vertexIn [[ stage_in ]],
     texture2d<float, access::sample> inputTexture [[ texture(0) ]], 
     texture2d<float, access::sample> map1 [[ texture(1) ]], 
     texture2d<float, access::sample> map2 [[ texture(2) ]], 
+    constant float & strength [[ buffer(0)]], 
     sampler textureSampler [[ sampler(0) ]])
 {
     constexpr sampler s(coord::normalized, address::clamp_to_edge, filter::linear);
