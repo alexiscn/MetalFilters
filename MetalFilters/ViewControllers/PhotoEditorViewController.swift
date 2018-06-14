@@ -239,17 +239,31 @@ class PhotoEditorViewController: UIViewController {
         let width = self.filtersView.bounds.width
         let height = self.filtersView.bounds.height + 44
         let frame = CGRect(x: 0, y: view.bounds.height - height + 44, width: width, height: height)
-        let value = valueForFilterControlView(with: tool)
-        let controlView = FilterControlView(frame: frame, filterTool: tool, value: value)
-        controlView.delegate = self
-        filterControlView = controlView
         
-        UIView.animate(withDuration: 0.2, animations: {
-            self.view.addSubview(controlView)
-            controlView.setPosition(offScreen: false)
-        }) { finish in
-            self.title = tool.title
-            self.clearNavigationButton()
+        if tool.type == .color {
+            let colorControlView = FilterTintColorControl(frame: frame)
+            UIView.animate(withDuration: 0.2, animations: {
+                self.view.addSubview(colorControlView)
+                colorControlView.setPosition(offScreen: false)
+            }) { finish in
+                self.title = tool.title
+                self.clearNavigationButton()
+            }
+        } else if tool.type == .adjust {
+            
+        } else {
+            let value = valueForFilterControlView(with: tool)
+            let controlView = FilterControlView(frame: frame, filterTool: tool, value: value)
+            controlView.delegate = self
+            filterControlView = controlView
+            
+            UIView.animate(withDuration: 0.2, animations: {
+                self.view.addSubview(controlView)
+                controlView.setPosition(offScreen: false)
+            }) { finish in
+                self.title = tool.title
+                self.clearNavigationButton()
+            }
         }
     }
     

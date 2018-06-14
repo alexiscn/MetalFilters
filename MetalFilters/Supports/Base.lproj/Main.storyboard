@@ -83,7 +83,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9O-hJ-4li" userLabel="Filters View">
-                                <rect key="frame" x="0.0" y="407" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="395" width="375" height="228"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lix-sF-hlR" userLabel="Toobar View">
@@ -140,7 +140,7 @@
                             <constraint firstItem="V4X-Bw-skj" firstAttribute="top" secondItem="oJJ-HM-wNQ" secondAttribute="top" id="5Na-Gv-IBj"/>
                             <constraint firstItem="oJJ-HM-wNQ" firstAttribute="bottom" secondItem="Lix-sF-hlR" secondAttribute="bottom" id="6PB-Hg-iQW"/>
                             <constraint firstItem="oJJ-HM-wNQ" firstAttribute="trailing" secondItem="Lix-sF-hlR" secondAttribute="trailing" id="B7m-7w-EFM"/>
-                            <constraint firstItem="u9O-hJ-4li" firstAttribute="top" secondItem="V4X-Bw-skj" secondAttribute="bottom" constant="12" id="Fhg-Ga-rAm"/>
+                            <constraint firstItem="u9O-hJ-4li" firstAttribute="top" secondItem="V4X-Bw-skj" secondAttribute="bottom" id="Fhg-Ga-rAm"/>
                             <constraint firstItem="oJJ-HM-wNQ" firstAttribute="trailing" secondItem="u9O-hJ-4li" secondAttribute="trailing" id="Kd5-rD-WY2"/>
                             <constraint firstItem="u9O-hJ-4li" firstAttribute="leading" secondItem="oJJ-HM-wNQ" secondAttribute="leading" id="N8v-HE-gP5"/>
                             <constraint firstItem="Lix-sF-hlR" firstAttribute="top" secondItem="u9O-hJ-4li" secondAttribute="bottom" id="fE7-f0-7Wd"/>
