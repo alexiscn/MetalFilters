@@ -60,28 +60,39 @@ class MTBasicAdjustFilter: MTFilter {
         ]
     }
     
-    func t() {
-        var knots1: [float2] = []
-        knots1.append(float2(0, 0))
-        knots1.append(float2(0.0612549, 0.185368))
-        knots1.append(float2(0.16381, 0.365771))
-        knots1.append(float2(0.320955, 0.527539))
-        knots1.append(float2(0.496851, 0.659237))
-        knots1.append(float2(0.709977, 0.79987))
-        knots1.append(float2(1, 1))
+    var spline1: MTIRGBToneCurveFilter {
+        var knots: [MTIVector] = []
+        knots.append(MTIVector(float2: float2(0, 0)))
+        knots.append(MTIVector(float2: float2(0.0612549, 0.185368)))
+        knots.append(MTIVector(float2: float2(0.16381, 0.365771)))
+        knots.append(MTIVector(float2: float2(0.320955, 0.527539)))
+        knots.append(MTIVector(float2: float2(0.496851, 0.659237)))
+        knots.append(MTIVector(float2: float2(0.709977, 0.79987)))
+        knots.append(MTIVector(float2: float2(1, 1)))
+        let curve = MTIRGBToneCurveFilter()
+        curve.rgbCompositeControlPoints = knots
+        return curve
+    }
+    
+    var spline2: MTIRGBToneCurveFilter {
+        var knots: [MTIVector] = []
+        knots.append(MTIVector(float2: float2(0, 0)))
+        knots.append(MTIVector(float2: float2(0.185368, 0.0612549)))
+        knots.append(MTIVector(float2: float2(0.365771, 0.16381)))
+        knots.append(MTIVector(float2: float2(0.527539, 0.320955)))
+        knots.append(MTIVector(float2: float2(0.659237, 0.496851)))
+        knots.append(MTIVector(float2: float2(0.79987, 0.709977)))
+        knots.append(MTIVector(float2: float2(1, 1)))
+        let curve = MTIRGBToneCurveFilter()
+        curve.rgbCompositeControlPoints = knots
+        return curve
+    }
+    
+    override func modifySamplersIfNeeded(_ samplers: [MTIImage]) -> [MTIImage] {
         
-        var knots2: [float2] = []
-        knots2.append(float2(0, 0))
-        knots2.append(float2(0.185368, 0.0612549))
-        knots2.append(float2(0.365771, 0.16381))
-        knots2.append(float2(0.527539, 0.320955))
-        knots2.append(float2(0.659237, 0.496851))
-        knots2.append(float2(0.79987, 0.709977))
-        knots2.append(float2(1, 1))
         
-        let curve1 = MTIRGBToneCurveFilter()
         
-        let curve2 = MTIRGBToneCurveFilter()
+        return samplers
     }
  
     override var parameters: [String: Any] {

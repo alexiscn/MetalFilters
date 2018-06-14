@@ -43,6 +43,29 @@ enum MTTintColor {
         }
     }
     
+    var displayName: String {
+        switch self {
+        case .none:
+            return "No Color"
+        case .yellow:
+            return "Yellow"
+        case .orange:
+            return "Orange"
+        case .red:
+            return "Red"
+        case .pink:
+            return "Pink"
+        case .purple:
+            return "Purple"
+        case .blue:
+            return "Blue"
+        case .lightBlue:
+            return "Light Blue"
+        case .green:
+            return "Green"
+        }
+    }
+    
     var colorVector: MTIVector {
         switch self {
         case .none:
@@ -64,5 +87,9 @@ enum MTTintColor {
         case .green:
             return MTIVector(float3: float3(0.0, 1.0, 0.0))
         }
+    }
+    
+    static func colors() -> [MTTintColor] {
+        return [.none, .yellow, .orange, .red, .pink, .purple, .blue, .lightBlue, .green]
     }
 }

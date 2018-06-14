@@ -16,9 +16,9 @@ class MTFilterManager {
     
     var allFilters: [MTFilter.Type] = []
     
-    var resourceBundle: Bundle
+    private var resourceBundle: Bundle
     
-    var context: MTIContext?
+    private var context: MTIContext?
     
     init() {
         

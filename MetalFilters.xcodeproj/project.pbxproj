@@ -10,6 +10,7 @@
 		6C6C88BFBC95C7EDDE5BA9ED /* Pods_MetalFilters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B817D3CCD2892291BA74BE47 /* Pods_MetalFilters.framework */; };
 		A30D742120D0EC1C00824A1A /* MTLocalLaplacianFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D742020D0EC1C00824A1A /* MTLocalLaplacianFilter.swift */; };
 		A30D742320D0EC2A00824A1A /* MTLocalLaplacianFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A30D742220D0EC2A00824A1A /* MTLocalLaplacianFilter.metal */; };
+		A32F2BF420D2393E0018C281 /* FilterTintColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F2BF320D2393E0018C281 /* FilterTintColorPicker.swift */; };
 		A36133C120C665A70022F27C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36133C020C665A70022F27C /* AppDelegate.swift */; };
 		A36133C620C665A70022F27C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36133C420C665A70022F27C /* Main.storyboard */; };
 		A36133C820C665A70022F27C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A36133C720C665A70022F27C /* Assets.xcassets */; };
@@ -119,6 +120,7 @@
 		8CF694358EC8CD79BA5C6B8E /* Pods-MetalFilters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalFilters.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetalFilters/Pods-MetalFilters.release.xcconfig"; sourceTree = "<group>"; };
 		A30D742020D0EC1C00824A1A /* MTLocalLaplacianFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTLocalLaplacianFilter.swift; sourceTree = "<group>"; };
 		A30D742220D0EC2A00824A1A /* MTLocalLaplacianFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MTLocalLaplacianFilter.metal; sourceTree = "<group>"; };
+		A32F2BF320D2393E0018C281 /* FilterTintColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTintColorPicker.swift; sourceTree = "<group>"; };
 		A36133BD20C665A70022F27C /* MetalFilters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalFilters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36133C020C665A70022F27C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A36133C520C665A70022F27C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 				A38FC79620CF40F8002CA905 /* SloppyTouchSlider.swift */,
 				A3A068DE20CFA92F00A2DF76 /* FilterControlView.swift */,
 				A3A068E420CFCE3800A2DF76 /* HorizontalSliderView.swift */,
+				A32F2BF320D2393E0018C281 /* FilterTintColorPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				A38FC65A20CB7979002CA905 /* MainViewController.swift in Sources */,
 				A3A068E520CFCE3800A2DF76 /* HorizontalSliderView.swift in Sources */,
 				A391B2F020CE4CCA00E6FD67 /* MTJunoFilter.metal in Sources */,
+				A32F2BF420D2393E0018C281 /* FilterTintColorPicker.swift in Sources */,
 				A391B2DF20CE4CCA00E6FD67 /* MTToasterFilter.metal in Sources */,
 				A391B31320CE4CCA00E6FD67 /* MTReyesFilter.metal in Sources */,
 				A391B2EA20CE4CCA00E6FD67 /* MTCremaFilter.swift in Sources */,

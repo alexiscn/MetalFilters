@@ -17,12 +17,21 @@ class MTFilter: NSObject, MTIUnaryFilter {
     class var name: String { return "" }
     
     var borderName: String { return "" }
-    
+
+    /// fragment shader name in Metal
     var fragmentName: String { return "" }
 
+    /// Textures, key should match parameter name
     var samplers: [String: String] { return [:] }
     
     var parameters: [String: Any] { return [:] }
+    
+    /// override this function to modifiy samplers if needed
+    ///
+    /// - Returns: final samplers passes into Metal
+    func modifySamplersIfNeeded(_ samplers: [MTIImage]) -> [MTIImage] {
+        return samplers
+    }
 
     // MARK: - MTIUnaryFilter
     
@@ -35,8 +44,7 @@ class MTFilter: NSObject, MTIUnaryFilter {
             return inputImage
         }
         
-        var images: [MTIImage] = [input]
-        
+        var images: [MTIImage] = []
         for key in samplers.keys.sorted() {
             let imageName = samplers[key]!
             if imageName.count > 0 {
@@ -44,6 +52,9 @@ class MTFilter: NSObject, MTIUnaryFilter {
                 images.append(image)
             }
         }
+        images = modifySamplersIfNeeded(images)
+        images.insert(input, at: 0)
+        
         let outputDescriptors = [
             MTIRenderPassOutputDescriptor(dimensions: MTITextureDimensions(cgSize: input.size), pixelFormat: outputPixelFormat)
         ]
@@ -61,6 +72,7 @@ class MTFilter: NSObject, MTIUnaryFilter {
         if let imageUrl = MTFilterManager.shard.url(forResource: name) {
             let ciImage = CIImage(contentsOf: imageUrl)
             return MTIImage(ciImage: ciImage!, isOpaque: true)
+            // contentsOf can not load Grayscale texture correctly
 //            return MTIImage(contentsOf: imageUrl, options: [.SRGB: false], alphaType: .alphaIsOne)
         }
         return nil
