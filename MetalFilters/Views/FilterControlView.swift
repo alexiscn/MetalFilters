@@ -93,8 +93,9 @@ class FilterControlView: UIView {
         addSubview(sliderView)
         addSubview(cancelButton)
         addSubview(doneButton)
-        cancelButton.frame = CGRect(x: 0, y: frame.height - 52, width: frame.width/2, height: 52)
-        doneButton.frame = CGRect(x: frame.width/2, y: frame.height - 52, width: frame.width/2, height: 52)
+        let buttonHeight: CGFloat = 52
+        cancelButton.frame = CGRect(x: 0, y: frame.height - buttonHeight, width: frame.width/2, height: buttonHeight)
+        doneButton.frame = CGRect(x: frame.width/2, y: frame.height - buttonHeight, width: frame.width/2, height: buttonHeight)
         
         cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
         doneButton.addTarget(self, action: #selector(doneButtonTapped), for: .touchUpInside)
@@ -104,7 +105,10 @@ class FilterControlView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-//        if filterTool.type == .
+        let buttonY = frame.height - cancelButton.frame.height - keyWindowSafeAreaInsets.bottom
+        cancelButton.frame.origin = CGPoint(x: 0, y: buttonY)
+        doneButton.frame.origin = CGPoint(x: frame.width/2, y: buttonY)
+        
     }
     
     @objc private func cancelButtonTapped() {

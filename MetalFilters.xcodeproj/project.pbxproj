@@ -10,6 +10,7 @@
 		6C6C88BFBC95C7EDDE5BA9ED /* Pods_MetalFilters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B817D3CCD2892291BA74BE47 /* Pods_MetalFilters.framework */; };
 		A30D742120D0EC1C00824A1A /* MTLocalLaplacianFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D742020D0EC1C00824A1A /* MTLocalLaplacianFilter.swift */; };
 		A30D742320D0EC2A00824A1A /* MTLocalLaplacianFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A30D742220D0EC2A00824A1A /* MTLocalLaplacianFilter.metal */; };
+		A30FE12B20D37923007BE540 /* UIView+SafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30FE12A20D37923007BE540 /* UIView+SafeArea.swift */; };
 		A32F2BF420D2393E0018C281 /* FilterTintColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F2BF320D2393E0018C281 /* FilterTintColorPicker.swift */; };
 		A32F2BFD20D260DC0018C281 /* FilterTintColorControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F2BFC20D260DC0018C281 /* FilterTintColorControl.swift */; };
 		A36133C120C665A70022F27C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36133C020C665A70022F27C /* AppDelegate.swift */; };
@@ -120,6 +121,7 @@
 		8CF694358EC8CD79BA5C6B8E /* Pods-MetalFilters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalFilters.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetalFilters/Pods-MetalFilters.release.xcconfig"; sourceTree = "<group>"; };
 		A30D742020D0EC1C00824A1A /* MTLocalLaplacianFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTLocalLaplacianFilter.swift; sourceTree = "<group>"; };
 		A30D742220D0EC2A00824A1A /* MTLocalLaplacianFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MTLocalLaplacianFilter.metal; sourceTree = "<group>"; };
+		A30FE12A20D37923007BE540 /* UIView+SafeArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SafeArea.swift"; sourceTree = "<group>"; };
 		A32F2BF320D2393E0018C281 /* FilterTintColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTintColorPicker.swift; sourceTree = "<group>"; };
 		A32F2BFC20D260DC0018C281 /* FilterTintColorControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTintColorControl.swift; sourceTree = "<group>"; };
 		A36133BD20C665A70022F27C /* MetalFilters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalFilters.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +252,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A30FE12920D37906007BE540 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A30FE12A20D37923007BE540 /* UIView+SafeArea.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A36133B420C665A70022F27C = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +286,7 @@
 				A38FC66220CB8613002CA905 /* ViewControllers */,
 				A38FC66B20CCD729002CA905 /* Filters */,
 				A36133D420C6666F0022F27C /* MTFilter */,
+				A30FE12920D37906007BE540 /* Extensions */,
 				A38FC66120CB85F4002CA905 /* Supports */,
 				A36133C020C665A70022F27C /* AppDelegate.swift */,
 				A36133CC20C665A70022F27C /* Info.plist */,
@@ -591,6 +602,7 @@
 				A38FC66420CBEAA5002CA905 /* AlbumPhotoCell.swift in Sources */,
 				A38FC66020CB85B2002CA905 /* PhotoEditorViewController.swift in Sources */,
 				A391B30B20CE4CCA00E6FD67 /* MTStinsonVideoFilter.metal in Sources */,
+				A30FE12B20D37923007BE540 /* UIView+SafeArea.swift in Sources */,
 				A391B2F920CE4CCA00E6FD67 /* MTEarlybirdFilter.swift in Sources */,
 				A391B30620CE4CCA00E6FD67 /* MTToasterFilter.swift in Sources */,
 				A391B31E20CE4CCA00E6FD67 /* MTSierraFilter.metal in Sources */,

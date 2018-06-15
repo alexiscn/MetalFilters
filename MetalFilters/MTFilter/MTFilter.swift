@@ -16,6 +16,7 @@ class MTFilter: NSObject, MTIUnaryFilter {
     // MARK: - Should overrided by subclasses
     class var name: String { return "" }
     
+    /// border image Name
     var borderName: String { return "" }
 
     /// fragment shader name in Metal
@@ -26,6 +27,9 @@ class MTFilter: NSObject, MTIUnaryFilter {
     
     var parameters: [String: Any] { return [:] }
     
+    /// Strength to adjust filter, ranges in [0.0, 1.0]
+    /// if value is 0.0, means no filter effect
+    /// if values is 1.0, means full filter effect
     var strength: Float = 1.0
     
     /// override this function to modifiy samplers if needed

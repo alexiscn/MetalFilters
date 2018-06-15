@@ -46,6 +46,6 @@ fragment float4 MTSierraFragment(VertexOut vertexIn [[ stage_in ]],
     color.b = map.sample(s, mapSample).b;
 
     texel.rgb = color;
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

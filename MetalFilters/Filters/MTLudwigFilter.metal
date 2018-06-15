@@ -38,6 +38,6 @@ fragment float4 MTLudwigFragment(VertexOut vertexIn [[ stage_in ]],
 
         texel.rgb = gradOpac * gradBlend + (1.0 - gradOpac) * texel.rgb;
     }
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

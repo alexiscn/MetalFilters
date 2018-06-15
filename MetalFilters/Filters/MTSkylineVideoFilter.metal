@@ -41,6 +41,6 @@ fragment float4 MTSkylineVideoFragment(VertexOut vertexIn [[ stage_in ]],
 
     // final saturation pass
     texel.rgb = mix(texel.rgb, float3(luma), -0.225);
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

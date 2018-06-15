@@ -33,6 +33,6 @@ fragment float4 MTPerpetuaFragment(VertexOut vertexIn [[ stage_in ]],
         float3 grained = BlendOverlay(texel.rgb, grain);
         texel.rgb = mix(texel.rgb, grained, 0.35);
     }
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

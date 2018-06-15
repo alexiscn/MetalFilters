@@ -21,6 +21,6 @@ fragment float4 MTInkwellFragment(VertexOut vertexIn [[ stage_in ]],
     float4 inputTexel = texel;
     texel.rgb = float3(dot(float3(0.3, 0.6, 0.1), texel.rgb));
     texel.rgb = float3(map.sample(s, float2(texel.r, .16666)).r);
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

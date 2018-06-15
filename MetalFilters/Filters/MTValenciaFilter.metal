@@ -41,6 +41,6 @@ fragment float4 MTValenciaFragment(VertexOut vertexIn [[ stage_in ]],
     texel.rgb = float3(gradientMap.sample(s, float2(luma, texel.r)).r,
                      gradientMap.sample(s, float2(luma, texel.g)).g,
                      gradientMap.sample(s, float2(luma, texel.b)).b);
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

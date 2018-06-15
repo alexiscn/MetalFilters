@@ -30,6 +30,6 @@ fragment float4 MTKelvinFragment(VertexOut vertexIn [[ stage_in ]],
 
     lookup.x = texel.b;
     texel.b = map.sample(s, lookup).b;
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

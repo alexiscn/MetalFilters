@@ -33,6 +33,6 @@ fragment float4 MTHudsonFragment(VertexOut vertexIn [[ stage_in ]],
     mapped.b = map.sample(s, float2(texel.b, .83333)).b;
 
     texel.rgb = mapped;
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

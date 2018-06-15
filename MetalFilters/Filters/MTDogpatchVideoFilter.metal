@@ -36,6 +36,6 @@ fragment float4 MTDogpatchVideoFragment(VertexOut vertexIn [[ stage_in ]],
     texel.r = mapLgg.sample(s, float2(texel.r, 0.5)).r;
     texel.g = mapLgg.sample(s, float2(texel.g, 0.5)).g;
     texel.b = mapLgg.sample(s, float2(texel.b, 0.5)).b;
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

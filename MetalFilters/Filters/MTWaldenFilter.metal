@@ -34,6 +34,6 @@ fragment float4 MTWaldenFragment(VertexOut vertexIn [[ stage_in ]],
     texel.g = vignetteMap.sample(s, lookup).g;
     lookup.y = texel.b;
     texel.b    = vignetteMap.sample(s, lookup).b;
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

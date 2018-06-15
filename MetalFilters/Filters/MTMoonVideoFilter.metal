@@ -36,6 +36,6 @@ fragment float4 MTMoonVideoFragment(VertexOut vertexIn [[ stage_in ]],
     texel.r = map2.sample(s, float2(texel.r, 0.5)).r;
     texel.g = map2.sample(s, float2(texel.g, 0.5)).g;
     texel.b = map2.sample(s, float2(texel.b, 0.5)).b;
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

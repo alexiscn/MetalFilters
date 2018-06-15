@@ -42,6 +42,6 @@ fragment float4 MTXpro2Fragment(VertexOut vertexIn [[ stage_in ]],
     texel.g = xproMap.sample(s, lookup).g;
     lookup.x = texel.b;
     texel.b = xproMap.sample(s, lookup).b;
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

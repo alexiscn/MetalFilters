@@ -42,6 +42,6 @@ fragment float4 MTGinghamVideoFragment(VertexOut vertexIn [[ stage_in ]],
     lgg.g = mapLgg.sample(s, float2(texel.g, 0.5)).g;
     lgg.b = mapLgg.sample(s, float2(texel.b, 0.5)).b;
     texel.rgb = mix(texel.rgb, lgg, min(1.0, 0.8 + luma));
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

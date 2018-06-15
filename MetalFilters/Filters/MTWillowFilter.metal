@@ -76,6 +76,6 @@ fragment float4 MTWillowFragment(VertexOut vertexIn [[ stage_in ]],
     lookup.y = 0.5;
     lookup.x = texel.r; // Can do only one lookup because it's monochromatic at this pt. r=g=b
     texel.rgb = map.sample(s, lookup).rgb;
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

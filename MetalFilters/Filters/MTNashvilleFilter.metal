@@ -22,6 +22,6 @@ fragment float4 MTNashvilleFragment(VertexOut vertexIn [[ stage_in ]],
     texel.rgb = float3(map.sample(s, float2(texel.r, .16666)).r,
                      map.sample(s, float2(texel.g, .5)).g,
                      map.sample(s, float2(texel.b, .83333)).b);
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

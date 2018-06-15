@@ -105,6 +105,13 @@ class PhotoEditorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+     
+        filterCollectionView.frame.size = filtersView.bounds.size
+        toolCollectionView.frame.size = filtersView.bounds.size
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -263,7 +270,7 @@ class PhotoEditorViewController: UIViewController {
         //adjustFilter.inputImage = imageView.image
         adjustFilter.inputImage = originInputImage
         let width = self.filtersView.bounds.width
-        let height = self.filtersView.bounds.height + 44
+        let height = self.filtersView.bounds.height + 44 + view.safeAreaInsets.bottom
         let frame = CGRect(x: 0, y: view.bounds.height - height + 44, width: width, height: height)
     
         let value = valueForFilterControlView(with: tool)
@@ -413,10 +420,14 @@ extension PhotoEditorViewController: UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == filterCollectionView {
-            let filter = allFilters[indexPath.item].init()
-            filter.inputImage = originInputImage
-            imageView.image = filter.outputImage
-            currentSelectFilterIndex = indexPath.item
+            if currentSelectFilterIndex == indexPath.item {
+                
+            } else {
+                let filter = allFilters[indexPath.item].init()
+                filter.inputImage = originInputImage
+                imageView.image = filter.outputImage
+                currentSelectFilterIndex = indexPath.item
+            }
         } else {
             let tool = allTools[indexPath.item]
             presentFilterControlView(for: tool)

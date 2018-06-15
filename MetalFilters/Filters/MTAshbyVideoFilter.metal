@@ -34,6 +34,6 @@ fragment float4 MTAshbyVideoFragment(VertexOut vertexIn [[ stage_in ]],
     // slight saturation boost
     float3 lumaFinal = float3(dot(float3(0.2126, 0.7152, 0.0722), texel.rgb));
     texel.rgb = mix(texel.rgb, lumaFinal, -0.1);
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

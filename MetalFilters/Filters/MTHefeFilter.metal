@@ -42,6 +42,6 @@ fragment float4 MTHefeFragment(VertexOut vertexIn [[ stage_in ]],
                         softLight.sample(s, float2(metal.b, final.b)).b);
 
     texel.rgb = metaled;
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

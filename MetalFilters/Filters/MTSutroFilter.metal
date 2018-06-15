@@ -46,6 +46,6 @@ fragment float4 MTSutroFragment(VertexOut vertexIn [[ stage_in ]],
     texel.r = curves.sample(s, float2(texel.r, .16666)).r;
     texel.g = curves.sample(s, float2(texel.g, .5)).g;
     texel.b = curves.sample(s, float2(texel.b, .83333)).b;
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

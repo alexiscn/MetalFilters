@@ -43,6 +43,6 @@ fragment float4 MTMavenVideoFragment(VertexOut vertexIn [[ stage_in ]],
 
     // tone down
     texel.rgb = mix(texel.rgb, original, 0.1);
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

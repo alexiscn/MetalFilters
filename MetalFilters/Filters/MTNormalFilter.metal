@@ -19,6 +19,6 @@ fragment float4 MTNormalFragment(VertexOut vertexIn [[ stage_in ]],
     float4 texel = inputTexture.sample(s, vertexIn.textureCoordinate);
     float4 inputTexel = texel;
     
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

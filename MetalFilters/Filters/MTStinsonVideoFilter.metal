@@ -33,6 +33,6 @@ fragment float4 MTStinsonVideoFragment(VertexOut vertexIn [[ stage_in ]],
     float luma = dot(float3(0.309, 0.609, 0.082), texel.rgb);
     float mixCoeff = mix(0.1, -0.09, min(1.0 - luma * 2.0, 1.0));
     texel.rgb = mix(texel.rgb, float3(luma), mixCoeff);
-    texel.rgb = mix(inputTexel.rgb, texel.rgb, 1.0);
+    texel.rgb = mix(inputTexel.rgb, texel.rgb, strength);
     return texel;
 }

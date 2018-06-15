@@ -23,6 +23,20 @@ class FilterPickerCell: UICollectionViewCell {
         }
     }
     
+    override var isHighlighted: Bool {
+        didSet {
+            if isHighlighted {
+                UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut, animations: {
+                    self.alpha = 0.96
+                    self.transform = CGAffineTransform(scaleX: 0.96, y: 0.96)
+                }) { finish in
+                    self.alpha = 1.0
+                    self.transform = .identity
+                }
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         
         thumbnailImageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
