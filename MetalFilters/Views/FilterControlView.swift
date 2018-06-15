@@ -23,11 +23,9 @@ class FilterControlView: UIView {
     var value: Float = 0
     
     private let cancelButton: UIButton
-    
     private let doneButton: UIButton
-    
     private let titleLabel: UILabel
-    
+    private let borderButton: UIButton
     private let sliderView: HorizontalSliderView
     
     private let filterTool: FilterToolItem
@@ -55,6 +53,11 @@ class FilterControlView: UIView {
         titleLabel.textColor = textColor
         
         sliderView = HorizontalSliderView(frame: CGRect(x: 30, y: frame.height/2 - 50, width: frame.width - 60, height: 70))
+        
+        borderButton = UIButton(type: .system)
+        borderButton.frame.size = CGSize(width: 22, height: 22)
+        borderButton.setImage(UIImage(named: "filter-border"), for: .normal)
+        borderButton.setImage(UIImage(named: "filter-border-active"), for: .selected)
         
         super.init(frame: frame)
         
@@ -96,6 +99,12 @@ class FilterControlView: UIView {
         cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
         doneButton.addTarget(self, action: #selector(doneButtonTapped), for: .touchUpInside)
         sliderView.slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+//        if filterTool.type == .
     }
     
     @objc private func cancelButtonTapped() {

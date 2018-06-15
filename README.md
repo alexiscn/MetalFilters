@@ -1,3 +1,4 @@
+![App Logo](Assets/MetalFiltersAppLogo.png)
 
 Just a demo using [MetalPetal](https://github.com/MetalPetal/MetalPetal) to implement Instagram filters.
 
@@ -5,6 +6,7 @@ Just a demo using [MetalPetal](https://github.com/MetalPetal/MetalPetal) to impl
 
 * Instagram like photo picker
 * All Instagram filters
+* Slider to control Strength of filters
 
 ## Requirements
 
