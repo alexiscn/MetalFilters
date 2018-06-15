@@ -13,32 +13,28 @@ import MetalPetal
 class PhotoEditorViewController: UIViewController {
 
     @IBOutlet weak var previewView: UIView!
-    
     @IBOutlet weak var filtersView: UIView!
-    
     @IBOutlet weak var filterButton: UIButton!
-    
     @IBOutlet weak var editButton: UIButton!
     
     fileprivate var filterCollectionView: UICollectionView!
-    
     fileprivate var toolCollectionView: UICollectionView!
-    
     fileprivate var filterControlView: FilterControlView?
-    
     fileprivate var imageView: MTIImageView!
     
     public var originAsset: PHAsset?
-    
     fileprivate var originInputImage: MTIImage?
+    fileprivate var adjustFilter = MTBasicAdjustFilter()
     
     fileprivate var allFilters: [MTFilter.Type] = []
-    
     fileprivate var allTools: [FilterToolItem] = []
-    
     fileprivate var thumbnails: [String: UIImage] = [:]
     
-    fileprivate var adjustFilter = MTBasicAdjustFilter()
+    /// TODO
+    /// It seems that we should have a group to store all filter states
+    /// Currently just simply restore to selected filters
+    fileprivate var currentSelectFilterIndex: Int = 0
+    fileprivate var showUnEditedGesture: UILongPressGestureRecognizer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +73,20 @@ class PhotoEditorViewController: UIViewController {
         setupNavigationButton()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if showUnEditedGesture == nil {
+            let gesture = UILongPressGestureRecognizer(target: self, action: #selector(showUnEditPhotoGesture(_:)))
+            gesture.minimumPressDuration = 0.02
+            imageView.addGestureRecognizer(gesture)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     private func setupNavigationButton() {
         let leftBarButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelBarButtonTapped(_:)))
         let rightBarButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(saveBarButtonTapped(_:)))
@@ -97,6 +107,22 @@ class PhotoEditorViewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    @objc func showUnEditPhotoGesture(_ gesture: UILongPressGestureRecognizer) {
+        // TODO
+        switch gesture.state {
+        case .cancelled, .ended:
+            let filter = allFilters[currentSelectFilterIndex].init()
+            filter.inputImage = originInputImage
+            imageView.image = filter.outputImage
+            break
+        default:
+            let filter = allFilters[0].init()
+            filter.inputImage = originInputImage
+            imageView.image = filter.outputImage
+             break
+        }
     }
     
     @objc func cancelBarButtonTapped(_ sender: Any) {
@@ -390,6 +416,7 @@ extension PhotoEditorViewController: UICollectionViewDataSource, UICollectionVie
             let filter = allFilters[indexPath.item].init()
             filter.inputImage = originInputImage
             imageView.image = filter.outputImage
+            currentSelectFilterIndex = indexPath.item
         } else {
             let tool = allTools[indexPath.item]
             presentFilterControlView(for: tool)
