@@ -14,6 +14,7 @@ protocol FilterControlViewDelegate {
     func filterControlViewDidStartDragging()
     func filterControlView(_ controlView: FilterControlView, didChangeValue value: Float, filterTool: FilterToolItem)
     func filterControlViewDidEndDragging()
+    func filterControlView(_ controlView: FilterControlView, borderSelectionChangeTo isSelected: Bool)
 }
 
 class FilterControlView: UIView {
@@ -56,8 +57,11 @@ class FilterControlView: UIView {
         
         borderButton = UIButton(type: .system)
         borderButton.frame.size = CGSize(width: 22, height: 22)
-        borderButton.setImage(UIImage(named: "filter-border"), for: .normal)
-        borderButton.setImage(UIImage(named: "filter-border-active"), for: .selected)
+        borderButton.setBackgroundImage(UIImage(named: "filter-border"), for: .normal)
+        borderButton.setBackgroundImage(UIImage(named: "filter-border-active"), for: .selected)
+        borderButton.tintColor = .clear
+        borderButton.isSelected = false
+        
         
         super.init(frame: frame)
         
@@ -88,6 +92,8 @@ class FilterControlView: UIView {
             sliderView.slider.maximumValue = 1
             sliderView.slider.minimumValue = 0
             sliderView.slider.value = 1.0
+            addSubview(borderButton)
+            borderButton.addTarget(self, action: #selector(borderButtonTapped(_:)), for: .touchUpInside)
             break
         }
         
@@ -114,6 +120,15 @@ class FilterControlView: UIView {
         cancelButton.frame.origin = CGPoint(x: 0, y: buttonY)
         doneButton.frame.origin = CGPoint(x: frame.width/2, y: buttonY)
         
+        if filterTool.type == .adjustStrength {
+            sliderView.frame.size = CGSize(width: frame.width - 100, height: 70)
+            borderButton.center = CGPoint(x: sliderView.frame.maxX + 30, y: sliderView.center.y)
+        }
+    }
+    
+    @objc private func borderButtonTapped(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        delegate?.filterControlView(self, borderSelectionChangeTo: sender.isSelected)
     }
     
     @objc private func cancelButtonTapped() {

@@ -400,6 +400,15 @@ extension PhotoEditorViewController: FilterControlViewDelegate {
     func filterControlViewDidEndDragging() {
         
     }
+    
+    func filterControlView(_ controlView: FilterControlView, borderSelectionChangeTo isSelected: Bool) {
+        // TODO: Performance issue
+        let blendFilter = MTIBlendFilter(blendMode: .overlay)
+        let filter = allFilters[currentSelectFilterIndex].init()
+        blendFilter.inputBackgroundImage = imageView.image
+        blendFilter.inputImage = filter.borderImage
+        imageView.image = blendFilter.outputImage
+    }
 }
 
 extension PhotoEditorViewController: UICollectionViewDataSource, UICollectionViewDelegate {

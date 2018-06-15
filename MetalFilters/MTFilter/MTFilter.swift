@@ -88,4 +88,8 @@ class MTFilter: NSObject, MTIUnaryFilter {
         }
         return nil
     }
+    
+    var borderImage: MTIImage? {
+        return samplerImage(named: borderName)
+    }
 }
