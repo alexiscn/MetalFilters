@@ -84,6 +84,11 @@ class FilterControlView: UIView {
             break
         case .tiltShift:
             break
+        case .hundredToZero:
+            sliderView.slider.maximumValue = 1
+            sliderView.slider.minimumValue = 0
+            sliderView.slider.value = 1.0
+            break
         }
         
         backgroundColor = .white

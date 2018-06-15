@@ -9,6 +9,7 @@
 import Foundation
 
 enum FilterToolType {
+    case adjustStrength
     case adjust
     case brightness
     case contrast
@@ -33,6 +34,7 @@ enum FilterToolType {
 /// - adjustStraighten: adjustStraighten, specially handled
 enum SliderValueType {
     case zeroToHundred
+    case hundredToZero
     case negHundredToHundred
     case tiltShift
     case adjustStraighten
@@ -46,6 +48,8 @@ struct FilterToolItem {
     
     var title: String {
         switch type {
+        case .adjustStrength:
+            return ""
         case .adjust:
             return "Adjust"
         case .brightness:
@@ -77,6 +81,8 @@ struct FilterToolItem {
     
     var icon: String {
         switch type {
+        case .adjustStrength:
+            return ""
         case .adjust:
             return "icon-structure"
         case .brightness:

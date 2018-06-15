@@ -35,6 +35,7 @@ class PhotoEditorViewController: UIViewController {
     /// Currently just simply restore to selected filters
     fileprivate var currentSelectFilterIndex: Int = 0
     fileprivate var showUnEditedGesture: UILongPressGestureRecognizer?
+    fileprivate var currentAdjustStrengthFilter: MTFilter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -299,6 +300,8 @@ class PhotoEditorViewController: UIViewController {
     
     fileprivate func valueForFilterControlView(with tool: FilterToolItem) -> Float {
         switch tool.type {
+        case .adjustStrength:
+            return 0
         case .adjust:
             return 0
         case .brightness:
@@ -344,6 +347,13 @@ extension PhotoEditorViewController: FilterControlViewDelegate {
     }
     
     func filterControlView(_ controlView: FilterControlView, didChangeValue value: Float, filterTool: FilterToolItem) {
+        
+        if filterTool.type == .adjustStrength {
+            currentAdjustStrengthFilter?.strength = value
+            imageView.image = currentAdjustStrengthFilter?.outputImage
+            return
+        }
+        
         switch filterTool.type {
         case .adjust:
             break
@@ -381,6 +391,8 @@ extension PhotoEditorViewController: FilterControlViewDelegate {
             adjustFilter.tintShadowsIntensity = value
         case .sharpen:
             adjustFilter.sharpen = value
+        default:
+            break
         }
         imageView.image = adjustFilter.outputImage
     }
@@ -421,7 +433,10 @@ extension PhotoEditorViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == filterCollectionView {
             if currentSelectFilterIndex == indexPath.item {
-                
+                let item = FilterToolItem(type: .adjustStrength, slider: .hundredToZero)
+                presentFilterControlView(for: item)
+                currentAdjustStrengthFilter = allFilters[currentSelectFilterIndex].init()
+                currentAdjustStrengthFilter?.inputImage = originInputImage
             } else {
                 let filter = allFilters[indexPath.item].init()
                 filter.inputImage = originInputImage
