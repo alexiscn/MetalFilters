@@ -2,6 +2,8 @@
 
 Just a demo using [MetalPetal](https://github.com/MetalPetal/MetalPetal) to implement Instagram filters.
 
+![](Assets/Preview01.jpeg)
+
 ## Features
 
 * Instagram like photo picker
