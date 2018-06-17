@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MetalPetal
 
 class MTImageOverlayFilter: MTFilter {
     
@@ -14,4 +15,7 @@ class MTImageOverlayFilter: MTFilter {
         return "MTImageOverlayFilterFragment"
     }
     
+    override func modifySamplersIfNeeded(_ samplers: [MTIImage]) -> [MTIImage] {
+        return samplers
+    }
 }

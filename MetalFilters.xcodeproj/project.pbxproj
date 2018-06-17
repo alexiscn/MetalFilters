@@ -116,6 +116,7 @@
 		A3A068E520CFCE3800A2DF76 /* HorizontalSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A068E420CFCE3800A2DF76 /* HorizontalSliderView.swift */; };
 		A3C44C3220CE7AFB0036E8E8 /* MTBasicAdjustFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C44C3120CE7AFB0036E8E8 /* MTBasicAdjustFilter.swift */; };
 		A3C44C3420CE7B520036E8E8 /* MTBasicAdjustFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A3C44C3320CE7B520036E8E8 /* MTBasicAdjustFilter.metal */; };
+		A3E9714E20D6064300D66B87 /* MTFilterGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E9714D20D6064300D66B87 /* MTFilterGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -232,6 +233,7 @@
 		A3A068E420CFCE3800A2DF76 /* HorizontalSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSliderView.swift; sourceTree = "<group>"; };
 		A3C44C3120CE7AFB0036E8E8 /* MTBasicAdjustFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTBasicAdjustFilter.swift; sourceTree = "<group>"; };
 		A3C44C3320CE7B520036E8E8 /* MTBasicAdjustFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MTBasicAdjustFilter.metal; sourceTree = "<group>"; };
+		A3E9714D20D6064300D66B87 /* MTFilterGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTFilterGroup.swift; sourceTree = "<group>"; };
 		B817D3CCD2892291BA74BE47 /* Pods_MetalFilters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalFilters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -302,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				A3700A2C20C91791005300B8 /* MTFilter.swift */,
+				A3E9714D20D6064300D66B87 /* MTFilterGroup.swift */,
 				A38FC79420CCDA64002CA905 /* MTFilterManager.swift */,
 				A3C44C3120CE7AFB0036E8E8 /* MTBasicAdjustFilter.swift */,
 				A3C44C3320CE7B520036E8E8 /* MTBasicAdjustFilter.metal */,
@@ -605,6 +608,7 @@
 				A391B2F720CE4CCA00E6FD67 /* MTInkwellFilter.swift in Sources */,
 				A391B30320CE4CCA00E6FD67 /* MTGinzaVideoFilter.metal in Sources */,
 				A391B2DA20CE4CCA00E6FD67 /* MTEarlybirdFilter.metal in Sources */,
+				A3E9714E20D6064300D66B87 /* MTFilterGroup.swift in Sources */,
 				A391B32820CE4CCA00E6FD67 /* MTNashvilleFilter.swift in Sources */,
 				A391B2E920CE4CCA00E6FD67 /* MTAmaroFilter.metal in Sources */,
 				A38FC66420CBEAA5002CA905 /* AlbumPhotoCell.swift in Sources */,
