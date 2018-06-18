@@ -17,6 +17,8 @@ class AlbumPhotoViewController: UIViewController, UICollectionViewDataSource, UI
     
     fileprivate var dataSource: PHFetchResult<PHAsset>
     
+    fileprivate var currentSelectIndex: IndexPath?
+    
     fileprivate var targetSize: CGSize = .zero
     
     init(dataSource: PHFetchResult<PHAsset>) {
@@ -87,6 +89,10 @@ class AlbumPhotoViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if currentSelectIndex == indexPath {
+            return
+        }
+        currentSelectIndex = indexPath
         let asset = dataSource.object(at: indexPath.item)
         didSelectAssetHandler?(asset)
     }

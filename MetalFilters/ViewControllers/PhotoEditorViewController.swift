@@ -442,10 +442,12 @@ extension PhotoEditorViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == filterCollectionView {
             if currentSelectFilterIndex == indexPath.item {
-                let item = FilterToolItem(type: .adjustStrength, slider: .hundredToZero)
-                presentFilterControlView(for: item)
-                currentAdjustStrengthFilter = allFilters[currentSelectFilterIndex].init()
-                currentAdjustStrengthFilter?.inputImage = originInputImage
+                if indexPath.item != 0 {
+                    let item = FilterToolItem(type: .adjustStrength, slider: .hundredToZero)
+                    presentFilterControlView(for: item)
+                    currentAdjustStrengthFilter = allFilters[currentSelectFilterIndex].init()
+                    currentAdjustStrengthFilter?.inputImage = originInputImage
+                }
             } else {
                 let filter = allFilters[indexPath.item].init()
                 filter.inputImage = originInputImage
