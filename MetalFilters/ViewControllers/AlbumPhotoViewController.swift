@@ -43,6 +43,7 @@ class AlbumPhotoViewController: UIViewController, UICollectionViewDataSource, UI
         layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
         
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
