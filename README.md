@@ -10,6 +10,15 @@ Just a demo using [MetalPetal](https://github.com/MetalPetal/MetalPetal) to impl
 * All Instagram filters
 * Slider to control Strength of filters
 
+## On-Working
+
+* MTBasicAdjustFilter
+* tint color ajustment
+* tintHighlightsColor UI Control
+* MTLocalLaplacianFilter
+* MTFilterGroup
+* Performance
+
 ## Requirements
 
 * iPhone Device
