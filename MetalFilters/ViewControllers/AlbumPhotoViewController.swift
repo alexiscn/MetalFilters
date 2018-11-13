@@ -82,8 +82,10 @@ class AlbumPhotoViewController: UIViewController, UICollectionViewDataSource, UI
         let option = PHImageRequestOptions()
         option.deliveryMode = .highQualityFormat
         PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: option) { [unowned cell] (image, _) in
-            if asset.localIdentifier == cell.assetIdentifier {
-                cell.imageView.image = image
+            DispatchQueue.main.async {
+                if asset.localIdentifier == cell.assetIdentifier {
+                    cell.imageView.image = image
+                }
             }
         }
         return cell
