@@ -57,8 +57,8 @@ class MainViewController: UIViewController {
             }
             albumController.view.frame = albumView.bounds
             albumView.addSubview(albumController.view)
-            addChildViewController(albumController)
-            albumController.didMove(toParentViewController: self)
+            addChild(albumController)
+            albumController.didMove(toParent: self)
             self.albumController = albumController
         }
     }
