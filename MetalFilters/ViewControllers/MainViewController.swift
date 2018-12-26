@@ -23,6 +23,20 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         title = "Metal Filters"
         
+        requestPhoto()
+    }
+    
+//    private func setupScrollViews() {
+//        scrollView.showsHorizontalScrollIndicator = false
+//        scrollView.showsVerticalScrollIndicator = false
+//        scrollView.contentSize = scrollView.bounds.size
+//        scrollView.delegate = self
+//        scrollView.maximumZoomScale = 6.0
+//        photoImageView.frame = scrollView.bounds
+//        scrollView.addSubview(photoImageView)
+//    }
+    
+    fileprivate func requestPhoto() {
         PHPhotoLibrary.requestAuthorization { (status) in
             switch status {
             case .authorized:
@@ -99,4 +113,10 @@ extension MainViewController: PHPhotoLibraryChangeObserver {
         self.loadPhotos()
     }
     
+}
+
+extension MainViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return photoImageView
+    }
 }
