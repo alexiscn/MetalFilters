@@ -22,6 +22,7 @@
 		A3710C5E20D3DADF00FC0025 /* MTImageOverlayFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3710C5D20D3DADF00FC0025 /* MTImageOverlayFilter.swift */; };
 		A3710C6020D3DAF800FC0025 /* MTImageOverlayFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A3710C5F20D3DAF800FC0025 /* MTImageOverlayFilter.metal */; };
 		A382041121E33D6E0000AC41 /* MTScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A382041021E33D6E0000AC41 /* MTScrollView.swift */; };
+		A382041521E37D750000AC41 /* MTGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A382041421E37D750000AC41 /* MTGridView.swift */; };
 		A38FC65A20CB7979002CA905 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC65920CB7979002CA905 /* MainViewController.swift */; };
 		A38FC66020CB85B2002CA905 /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC65F20CB85B2002CA905 /* PhotoEditorViewController.swift */; };
 		A38FC66420CBEAA5002CA905 /* AlbumPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FC66320CBEAA5002CA905 /* AlbumPhotoCell.swift */; };
@@ -145,6 +146,7 @@
 		A3710C5D20D3DADF00FC0025 /* MTImageOverlayFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTImageOverlayFilter.swift; sourceTree = "<group>"; };
 		A3710C5F20D3DAF800FC0025 /* MTImageOverlayFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MTImageOverlayFilter.metal; sourceTree = "<group>"; };
 		A382041021E33D6E0000AC41 /* MTScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTScrollView.swift; sourceTree = "<group>"; };
+		A382041421E37D750000AC41 /* MTGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGridView.swift; sourceTree = "<group>"; };
 		A38FC65920CB7979002CA905 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A38FC65F20CB85B2002CA905 /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewController.swift; sourceTree = "<group>"; };
 		A38FC66320CBEAA5002CA905 /* AlbumPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotoCell.swift; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 				A32F2BF320D2393E0018C281 /* FilterTintColorPicker.swift */,
 				A32F2BFC20D260DC0018C281 /* FilterTintColorControl.swift */,
 				A382041021E33D6E0000AC41 /* MTScrollView.swift */,
+				A382041421E37D750000AC41 /* MTGridView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				A391B30420CE4CCA00E6FD67 /* MTLoFiFilter.swift in Sources */,
 				A38FC66620CBEB0E002CA905 /* AlbumPhotoViewController.swift in Sources */,
 				A30D742320D0EC2A00824A1A /* MTLocalLaplacianFilter.metal in Sources */,
+				A382041521E37D750000AC41 /* MTGridView.swift in Sources */,
 				A3E572B920F8B5BF00294AE4 /* MTLuxBlendFilter.metal in Sources */,
 				A391B32720CE4CCA00E6FD67 /* MTNormalFilter.metal in Sources */,
 				A391B31220CE4CCA00E6FD67 /* MTMoonVideoFilter.swift in Sources */,

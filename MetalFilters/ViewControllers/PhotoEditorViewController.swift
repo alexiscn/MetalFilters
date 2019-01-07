@@ -22,8 +22,8 @@ class PhotoEditorViewController: UIViewController {
     fileprivate var filterControlView: FilterControlView?
     fileprivate var imageView: MTIImageView!
     
-    public var croppedImage: UIImage?
-    public var originAsset: PHAsset?
+    public var croppedImage: UIImage!
+    
     fileprivate var originInputImage: MTIImage?
     fileprivate var adjustFilter = MTBasicAdjustFilter()
     
@@ -41,44 +41,31 @@ class PhotoEditorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let luxImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
-        luxImageView.image = UIImage(named: "edit-luxtool")
-        navigationItem.titleView = luxImageView
+        setupNavigationBar()
         
         imageView = MTIImageView(frame: previewView.bounds)
         imageView.resizingMode = .aspectFill
         imageView.backgroundColor = .clear
-        
         previewView.addSubview(imageView)
         allFilters = MTFilterManager.shard.allFilters
+        
         setupFilterCollectionView()
         setupToolDataSource()
         setupToolCollectionView()
     
-        guard let asset = originAsset else {
-            return
-        }
-//        let targetSize = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
-//        let options = PHImageRequestOptions()
-//        options.isSynchronous = true
-//        options.deliveryMode = .highQualityFormat
-//        PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: options) { (image, _) in
-//            if let image = image {
-//                let ciImage = CIImage(cgImage: image.cgImage!)
-//                let originImage = MTIImage(ciImage: ciImage, isOpaque: true)
-//                self.originInputImage = originImage
-//                self.imageView.image = originImage
-//            }
-//        }
-        if let image = croppedImage {
-            let ciImage = CIImage(cgImage: image.cgImage!)
-            let originImage = MTIImage(ciImage: ciImage, isOpaque: true)
-            originInputImage = originImage
-            imageView.image = originImage
-        }
+        let ciImage = CIImage(cgImage: croppedImage.cgImage!)
+        let originImage = MTIImage(ciImage: ciImage, isOpaque: true)
+        originInputImage = originImage
+        imageView.image = originImage
         
-        generateFilterThumbnailForAsset(asset)
+        generateFilterThumbnails()
         setupNavigationButton()
+    }
+    
+    private func setupNavigationBar() {
+        let luxImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
+        luxImageView.image = UIImage(named: "edit-luxtool")
+        navigationItem.titleView = luxImageView
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -221,16 +208,15 @@ class PhotoEditorViewController: UIViewController {
         allTools.append(FilterToolItem(type: .sharpen, slider: .zeroToHundred))
     }
     
-    fileprivate func generateFilterThumbnailForAsset(_ asset: PHAsset) {
+    fileprivate func generateFilterThumbnails() {
         DispatchQueue.global().async {
-            let options = PHImageRequestOptions()
-            options.isSynchronous = true
-            options.deliveryMode = .highQualityFormat
-            let targetSize = CGSize(width: 200, height: 200)
-            PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: options) { (image, _) in
-                guard let image = image else {
-                    return
-                }
+            
+            let size = CGSize(width: 200, height: 200)
+            UIGraphicsBeginImageContextWithOptions(size, false, 0)
+            self.croppedImage.draw(in: CGRect(origin: .zero, size: size))
+            let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            if let image = scaledImage {
                 for filter in self.allFilters {
                     let image = MTFilterManager.shard.generateThumbnailsForImage(image, with: filter)
                     self.thumbnails[filter.name] = image

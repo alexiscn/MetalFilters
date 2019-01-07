@@ -50,6 +50,8 @@ class MTScrollView: UIScrollView {
         return view
     }()
     
+    private var gridView: MTGridView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(imageView)
@@ -57,6 +59,32 @@ class MTScrollView: UIScrollView {
         contentInsetAdjustmentBehavior = .never
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
+        delaysContentTouches = false
+        
+        gridView = MTGridView(frame: bounds)
+        gridView.isUserInteractionEnabled = false
+        gridView.alpha = 0.0
+        addSubview(gridView)
+        
+        let press = UILongPressGestureRecognizer(target: self, action: #selector(handlePress(_:)))
+        press.delegate = self
+        press.minimumPressDuration = 0
+        addGestureRecognizer(press)
+    }
+    
+    @objc func handlePress(_ gesture: UILongPressGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            UIView.animate(withDuration: 0.2) {
+                self.gridView.alpha = 1.0
+            }
+        case .ended:
+            UIView.animate(withDuration: 0.2) {
+                self.gridView.alpha = 0.0
+            }
+        default:
+            break
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -93,9 +121,18 @@ class MTScrollView: UIScrollView {
     }
 }
 
-
 extension MTScrollView: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        gridView.frame = bounds
+    }
+}
+
+extension MTScrollView: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

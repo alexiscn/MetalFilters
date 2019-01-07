@@ -100,7 +100,7 @@ class MainViewController: UIViewController {
             return
         }
         editorController.croppedImage = scrollView.croppedImage
-        editorController.originAsset = selectedAsset
+        
         navigationController?.pushViewController(editorController, animated: false)
     }
     
