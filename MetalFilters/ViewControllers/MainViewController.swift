@@ -11,10 +11,9 @@ import Photos
 
 class MainViewController: UIViewController {
     
-    @IBOutlet weak var photoImageView: UIImageView!
-    
+    @IBOutlet weak var photoView: UIView!
     @IBOutlet weak var albumView: UIView!
-    
+    fileprivate var scrollView: MTScrollView!
     fileprivate var selectedAsset: PHAsset?
     
     fileprivate var albumController: AlbumPhotoViewController?
@@ -23,18 +22,14 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         title = "Metal Filters"
         
+        setupScrollView()
         requestPhoto()
     }
     
-//    private func setupScrollViews() {
-//        scrollView.showsHorizontalScrollIndicator = false
-//        scrollView.showsVerticalScrollIndicator = false
-//        scrollView.contentSize = scrollView.bounds.size
-//        scrollView.delegate = self
-//        scrollView.maximumZoomScale = 6.0
-//        photoImageView.frame = scrollView.bounds
-//        scrollView.addSubview(photoImageView)
-//    }
+    private func setupScrollView() {
+        scrollView = MTScrollView(frame: photoView.bounds)
+        photoView.addSubview(scrollView)
+    }
     
     fileprivate func requestPhoto() {
         PHPhotoLibrary.requestAuthorization { (status) in
@@ -78,10 +73,13 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func loadImageFor(_ asset: PHAsset) {
+        let options = PHImageRequestOptions()
+        options.deliveryMode = .highQualityFormat
+        options.isSynchronous = true
         let targetSize = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
-        PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: nil) { (image, _) in
+        PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .default, options: options) { (image, _) in
             DispatchQueue.main.async {
-                self.photoImageView.image = image
+                self.scrollView.image = image
             }
         }
         selectedAsset = asset
@@ -101,6 +99,7 @@ class MainViewController: UIViewController {
         guard let editorController = mainStoryBoard.instantiateViewController(withIdentifier: "PhotoEditorViewController") as? PhotoEditorViewController else {
             return
         }
+        editorController.croppedImage = scrollView.croppedImage
         editorController.originAsset = selectedAsset
         navigationController?.pushViewController(editorController, animated: false)
     }
@@ -111,12 +110,5 @@ extension MainViewController: PHPhotoLibraryChangeObserver {
     
     func photoLibraryDidChange(_ changeInstance: PHChange) {
         self.loadPhotos()
-    }
-    
-}
-
-extension MainViewController: UIScrollViewDelegate {
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return photoImageView
     }
 }

@@ -22,6 +22,7 @@ class PhotoEditorViewController: UIViewController {
     fileprivate var filterControlView: FilterControlView?
     fileprivate var imageView: MTIImageView!
     
+    public var croppedImage: UIImage?
     public var originAsset: PHAsset?
     fileprivate var originInputImage: MTIImage?
     fileprivate var adjustFilter = MTBasicAdjustFilter()
@@ -57,17 +58,23 @@ class PhotoEditorViewController: UIViewController {
         guard let asset = originAsset else {
             return
         }
-        let targetSize = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
-        let options = PHImageRequestOptions()
-        options.isSynchronous = true
-        options.deliveryMode = .highQualityFormat
-        PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: options) { (image, _) in
-            if let image = image {
-                let ciImage = CIImage(cgImage: image.cgImage!)
-                let originImage = MTIImage(ciImage: ciImage, isOpaque: true)
-                self.originInputImage = originImage
-                self.imageView.image = originImage
-            }
+//        let targetSize = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
+//        let options = PHImageRequestOptions()
+//        options.isSynchronous = true
+//        options.deliveryMode = .highQualityFormat
+//        PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: options) { (image, _) in
+//            if let image = image {
+//                let ciImage = CIImage(cgImage: image.cgImage!)
+//                let originImage = MTIImage(ciImage: ciImage, isOpaque: true)
+//                self.originInputImage = originImage
+//                self.imageView.image = originImage
+//            }
+//        }
+        if let image = croppedImage {
+            let ciImage = CIImage(cgImage: image.cgImage!)
+            let originImage = MTIImage(ciImage: ciImage, isOpaque: true)
+            originInputImage = originImage
+            imageView.image = originImage
         }
         
         generateFilterThumbnailForAsset(asset)
