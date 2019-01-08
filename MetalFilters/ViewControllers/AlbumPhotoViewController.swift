@@ -57,8 +57,10 @@ class AlbumPhotoViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     public func update(dataSource: PHFetchResult<PHAsset>) {
-        self.dataSource = dataSource
-        collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.dataSource = dataSource
+            self.collectionView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {

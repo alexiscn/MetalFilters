@@ -30,6 +30,7 @@ class PhotoEditorViewController: UIViewController {
     fileprivate var allFilters: [MTFilter.Type] = []
     fileprivate var allTools: [FilterToolItem] = []
     fileprivate var thumbnails: [String: UIImage] = [:]
+    fileprivate var cachedFilters: [Int: MTFilter] = [:]
     
     /// TODO
     /// It seems that we should have a group to store all filter states
@@ -111,16 +112,24 @@ class PhotoEditorViewController: UIViewController {
         return true
     }
     
+    fileprivate func getFilterAtIndex(_ index: Int) -> MTFilter {
+        if let filter = cachedFilters[index] {
+            return filter
+        }
+        let filter = allFilters[index].init()
+        cachedFilters[index] = filter
+        return filter
+    }
+    
     @objc func showUnEditPhotoGesture(_ gesture: UILongPressGestureRecognizer) {
-        // TODO
         switch gesture.state {
         case .cancelled, .ended:
-            let filter = allFilters[currentSelectFilterIndex].init()
+            let filter = getFilterAtIndex(currentSelectFilterIndex)
             filter.inputImage = originInputImage
             imageView.image = filter.outputImage
             break
         default:
-            let filter = allFilters[0].init()
+            let filter = getFilterAtIndex(0)
             filter.inputImage = originInputImage
             imageView.image = filter.outputImage
              break
@@ -294,7 +303,7 @@ class PhotoEditorViewController: UIViewController {
     fileprivate func valueForFilterControlView(with tool: FilterToolItem) -> Float {
         switch tool.type {
         case .adjustStrength:
-            return 0
+            return 1.0
         case .adjust:
             return 0
         case .brightness:
@@ -395,12 +404,17 @@ extension PhotoEditorViewController: FilterControlViewDelegate {
     }
     
     func filterControlView(_ controlView: FilterControlView, borderSelectionChangeTo isSelected: Bool) {
-        // TODO: Performance issue
-        let blendFilter = MTIBlendFilter(blendMode: .overlay)
-        let filter = allFilters[currentSelectFilterIndex].init()
-        blendFilter.inputBackgroundImage = imageView.image
-        blendFilter.inputImage = filter.borderImage
-        imageView.image = blendFilter.outputImage
+        if isSelected {
+            let blendFilter = MTIBlendFilter(blendMode: .overlay)
+            let filter = getFilterAtIndex(currentSelectFilterIndex)
+            blendFilter.inputBackgroundImage = filter.borderImage
+            blendFilter.inputImage = imageView.image
+            imageView.image = blendFilter.outputImage
+        } else {
+//            let filter = getFilterAtIndex(currentSelectFilterIndex)
+//            filter.inputImage = originInputImage
+//            imageView.image = filter.outputImage
+        }
     }
 }
 
@@ -436,7 +450,7 @@ extension PhotoEditorViewController: UICollectionViewDataSource, UICollectionVie
         if collectionView == filterCollectionView {
             if currentSelectFilterIndex == indexPath.item {
                 if indexPath.item != 0 {
-                    let item = FilterToolItem(type: .adjustStrength, slider: .hundredToZero)
+                    let item = FilterToolItem(type: .adjustStrength, slider: .zeroToHundred)
                     presentFilterControlView(for: item)
                     currentAdjustStrengthFilter = allFilters[currentSelectFilterIndex].init()
                     currentAdjustStrengthFilter?.inputImage = originInputImage

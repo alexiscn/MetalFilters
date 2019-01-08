@@ -31,7 +31,7 @@ class FilterControlView: UIView {
     
     private let filterTool: FilterToolItem
     
-    init(frame: CGRect, filterTool: FilterToolItem, value: Float = 0) {
+    init(frame: CGRect, filterTool: FilterToolItem, value: Float = 1.0) {
         
         self.filterTool = filterTool
         
@@ -73,28 +73,11 @@ class FilterControlView: UIView {
             
         }
         
-        switch filterTool.slider {
-        case .adjustStraighten:
-            break
-        case .negHundredToHundred:
-            sliderView.slider.maximumValue = 1
-            sliderView.slider.minimumValue = -1
-            sliderView.slider.value = value
-            break
-        case .zeroToHundred:
-            sliderView.slider.maximumValue = 1
-            sliderView.slider.minimumValue = 0
-            sliderView.slider.value = value
-            break
-        case .tiltShift:
-            break
-        case .hundredToZero:
-            sliderView.slider.maximumValue = 1
-            sliderView.slider.minimumValue = 0
-            sliderView.slider.value = 1.0
+        sliderView.valueRange = filterTool.slider
+        sliderView.slider.value = value
+        if filterTool.type == .adjustStrength {
             addSubview(borderButton)
             borderButton.addTarget(self, action: #selector(borderButtonTapped(_:)), for: .touchUpInside)
-            break
         }
         
         backgroundColor = .white

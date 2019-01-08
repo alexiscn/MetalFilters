@@ -8,8 +8,36 @@
 
 import UIKit
 
+/// Slider Value Range
+///
+/// - zeroToHundred: value in [0, 100]
+/// - negHundredToHundred: value in [-100, 100], defaluts to 0
+/// - tiltShift: tiltShift
+/// - adjustStraighten: adjustStraighten, specially handled
+enum SliderValueRange {
+    case zeroToHundred
+    case negHundredToHundred
+    case tiltShift
+    case adjustStraighten
+}
+
 class HorizontalSliderView: UIView {
 
+    var valueRange: SliderValueRange = .zeroToHundred {
+        didSet {
+            switch valueRange {
+            case .adjustStraighten, .tiltShift:
+                break
+            case .negHundredToHundred:
+                slider.maximumValue = 1
+                slider.minimumValue = -1
+            case .zeroToHundred:
+                slider.maximumValue = 1
+                slider.minimumValue = 0
+            }
+        }
+    }
+    
     weak var slider: UISlider!
     weak var trackAdjustmentIndicator: UIView!
     
@@ -90,8 +118,24 @@ class HorizontalSliderView: UIView {
         self.slider.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
         let thumbRect = self.slider.convert(self.slider.thumbRect(forBounds: self.slider.bounds, trackRect: self.slider.trackRect(forBounds: self.slider.bounds), value: self.slider.value), to: self)
         let trackRect = self.slider.convert(self.slider.trackRect(forBounds: self.slider.bounds), to: self)
-        self.trackView.frame = CGRect(x: trackRect.origin.x, y: trackRect.origin.y, width: trackRect.width, height: 1) 
-        self.trackAdjustmentIndicator.frame = CGRect(x: trackRect.midX, y: trackRect.midY, width: thumbRect.midX - trackRect.midX, height: thumbRect.midY - trackRect.midY)
+        self.trackView.frame = CGRect(x: trackRect.origin.x, y: trackRect.midY, width: trackRect.width, height: 1)
+        
+        
+        switch valueRange {
+        case .zeroToHundred:
+            self.trackAdjustmentIndicator.frame = CGRect(x: trackRect.origin.x,
+                                                         y: trackRect.midY,
+                                                         width: thumbRect.midX,
+                                                         height: 1)
+        case .negHundredToHundred:
+            self.trackAdjustmentIndicator.frame = CGRect(x: trackRect.midX,
+                                                         y: trackRect.midY,
+                                                         width: thumbRect.midX - trackRect.midX,
+                                                         height: 1)
+        default:
+            break
+        }
+        
     }
 
 }

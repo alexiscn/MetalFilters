@@ -110,26 +110,11 @@ enum FilterToolType {
     
 }
 
-
-/// Slider Value Range
-///
-/// - zeroToHundred: value in [0, 100]
-/// - negHundredToHundred: value in [-100, 100], defaluts to 0
-/// - tiltShift: tiltShift
-/// - adjustStraighten: adjustStraighten, specially handled
-enum SliderValueType {
-    case zeroToHundred
-    case hundredToZero
-    case negHundredToHundred
-    case tiltShift
-    case adjustStraighten
-}
-
 struct FilterToolItem {
     
     let type: FilterToolType
     
-    let slider: SliderValueType
+    let slider: SliderValueRange
     
     var title: String {
         switch type {
