@@ -1,6 +1,6 @@
 ![App Logo](Assets/MetalFiltersAppLogo.png)
 
-Just a demo using [MetalPetal](https://github.com/MetalPetal/MetalPetal) to implement Instagram filters.
+A demo using [MetalPetal](https://github.com/MetalPetal/MetalPetal) to implement all Instagram filters.
 
 ![](Assets/preview.gif)
 
