@@ -16,13 +16,14 @@ FOUNDATION_EXPORT NSString * const MTIFilterPassthroughVertexFunctionName;
 FOUNDATION_EXPORT NSString * const MTIFilterPassthroughFragmentFunctionName;
 
 FOUNDATION_EXPORT NSString * const MTIFilterUnpremultiplyAlphaFragmentFunctionName;
+FOUNDATION_EXPORT NSString * const MTIFilterUnpremultiplyAlphaWithSRGBToLinearRGBFragmentFunctionName;
 FOUNDATION_EXPORT NSString * const MTIFilterPremultiplyAlphaFragmentFunctionName;
 
 FOUNDATION_EXPORT NSString * const MTIFilterColorMatrixFragmentFunctionName;
 
 @class MTIImage;
 
-@protocol MTIFilter <NSObject>
+@protocol MTIFilter
 
 @property (nonatomic) MTLPixelFormat outputPixelFormat; //Default: MTIPixelFormatUnspecified aka MTLPixelFormatInvalid
 

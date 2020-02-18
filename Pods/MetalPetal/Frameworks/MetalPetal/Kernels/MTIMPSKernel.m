@@ -12,7 +12,6 @@
 #import "MTITextureDescriptor.h"
 #import "MTIImageRenderingContext.h"
 #import "MTIError.h"
-#import "MTIDefer.h"
 #import "MTIImagePromiseDebug.h"
 #import "MTIContext+Internal.h"
 
@@ -36,31 +35,8 @@
     return self.inputImages;
 }
 
-- (MTIImagePromiseRenderTarget *)resolveWithContext:(MTIImageRenderingContext *)renderingContext error:(NSError * _Nullable __autoreleasing *)inOutError {
+- (MTIImagePromiseRenderTarget *)resolveWithContext:(MTIImageRenderingContext *)renderingContext error:(NSError * __autoreleasing *)inOutError {
     NSError *error = nil;
-    
-    NSUInteger inputResolutionsCount = self.inputImages.count;
-    id<MTIImagePromiseResolution> inputResolutions[inputResolutionsCount];
-    memset(inputResolutions, 0, sizeof inputResolutions);
-    const id<MTIImagePromiseResolution> * inputResolutionsRef = inputResolutions;
-    @MTI_DEFER {
-        for (NSUInteger index = 0; index < inputResolutionsCount; index+=1) {
-            [inputResolutionsRef[index] markAsConsumedBy:self];
-        }
-    };
-    for (NSUInteger index = 0; index < inputResolutionsCount; index += 1) {
-        MTIImage *image = self.inputImages[index];
-        NSParameterAssert([self.kernel.alphaTypeHandlingRule canAcceptAlphaType:image.alphaType]);
-        id<MTIImagePromiseResolution> resolution = [renderingContext resolutionForImage:image error:&error];
-        if (error) {
-            if (inOutError) {
-                *inOutError = error;
-            }
-            return nil;
-        }
-        NSAssert(resolution != nil, @"");
-        inputResolutions[index] = resolution;
-    }
     
     //May need to get a copy
     MPSKernel *kernel = [renderingContext.context kernelStateForKernel:self.kernel configuration:nil error:&error];
@@ -74,11 +50,9 @@
     [kernel setValuesForKeysWithDictionary:self.parameters];
     
     MTLPixelFormat pixelFormat = (self.outputPixelFormat == MTIPixelFormatUnspecified) ? renderingContext.context.workingPixelFormat : self.outputPixelFormat;
-
-    MTLTextureDescriptor *textureDescriptor = [MTLTextureDescriptor texture2DDescriptorWithPixelFormat:pixelFormat width:_dimensions.width height:_dimensions.height mipmapped:NO];
-    textureDescriptor.usage = MTLTextureUsageShaderWrite | MTLTextureUsageShaderRead;
-
-    MTIImagePromiseRenderTarget *renderTarget = [renderingContext.context newRenderTargetWithResuableTextureDescriptor:[textureDescriptor newMTITextureDescriptor] error:&error];
+    
+    MTITextureDescriptor *textureDescriptor = [MTITextureDescriptor texture2DDescriptorWithPixelFormat:pixelFormat width:_dimensions.width height:_dimensions.height mipmapped:NO usage:MTLTextureUsageShaderWrite | MTLTextureUsageShaderRead resourceOptions:MTLResourceStorageModePrivate];
+    MTIImagePromiseRenderTarget *renderTarget = [renderingContext.context newRenderTargetWithResuableTextureDescriptor:textureDescriptor error:&error];
     if (error) {
         if (inOutError) {
             *inOutError = error;
@@ -87,11 +61,14 @@
     }
     
     if (self.inputImages.count == 1) {
+        id<MTLTexture> texture = [renderingContext resolvedTextureForImage:self.inputImages[0]];
         MPSUnaryImageKernel *encoder = (MPSUnaryImageKernel *)kernel;
-        [encoder encodeToCommandBuffer:renderingContext.commandBuffer sourceTexture:inputResolutions[0].texture destinationTexture:renderTarget.texture];
+        [encoder encodeToCommandBuffer:renderingContext.commandBuffer sourceTexture:texture destinationTexture:renderTarget.texture];
     } else if (self.inputImages.count == 2) {
+        id<MTLTexture> texture0 = [renderingContext resolvedTextureForImage:self.inputImages[0]];
+        id<MTLTexture> texture1 = [renderingContext resolvedTextureForImage:self.inputImages[1]];
         MPSBinaryImageKernel *encoder = (MPSBinaryImageKernel *)kernel;
-        [encoder encodeToCommandBuffer:renderingContext.commandBuffer primaryTexture:inputResolutions[0].texture secondaryTexture:inputResolutions[1].texture destinationTexture:renderTarget.texture];
+        [encoder encodeToCommandBuffer:renderingContext.commandBuffer primaryTexture:texture0 secondaryTexture:texture1 destinationTexture:renderTarget.texture];
     } else {
         if (inOutError) {
             *inOutError = MTIErrorCreate(MTIErrorMPSKernelInputCountMismatch, nil);
@@ -112,6 +89,17 @@
        outputTextureDimensions:(MTITextureDimensions)outputTextureDimensions
              outputPixelFormat:(MTLPixelFormat)outputPixelFormat {
     if (self = [super init]) {
+        NSParameterAssert({
+            /* Alpha Type Assert */
+            BOOL canAcceptAlphaType = YES;
+            for (MTIImage *image in inputImages) {
+                if (![kernel.alphaTypeHandlingRule canAcceptAlphaType:image.alphaType]) {
+                    canAcceptAlphaType = NO;
+                    break;
+                }
+            }
+            canAcceptAlphaType;
+        });
         _inputImages = inputImages;
         _kernel = kernel;
         _parameters = parameters;
@@ -153,7 +141,7 @@
     return self;
 }
 
-- (id)newKernelStateWithContext:(MTIContext *)context configuration:(id<MTIKernelConfiguration>)configuration error:(NSError * _Nullable __autoreleasing *)error {
+- (id)newKernelStateWithContext:(MTIContext *)context configuration:(id<MTIKernelConfiguration>)configuration error:(NSError * __autoreleasing *)error {
     if (!context.isMetalPerformanceShadersSupported) {
         if (error) {
             *error = MTIErrorCreate(MTIErrorMPSKernelNotSupported, nil);

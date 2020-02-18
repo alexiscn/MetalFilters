@@ -11,13 +11,16 @@
 #import <MetalKit/MetalKit.h>
 #import <simd/simd.h>
 #import <CoreImage/CoreImage.h>
+#import <ModelIO/ModelIO.h>
 #import "MTIColor.h"
 #import "MTITextureDimensions.h"
 #import "MTIAlphaType.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class MTIImage, MTIImageRenderingContext, MTIFunctionDescriptor, MTITextureDescriptor, MTIImagePromiseRenderTarget, MTIImagePromiseDebugInfo, MTICIImageRenderingOptions;
+FOUNDATION_EXPORT BOOL MTIMTKTextureLoaderCanDecodeImage(CGImageRef image);
+
+@class MTIImage, MTIImageRenderingContext, MTIFunctionDescriptor, MTITextureDescriptor, MTIImagePromiseRenderTarget, MTIImagePromiseDebugInfo, MTICIImageRenderingOptions, MTIImageProperties;
 
 @protocol MTIImagePromise <NSObject, NSCopying>
 
@@ -39,7 +42,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MTIImageURLPromise : NSObject <MTIImagePromise>
 
-- (nullable instancetype)initWithContentsOfURL:(NSURL *)URL options:(nullable NSDictionary<MTKTextureLoaderOption, id> *)options alphaType:(MTIAlphaType)alphaType;
+- (nullable instancetype)initWithContentsOfURL:(NSURL *)URL
+                                    properties:(MTIImageProperties *)properties
+                                       options:(nullable NSDictionary<MTKTextureLoaderOption, id> *)options
+                                     alphaType:(MTIAlphaType)alphaType;
 
 @end
 
@@ -57,13 +63,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MTICIImagePromise : NSObject <MTIImagePromise>
 
-- (instancetype)initWithCIImage:(CIImage *)ciImage isOpaque:(BOOL)isOpaque options:(MTICIImageRenderingOptions *)options;
+- (instancetype)initWithCIImage:(CIImage *)ciImage bounds:(CGRect)bounds isOpaque:(BOOL)isOpaque options:(MTICIImageRenderingOptions *)options;
 
 @end
 
 @interface MTIColorImagePromise: NSObject <MTIImagePromise>
 
-@property (nonatomic,readonly) MTIColor color;
+@property (nonatomic, readonly) MTIColor color;
 
 - (instancetype)initWithColor:(MTIColor)color sRGB:(BOOL)sRGB size:(CGSize)size;
 
@@ -88,6 +94,15 @@ NS_AVAILABLE(10_12, 10_0)
                  scaleFactor:(CGFloat)scaleFactor
                      options:(nullable NSDictionary<MTKTextureLoaderOption, id> *)options
                    alphaType:(MTIAlphaType)alphaType;
+
+@end
+
+NS_AVAILABLE(10_12, 10_0)
+@interface MTIMDLTexturePromise: NSObject <MTIImagePromise>
+
+- (instancetype)initWithMDLTexture:(MDLTexture *)texture
+                           options:(nullable NSDictionary<MTKTextureLoaderOption, id> *)options
+                         alphaType:(MTIAlphaType)alphaType;
 
 @end
 

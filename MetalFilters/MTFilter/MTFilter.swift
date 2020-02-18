@@ -80,11 +80,21 @@ class MTFilter: NSObject, MTIUnaryFilter {
     }
     
     func samplerImage(named name: String) -> MTIImage? {
-        if let imageUrl = MTFilterManager.shard.url(forResource: name) {
-            let ciImage = CIImage(contentsOf: imageUrl)
-            return MTIImage(ciImage: ciImage!, isOpaque: true)
-            // contentsOf can not load Grayscale texture correctly
-//            return MTIImage(contentsOf: imageUrl, options: [.SRGB: false], alphaType: .alphaIsOne)
+        if let imageUrl = MTFilterManager.shared.url(forResource: name) {
+            if name.hasSuffix(".pvr") {
+                let loader = MTKTextureLoader(device: MTFilterManager.shared.device)
+                do {
+                    let texture = try loader.newTexture(URL: imageUrl, options: [
+                        MTKTextureLoader.Option.SRGB: false
+                    ])
+                    return MTIImage(texture: texture, alphaType: .alphaIsOne)
+                } catch {
+                    print(error)
+                }
+            } else {
+                let ciImage = CIImage(contentsOf: imageUrl)
+                return MTIImage(ciImage: ciImage!, isOpaque: true)
+            }
         }
         return nil
     }

@@ -14,19 +14,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MTIImageRenderingDependencyGraph : NSObject
-
-- (NSInteger)dependentCountForPromise:(id<MTIImagePromise>)promise;
-
-@end
-
-@protocol MTIImagePromiseResolution <NSObject>
-
-@property (nonatomic,readonly) id<MTLTexture> texture;
-
-- (void)markAsConsumedBy:(id)consumer;
-
-@end
+/*! @brief Rendering context related constant for MTIContextImageAssociatedValueTableName. */
+FOUNDATION_EXPORT NSString * const MTIContextImagePersistentResolutionHolderTableName;
 
 @interface MTIImageRenderingContext : NSObject
 
@@ -38,19 +27,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)new NS_UNAVAILABLE;
 
-- (instancetype)initWithContext:(MTIContext *)context;
-
-- (nullable id<MTIImagePromiseResolution>)resolutionForImage:(MTIImage *)image error:(NSError **)error;
+/// Use this method in -[MTIImagePromise resolveWithContext:error:] to get the resolved dependencies of the promise. The `image` parameter must be one of the resolving promise's dependencies. An exception is thrown when calling this method outside the -[MTIImagePromise resolveWithContext:error:] method or passing an invalid image.
+- (id<MTLTexture>)resolvedTextureForImage:(MTIImage *)image;
 
 @end
 
-@interface MTIImageBuffer : NSObject
+NS_ASSUME_NONNULL_END
 
-- (instancetype)init NS_UNAVAILABLE;
 
-+ (instancetype)new NS_UNAVAILABLE;
+#import "MTIContext.h"
 
-+ (nullable MTIImage *)renderedBufferForImage:(MTIImage *)targetImage inContext:(MTIContext *)context;
+NS_ASSUME_NONNULL_BEGIN
+
+@interface MTIContext (RenderedImageBuffer)
+
+- (nullable MTIImage *)renderedBufferForImage:(MTIImage *)targetImage;
 
 @end
 

@@ -12,13 +12,15 @@ import MetalPetal
 
 class MTFilterManager {
     
-    static let shard = MTFilterManager()
+    static let shared = MTFilterManager()
     
     var allFilters: [MTFilter.Type] = []
     
     private var resourceBundle: Bundle
     
     private var context: MTIContext?
+    
+    var device = MTLCreateSystemDefaultDevice()!
     
     init() {
         

@@ -48,7 +48,7 @@ class PhotoEditorViewController: UIViewController {
         imageView.resizingMode = .aspectFill
         imageView.backgroundColor = .clear
         previewView.addSubview(imageView)
-        allFilters = MTFilterManager.shard.allFilters
+        allFilters = MTFilterManager.shared.allFilters
         
         setupFilterCollectionView()
         setupToolDataSource()
@@ -142,7 +142,7 @@ class PhotoEditorViewController: UIViewController {
     
     @objc func saveBarButtonTapped(_ sender: Any) {
         guard let image = self.imageView.image,
-            let uiImage = MTFilterManager.shard.generate(image: image) else {
+            let uiImage = MTFilterManager.shared.generate(image: image) else {
             return
         }
         PHPhotoLibrary.shared().performChanges({
@@ -227,7 +227,7 @@ class PhotoEditorViewController: UIViewController {
             UIGraphicsEndImageContext()
             if let image = scaledImage {
                 for filter in self.allFilters {
-                    let image = MTFilterManager.shard.generateThumbnailsForImage(image, with: filter)
+                    let image = MTFilterManager.shared.generateThumbnailsForImage(image, with: filter)
                     self.thumbnails[filter.name] = image
                     DispatchQueue.main.async {
                         self.filterCollectionView.reloadData()

@@ -12,14 +12,21 @@
 @implementation MTIImage (Filters)
 
 - (MTIImage *)imageByUnpremultiplyingAlpha {
-    return [MTIUnpremultiplyAlphaFilter imageByProcessingImage:self];
+    return [[MTIUnpremultiplyAlphaFilter imageByProcessingImage:[self imageWithCachePolicy:MTIImageCachePolicyTransient]] imageWithCachePolicy:self.cachePolicy];
 }
 
 - (MTIImage *)imageByPremultiplyingAlpha {
-    return [MTIPremultiplyAlphaFilter imageByProcessingImage:self];
+    return [[MTIPremultiplyAlphaFilter imageByProcessingImage:[self imageWithCachePolicy:MTIImageCachePolicyTransient]] imageWithCachePolicy:self.cachePolicy];
 }
 
 - (MTIImage *)imageByApplyingCGOrientation:(CGImagePropertyOrientation)orientation {
+    return [self imageByApplyingCGOrientation:orientation outputPixelFormat:MTIPixelFormatUnspecified];
+}
+
+- (MTIImage *)imageByApplyingCGOrientation:(CGImagePropertyOrientation)orientation outputPixelFormat:(MTLPixelFormat)pixelFormat {
+    if (orientation == kCGImagePropertyOrientationUp) {
+        return self;
+    }
     MTIImageOrientation imageOrientation;
     switch (orientation) {
         case kCGImagePropertyOrientationUp:
@@ -50,7 +57,7 @@
             imageOrientation = MTIImageOrientationUnknown;
             break;
     }
-    return [MTIUnaryImageRenderingFilter imageByProcessingImage:self orientation:imageOrientation parameters:@{} outputPixelFormat:MTIPixelFormatUnspecified];
+    return [[MTIUnaryImageRenderingFilter imageByProcessingImage:[self imageWithCachePolicy:MTIImageCachePolicyTransient] orientation:imageOrientation parameters:@{} outputPixelFormat:pixelFormat] imageWithCachePolicy:self.cachePolicy];
 }
 
 @end

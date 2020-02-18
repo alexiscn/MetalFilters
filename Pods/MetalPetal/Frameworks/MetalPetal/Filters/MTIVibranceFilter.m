@@ -6,7 +6,7 @@
 //
 
 #import "MTIVibranceFilter.h"
-#import "MTIVector.h"
+#import "MTIVector+SIMD.h"
 #import "MTIFunctionDescriptor.h"
 #import "MTIColor.h"
 
@@ -36,6 +36,10 @@
              @"avoidsSaturatingSkinTones": @(_avoidsSaturatingSkinTones),
              @"grayColorTransform": [MTIVector vectorWithFloat3:_grayColorTransform]
              };
+}
+
++ (MTIAlphaTypeHandlingRule *)alphaTypeHandlingRule {
+    return MTIAlphaTypeHandlingRule.generalAlphaTypeHandlingRule;
 }
 
 @end

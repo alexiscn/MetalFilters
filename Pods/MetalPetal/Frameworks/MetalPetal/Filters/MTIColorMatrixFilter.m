@@ -11,7 +11,6 @@
 #import "MTIImage.h"
 #import "MTIKernel.h"
 #import "MTIRenderPipelineKernel.h"
-#import "MTIVector.h"
 
 NSString * const MTIColorMatrixFilterColorMatrixParameterKey = @"colorMatrix";
 
@@ -30,6 +29,10 @@ NSString * const MTIColorMatrixFilterColorMatrixParameterKey = @"colorMatrix";
 
 - (NSDictionary<NSString *,id> *)parameters {
     return @{MTIColorMatrixFilterColorMatrixParameterKey: [NSData dataWithBytes:&_colorMatrix length:sizeof(MTIColorMatrix)]};
+}
+
++ (MTIAlphaTypeHandlingRule *)alphaTypeHandlingRule {
+    return MTIAlphaTypeHandlingRule.generalAlphaTypeHandlingRule;
 }
 
 @end

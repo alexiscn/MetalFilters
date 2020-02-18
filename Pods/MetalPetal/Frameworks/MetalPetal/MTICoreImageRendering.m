@@ -16,6 +16,17 @@
 - (instancetype)initWithDestinationPixelFormat:(MTLPixelFormat)pixelFormat colorSpace:(CGColorSpaceRef)colorSpace flipped:(BOOL)flipped {
     if (self = [super init]) {
         _destinationPixelFormat = pixelFormat;
+        _alphaMode = CIRenderDestinationAlphaPremultiplied;
+        _colorSpace = CGColorSpaceRetain(colorSpace);
+        _flipped = flipped;
+    }
+    return self;
+}
+
+- (instancetype)initWithDestinationPixelFormat:(MTLPixelFormat)pixelFormat alphaMode:(CIRenderDestinationAlphaMode)alphaMode colorSpace:(CGColorSpaceRef)colorSpace flipped:(BOOL)flipped {
+    if (self = [super init]) {
+        _destinationPixelFormat = pixelFormat;
+        _alphaMode = alphaMode;
         _colorSpace = CGColorSpaceRetain(colorSpace);
         _flipped = flipped;
     }
@@ -31,7 +42,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
-        defaultOptions = [[MTICIImageRenderingOptions alloc] initWithDestinationPixelFormat:MTLPixelFormatBGRA8Unorm_sRGB colorSpace:colorspace flipped:YES];
+        defaultOptions = [[MTICIImageRenderingOptions alloc] initWithDestinationPixelFormat:MTLPixelFormatBGRA8Unorm colorSpace:colorspace flipped:YES];
         CGColorSpaceRelease(colorspace);
     });
     return defaultOptions;
@@ -67,4 +78,5 @@
     });
     return defaultOptions;
 }
+
 @end

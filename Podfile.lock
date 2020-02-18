@@ -1,18 +1,18 @@
 PODS:
-  - MetalPetal (0.5.2):
-    - MetalPetal/Core (= 0.5.2)
-  - MetalPetal/Core (0.5.2)
+  - MetalPetal (1.8.0):
+    - MetalPetal/Core (= 1.8.0)
+  - MetalPetal/Core (1.8.0)
 
 DEPENDENCIES:
   - MetalPetal
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - MetalPetal
 
 SPEC CHECKSUMS:
-  MetalPetal: d6cfdab456d9bdf202c48488cd9e2a60f4da694b
+  MetalPetal: 1720e3d54f6a2502fe0b1f40756cfc5c667c6ac3
 
 PODFILE CHECKSUM: c21a5d46d824be685f2949ca4ef75c333ad152cf
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.8.4

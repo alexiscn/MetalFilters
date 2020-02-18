@@ -557,17 +557,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MetalFilters/Pods-MetalFilters-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MetalPetal/MetalPetal.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MetalFilters/Pods-MetalFilters-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MetalPetal.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MetalFilters/Pods-MetalFilters-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetalFilters/Pods-MetalFilters-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MetalFilters/Pods-MetalFilters-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4E39381F8587B58D24E4015F /* [CP] Check Pods Manifest.lock */ = {

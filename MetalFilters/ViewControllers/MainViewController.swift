@@ -8,6 +8,8 @@
 
 import UIKit
 import Photos
+import Metal
+import MetalKit
 
 class MainViewController: UIViewController {
     
@@ -24,6 +26,11 @@ class MainViewController: UIViewController {
         
         setupScrollView()
         requestPhoto()
+        test()
+    }
+    
+    private func test() {
+        
     }
     
     private func setupScrollView() {

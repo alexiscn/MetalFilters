@@ -7,7 +7,7 @@
 
 #import "MTIDotScreenFilter.h"
 #import "MTIFunctionDescriptor.h"
-#import "MTIVector.h"
+#import "MTIVector+SIMD.h"
 #import "MTIColor.h"
 
 @implementation MTIDotScreenFilter
@@ -27,8 +27,12 @@
 
 - (NSDictionary<NSString *,id> *)parameters {
     return @{@"angle": @(self.angle),
-             @"scale": @(self.scale),
+             @"scale": @(MAX(self.scale, 1.0f)),
              @"grayColorTransform": [MTIVector vectorWithFloat3:self.grayColorTransform]};
+}
+
++ (MTIAlphaTypeHandlingRule *)alphaTypeHandlingRule {
+    return MTIAlphaTypeHandlingRule.generalAlphaTypeHandlingRule;
 }
 
 @end
