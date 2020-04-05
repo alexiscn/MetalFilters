@@ -81,14 +81,14 @@ class MTFilterManager {
         let filter = type.init()
         filter.inputImage = inputImage
         if let cgImage = try? context?.makeCGImage(from: filter.outputImage!) {
-            return UIImage(cgImage: cgImage!)
+            return UIImage(cgImage: cgImage)
         }
         return nil
     }
     
     func generate(image: MTIImage) -> UIImage? {
         if let cgImage = try? context?.makeCGImage(from: image) {
-            return UIImage(cgImage: cgImage!)
+            return UIImage(cgImage: cgImage)
         }
         return nil
     }

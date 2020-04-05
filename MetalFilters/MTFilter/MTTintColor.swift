@@ -69,23 +69,23 @@ enum MTTintColor {
     var colorVector: MTIVector {
         switch self {
         case .none:
-            return MTIVector(value: float3(0.0, 0.0, 0.0))
+            return MTIVector(value: SIMD3(0.0, 0.0, 0.0))
         case .yellow:
-            return MTIVector(value: float3(1.0, 1.0, 0.0))
+            return MTIVector(value: SIMD3(1.0, 1.0, 0.0))
         case .orange:
-            return MTIVector(value: float3(1.0, 0.5, 0.0))
+            return MTIVector(value: SIMD3(1.0, 0.5, 0.0))
         case .red:
-            return MTIVector(value: float3(1.0, 0.0, 0.0))
+            return MTIVector(value: SIMD3(1.0, 0.0, 0.0))
         case .pink:
-            return MTIVector(value: float3(1.0, 0.0, 1.0))
+            return MTIVector(value: SIMD3(1.0, 0.0, 1.0))
         case .purple:
-            return MTIVector(value: float3(0.5, 0.0, 1.0))
+            return MTIVector(value: SIMD3(0.5, 0.0, 1.0))
         case .blue:
-            return MTIVector(value: float3(0.0, 0.0, 1.0))
+            return MTIVector(value: SIMD3(0.0, 0.0, 1.0))
         case .lightBlue:
-            return MTIVector(value: float3(0.0, 1.0, 1.0))
+            return MTIVector(value: SIMD3(0.0, 1.0, 1.0))
         case .green:
-            return MTIVector(value: float3(0.0, 1.0, 0.0))
+            return MTIVector(value: SIMD3(0.0, 1.0, 0.0))
         }
     }
     

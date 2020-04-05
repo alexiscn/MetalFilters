@@ -33,7 +33,7 @@ fragment float4 MTEarlybirdFragment(VertexOut vertexIn [[ stage_in ]],
               -0.034200,
               1.265800);
 
-    const float3 rgbPrime = float3(0.25098, 0.14640522, 0.0);
+    //const float3 rgbPrime = float3(0.25098, 0.14640522, 0.0);
     const float3 desaturate = float3(.3, .59, .11);
 
     float2 lookup;

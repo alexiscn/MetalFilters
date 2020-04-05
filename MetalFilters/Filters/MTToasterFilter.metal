@@ -23,9 +23,9 @@ fragment float4 MTToasterFragment(VertexOut vertexIn [[ stage_in ]],
     constexpr sampler s(coord::normalized, address::clamp_to_edge, filter::linear);
     float4 texel = inputTexture.sample(s, vertexIn.textureCoordinate);
     float4 inputTexel = texel;
-    float2 red;
-    float2 green;
-    float2 blue;
+    //float2 red;
+    //float2 green;
+    //float2 blue;
     float2 tc;
     float2 lookup;
     float3 metalSample;

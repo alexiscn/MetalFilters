@@ -14,11 +14,11 @@ class MTScrollView: UIScrollView {
         didSet {
             imageView.image = image
             if let image = image {
-                imageView.frame.size = actualSizeFor(image)
-                contentSize = imageView.bounds.size
                 zoomScale = 1.0
                 minimumZoomScale = 1.0
                 maximumZoomScale = 5.0
+                imageView.frame.size = actualSizeFor(image)
+                contentSize = imageView.bounds.size
                 let offset = CGPoint(x: (contentSize.width - bounds.width)/2, y: (contentSize.height - bounds.height)/2)
                 setContentOffset(offset, animated: false)
             }
