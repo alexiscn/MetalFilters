@@ -83,16 +83,7 @@ static const void * const MTICIImageMTIImageAssociationKey = &MTICIImageMTIImage
     if (image.alphaType == MTIAlphaTypeNonPremultiplied) {
         //ref: https://developer.apple.com/documentation/coreimage/ciimage/1645894-premultiplyingalpha
         //Premultiplied alpha speeds up the rendering of images, so Core Image filters require that input image data be premultiplied. If you have an image without premultiplied alpha that you want to feed into a filter, use this method before applying the filter.
-        if (@available(iOS 10.0, *)) {
-            ciImage = [ciImage imageByPremultiplyingAlpha];
-        } else {
-            CIFilter *premultiplyFilter = [CIFilter filterWithName:@"CIPremultiply"];
-            NSAssert(premultiplyFilter, @"");
-            if (premultiplyFilter) {
-                [premultiplyFilter setValue:ciImage forKey:kCIInputImageKey];
-                ciImage = premultiplyFilter.outputImage;
-            }
-        }
+        ciImage = [ciImage imageByPremultiplyingAlpha];
     }
     objc_setAssociatedObject(ciImage, MTICIImageMTIImageAssociationKey, persistentImage, OBJC_ASSOCIATION_RETAIN);
     return ciImage;
@@ -224,7 +215,6 @@ static const void * const MTICIImageMTIImageAssociationKey = &MTICIImageMTIImage
     
     MTLTextureDescriptor *textureDescriptor = [MTLTextureDescriptor texture2DDescriptorWithPixelFormat:targetPixelFormat width:frameWidth height:frameHeight mipmapped:NO];
     textureDescriptor.usage = MTLTextureUsageShaderWrite | MTLTextureUsageRenderTarget;
-    textureDescriptor.storageMode = MTLStorageModePrivate;
     id<MTICVMetalTexture> renderTexture = [self.coreVideoTextureBridge newTextureWithCVImageBuffer:pixelBuffer textureDescriptor:textureDescriptor planeIndex:0 error:&error];
     if (!renderTexture || error) {
         if (inOutError) {

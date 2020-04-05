@@ -77,7 +77,7 @@ class MTFilterManager {
     }
     
     func generateThumbnailsForImage(_ image: UIImage, with type: MTFilter.Type) -> UIImage? {
-        let inputImage = MTIImage(cgImage: image.cgImage!, options: [.SRGB: false], alphaType: .alphaIsOne)
+        let inputImage = MTIImage(cgImage: image.cgImage!, options: [.SRGB: false], isOpaque: true)
         let filter = type.init()
         filter.inputImage = inputImage
         if let cgImage = try? context?.makeCGImage(from: filter.outputImage!) {

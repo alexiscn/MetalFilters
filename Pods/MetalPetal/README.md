@@ -1,8 +1,8 @@
 # MetalPetal
 
-[![Platform](https://img.shields.io/badge/platform-iOS%209.0%2B%20%7C%20macOS%2010.13%2B-blue.svg?style=flat-square)](#)
-[![Version](https://img.shields.io/cocoapods/v/MetalPetal.svg?style=flat-square)](#)
-[![License](https://img.shields.io/cocoapods/l/MetalPetal.svg?style=flat-square)](#)
+[![Platform](https://img.shields.io/badge/platform-iOS%2010.0%2B%20%7C%20macOS%2010.13%2B-blue.svg)](#)
+[![Version](https://img.shields.io/cocoapods/v/MetalPetal.svg)](#)
+[![Swift](https://github.com/MetalPetal/MetalPetal/workflows/Swift/badge.svg)](#)
 
 An image processing framework based on Metal.
 
@@ -21,6 +21,7 @@ An image processing framework based on Metal.
     - [Advantages over Core Image](#advantages-over-core-image)
     - [Extensions](#extensions)
         - [Working with SceneKit](#working-with-scenekit)
+        - [Working with Core Image](#working-with-core-image)
         - [Working with JavaScript](#working-with-javascript)
         - [Texture Loader](#texture-loader)
 - [Builtin Filters](#builtin-filters)
@@ -39,6 +40,8 @@ An image processing framework based on Metal.
     - [Custom Vertex Data](#custom-vertex-data)
     - [Custom Processing Module](#custom-processing-module)
 - [Install](#install)
+    - [CocoaPods](#cocoapods)
+    - [Swift Package Manager](#swift-package-manager)
 - [iOS Simulator Support](#ios-simulator-support)
 - [Trivia](#trivia)
 - [Contribute](#contribute)
@@ -150,6 +153,14 @@ A `MTIContext` contains a lot of states and caches. There's a thread-safe mechan
 
 You can use `MTISCNSceneRenderer` to generate `MTIImage`s from a `SCNScene`. You may want to handle the SceneKit renderer's linear RGB color space, see issue [#76 The image from SceneKit is darker than normal](https://github.com/MetalPetal/MetalPetal/issues/76).
 
+#### Working with Core Image
+
+You can create `MTIImage`s from `CIImage`s.
+
+You can render a `MTIImage` to a `CIImage` using a `MTIContext`.
+
+You can use a `CIFilter` directly with `MTICoreImageKernel` or the `MTICoreImageUnaryFilter` class. (Swift Only)
+
 #### Working with JavaScript
 
 See [MetalPetalJS](https://github.com/MetalPetal/MetalPetalJS)
@@ -161,14 +172,6 @@ With MetalPetalJS you can create render pipelines and filters using JavaScript, 
 MetalPetal, by default, uses `MTKTextureLoader` to load `CGImage`s, images from `URL`, and named images.
 
 You can custom this behavior by implementing the `MTITextureLoader` protocol. Then assign your texture loader class to `MTIContextOptions.textureLoaderClass` when creating a `MTIContext`.
-
-The `MTKTextureLoader` on iOS 9 loads images with the bottom-left origin by default. MetalPetal provides a custom texture loader to resolve this issue. You can add the following code if you'd like MetalPetal to use the `MTITextureLoaderForiOS9WithImageOrientationFix` on iOS 9. Releated issue(s): [#67 MTIColorLookupFilter error result](https://github.com/MetalPetal/MetalPetal/issues/67)
-
-```
-if (NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_9_x_Max) {
-    MTIContextOptions.defaultTextureLoaderClass = MTITextureLoaderForiOS9WithImageOrientationFix.class;
-}
-```
 
 ## Builtin Filters
 
@@ -264,6 +267,8 @@ if (NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_9_x_Max) {
 
 - Dot Screen
 
+- All Core Image Filters
+
 ## Example Code
 
 ### Create a `MTIImage`
@@ -357,7 +362,7 @@ If you do a Quick Look on a `MTIImage`, it'll show you the image graph that you 
 
 - Use `MTIImage.cachePolicy` wisely.
     
-    Use `MTIImageCachePolicyTransient` when you do not want to preserve the render result of a image, for example when the image is just an intermediate result in a filter chain, so the underlying texture of the render result can be reused. It is the most memory efficient option. However, when you ask the context to render a previously rendered image, it may re-render that image since its underlying texture has been reused.
+    Use `MTIImageCachePolicyTransient` when you do not want to preserve the render result of an image, for example when the image is just an intermediate result in a filter chain, so the underlying texture of the render result can be reused. It is the most memory efficient option. However, when you ask the context to render a previously rendered image, it may re-render that image since its underlying texture has been reused.
     
     By default, a filter's output image has the `transient` policy.
 
@@ -397,7 +402,7 @@ If you do a Quick Look on a `MTIImage`, it'll show you the image graph that you 
 
 If you want to include the `MTIShaderLib.h` in your `.metal` file, you need to add the path of `MTIShaderLib.h` file to the `Metal Compiler - Header Search Paths` (`MTL_HEADER_SEARCH_PATHS`) setting.
 
-For example, if you use CocoaPods you can set the `MTL_HEADER_SEARCH_PATHS` to  `${PODS_CONFIGURATION_BUILD_DIR}/MetalPetal/MetalPetal.framework/Headers` or `${PODS_ROOT}/MetalPetal/Frameworks/MetalPetal/Shaders`.
+For example, if you use CocoaPods you can set the `MTL_HEADER_SEARCH_PATHS` to  `${PODS_CONFIGURATION_BUILD_DIR}/MetalPetal/MetalPetal.framework/Headers` or `${PODS_ROOT}/MetalPetal/Frameworks/MetalPetal/Shaders`. If you use Swift Package Manager, set the `MTL_HEADER_SEARCH_PATHS` to `$(HEADER_SEARCH_PATHS)`
 
 ### Shader Function Arguments Encoding
 
@@ -580,11 +585,29 @@ In rare scenarios, you may want to access the underlying texture directly, use m
 
 `MTIImagePromise` protocol provides direct access to the underlying texture and the render context for a step in MetalPetal.
 
-You can create new input sources or fully custom processing unit by implementing `MTIImagePromise` protocol. You will need to import an additional module to do so. For Swift: `import MetalPetal.Extension`, Objective-C: `@import MetalPetal.Extension;`.
+You can create new input sources or fully custom processing unit by implementing `MTIImagePromise` protocol. You will need to import an additional module to do so. 
+
+Objective-C
+
+```
+@import MetalPetal.Extension;
+```
+
+Swift
+
+```
+// CocoaPods
+import MetalPetal.Extension
+
+// Swift Package Manager
+import MetalPetalObjectiveC.Extension
+```
 
 See the implementation of `MTIComputePipelineKernel`, `MTICLAHELUTRecipe` or `MTIImage` for example.
 
 ## Install
+
+### CocoaPods
 
 You can use [CocoaPods](https://cocoapods.org/) to install the lastest version.
 
@@ -593,12 +616,16 @@ use_frameworks!
 
 pod 'MetalPetal'
 
-# Swift extensions (optional).
+# If you are using Swift
 pod 'MetalPetal/Swift'
 
 ```
 
 We also provide a script to generate dynamic `.framework`s for you. You need to first install [CocoaPods/Rome](https://github.com/CocoaPods/Rome), then run [Rome/build_frameworks.sh](Rome/build_frameworks.sh)
+
+### Swift Package Manager
+
+This repo contains a package description file. However using Swift Package Manager is not supported until [SE-0271](https://github.com/apple/swift-evolution/blob/master/proposals/0271-package-manager-resources.md) is fully implemented.
 
 ## iOS Simulator Support
 
